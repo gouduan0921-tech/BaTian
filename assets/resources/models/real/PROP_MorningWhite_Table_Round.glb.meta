@@ -1,0 +1,93 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "8373d259-04e0-4507-a978-4759a132f2dd",
+  "files": [],
+  "subMetas": {
+    "7a20e": {
+      "importer": "gltf-mesh",
+      "uuid": "8373d259-04e0-4507-a978-4759a132f2dd@7a20e",
+      "displayName": "",
+      "id": "7a20e",
+      "name": "Round tabletop.005.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 456
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "8373d259-04e0-4507-a978-4759a132f2dd@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3dd42": {
+      "importer": "gltf-scene",
+      "uuid": "8373d259-04e0-4507-a978-4759a132f2dd@3dd42",
+      "displayName": "",
+      "id": "3dd42",
+      "name": "PROP_MorningWhite_Table_Round.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "8373d259-04e0-4507-a978-4759a132f2dd@7a20e"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "8373d259-04e0-4507-a978-4759a132f2dd@1834c"
+      ],
+      "scenes": [
+        "8373d259-04e0-4507-a978-4759a132f2dd@3dd42"
+      ]
+    }
+  }
+}

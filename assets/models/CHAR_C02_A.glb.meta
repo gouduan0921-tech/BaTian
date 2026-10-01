@@ -1,0 +1,165 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489",
+  "files": [],
+  "subMetas": {
+    "29341": {
+      "importer": "gltf-mesh",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@29341",
+      "displayName": "",
+      "id": "29341",
+      "name": "立方体.038.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "33697": {
+      "importer": "gltf-material",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@33697",
+      "displayName": "",
+      "id": "33697",
+      "name": "MAT_UsedIron.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8fc98": {
+      "importer": "gltf-mesh",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@8fc98",
+      "displayName": "",
+      "id": "8fc98",
+      "name": "立方体.037.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "39eda": {
+      "importer": "gltf-mesh",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@39eda",
+      "displayName": "",
+      "id": "39eda",
+      "name": "球体.134.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 440
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c87e5": {
+      "importer": "gltf-material",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@c87e5",
+      "displayName": "",
+      "id": "c87e5",
+      "name": "MAT_Skin.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "47d04": {
+      "importer": "gltf-material",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@47d04",
+      "displayName": "",
+      "id": "47d04",
+      "name": "MAT_C02_Cloth.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "117d0": {
+      "importer": "gltf-scene",
+      "uuid": "5c7ac515-bf51-4939-8730-b0b885bf2489@117d0",
+      "displayName": "",
+      "id": "117d0",
+      "name": "CHAR_C02_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@8fc98",
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@39eda",
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@29341"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@33697",
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@c87e5",
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@47d04"
+      ],
+      "scenes": [
+        "5c7ac515-bf51-4939-8730-b0b885bf2489@117d0"
+      ]
+    }
+  }
+}

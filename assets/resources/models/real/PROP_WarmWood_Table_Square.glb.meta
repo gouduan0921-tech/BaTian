@@ -1,0 +1,143 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3",
+  "files": [],
+  "subMetas": {
+    "15357": {
+      "importer": "gltf-material",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@15357",
+      "displayName": "",
+      "id": "15357",
+      "name": "BT_HoneyOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2b0cc": {
+      "importer": "gltf-mesh",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@2b0cc",
+      "displayName": "",
+      "id": "2b0cc",
+      "name": "立方体.2335.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 376
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9022a": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a",
+      "displayName": "",
+      "id": "9022a",
+      "name": "HoneyOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "de520": {
+      "importer": "gltf-scene",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@de520",
+      "displayName": "",
+      "id": "de520",
+      "name": "PROP_WarmWood_Table_Square.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "HoneyOak_B",
+        "uri": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "2b881682-b446-4262-a2ba-f0544cf628d3@2b0cc"
+      ],
+      "skeletons": [],
+      "textures": [
+        "2b881682-b446-4262-a2ba-f0544cf628d3@e39f7"
+      ],
+      "materials": [
+        "2b881682-b446-4262-a2ba-f0544cf628d3@15357"
+      ],
+      "scenes": [
+        "2b881682-b446-4262-a2ba-f0544cf628d3@de520"
+      ]
+    }
+  }
+}

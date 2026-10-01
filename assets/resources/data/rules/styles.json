@@ -1,0 +1,26 @@
+[
+  {
+    "id": "warm-wood",
+    "name": "暖木",
+    "unlock": {
+      "type": "default"
+    }
+  },
+  {
+    "id": "morning-white",
+    "name": "晨白",
+    "unlock": {
+      "type": "completedDays",
+      "value": 4
+    }
+  },
+  {
+    "id": "night-blue",
+    "name": "夜蓝",
+    "unlock": {
+      "type": "story",
+      "value": "S03",
+      "fallbackDays": 12
+    }
+  }
+]

@@ -1,0 +1,225 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6",
+  "files": [],
+  "subMetas": {
+    "15357": {
+      "importer": "gltf-material",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@15357",
+      "displayName": "",
+      "id": "15357",
+      "name": "BT_HoneyOak.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6d4ee": {
+      "importer": "gltf-mesh",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@6d4ee",
+      "displayName": "",
+      "id": "6d4ee",
+      "name": "立方体.2370.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 336
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4d235": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@4d235",
+      "displayName": "",
+      "id": "4d235",
+      "name": "RicePaper_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "9022a": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@9022a",
+      "displayName": "",
+      "id": "9022a",
+      "name": "HoneyOak_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@4d235"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@9022a"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f91b8": {
+      "importer": "gltf-material",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@f91b8",
+      "displayName": "",
+      "id": "f91b8",
+      "name": "BT_RicePaper.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "61df5": {
+      "importer": "gltf-scene",
+      "uuid": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@61df5",
+      "displayName": "",
+      "id": "61df5",
+      "name": "PROP_MorningWhite_Window_Morning.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "RicePaper_B",
+        "uri": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@4d235"
+      },
+      {
+        "name": "HoneyOak_B",
+        "uri": "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@9022a"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@6d4ee"
+      ],
+      "skeletons": [],
+      "textures": [
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@3effa",
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@221a5"
+      ],
+      "materials": [
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@1834c",
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@f91b8",
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@15357"
+      ],
+      "scenes": [
+        "b74f56c7-0d07-4d19-a42a-eb5a5e3d14f6@61df5"
+      ]
+    }
+  }
+}

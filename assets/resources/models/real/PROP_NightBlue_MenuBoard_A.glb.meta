@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1",
+  "files": [],
+  "subMetas": {
+    "3461e": {
+      "importer": "gltf-mesh",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@3461e",
+      "displayName": "",
+      "id": "3461e",
+      "name": "立方体.2461.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 4312
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "66722b96-5442-46d2-a1a8-429daa5a14b1@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8f9f8": {
+      "importer": "gltf-material",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@8f9f8",
+      "displayName": "",
+      "id": "8f9f8",
+      "name": "BT_IndigoGlaze.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7ae36": {
+      "importer": "gltf-material",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@7ae36",
+      "displayName": "",
+      "id": "7ae36",
+      "name": "BT_Chalk.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "afafd": {
+      "importer": "gltf-scene",
+      "uuid": "66722b96-5442-46d2-a1a8-429daa5a14b1@afafd",
+      "displayName": "",
+      "id": "afafd",
+      "name": "PROP_NightBlue_MenuBoard_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "WornOak_B",
+        "uri": "66722b96-5442-46d2-a1a8-429daa5a14b1@9fcef"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@3461e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@e39f7"
+      ],
+      "materials": [
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@c0c2f",
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@8f9f8",
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@7ae36"
+      ],
+      "scenes": [
+        "66722b96-5442-46d2-a1a8-429daa5a14b1@afafd"
+      ]
+    }
+  }
+}

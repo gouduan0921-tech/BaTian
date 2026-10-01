@@ -1,0 +1,225 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a",
+  "files": [],
+  "subMetas": {
+    "a6901": {
+      "importer": "gltf-mesh",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@a6901",
+      "displayName": "",
+      "id": "a6901",
+      "name": "Porcelain vase.005.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1160
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "4d235": {
+      "importer": "gltf-embeded-image",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@4d235",
+      "displayName": "",
+      "id": "4d235",
+      "name": "RicePaper_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@4d235"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f91b8": {
+      "importer": "gltf-material",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@f91b8",
+      "displayName": "",
+      "id": "f91b8",
+      "name": "BT_RicePaper.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fde7e": {
+      "importer": "gltf-scene",
+      "uuid": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@fde7e",
+      "displayName": "",
+      "id": "fde7e",
+      "name": "PROP_MorningWhite_Vase_Porcelain.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "WornOak_B",
+        "uri": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@9fcef"
+      },
+      {
+        "name": "RicePaper_B",
+        "uri": "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@4d235"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@a6901"
+      ],
+      "skeletons": [],
+      "textures": [
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@3effa",
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@221a5"
+      ],
+      "materials": [
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@1834c",
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@c0c2f",
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@f91b8"
+      ],
+      "scenes": [
+        "5d3cbb8e-3d2e-437b-8add-f9bceb02191a@fde7e"
+      ]
+    }
+  }
+}

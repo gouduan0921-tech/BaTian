@@ -1,0 +1,34 @@
+{
+  "id": "AT01",
+  "base": {
+    "warmth": 20,
+    "clean": 40,
+    "aroma": 10,
+    "light": 20,
+    "crowd": 0
+  },
+  "weights": {
+    "warmth": 0.3,
+    "clean": 0.2,
+    "aroma": 0.2,
+    "light": 0.2,
+    "crowd": 0.1
+  },
+  "cookingAroma": 8,
+  "burntAroma": -10,
+  "dirtyBowlClean": -2,
+  "dirtyBowlInterval": 30,
+  "burntPotClean": -8,
+  "mixStyleLimit": 2,
+  "mixLightPenalty": 5,
+  "criticRejectBelow": 30,
+  "criticRejectChance": 0.5,
+  "reorderAtLeast": 60,
+  "reorderChance": 0.3,
+  "reorderCustomers": [
+    "C02",
+    "C05",
+    "C08"
+  ],
+  "sampleSeconds": 10
+}

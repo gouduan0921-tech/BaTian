@@ -1,0 +1,67 @@
+[
+  {
+    "id": "AU01",
+    "event": "pot:heat-low",
+    "file": "AU01_low_loop"
+  },
+  {
+    "id": "AU02",
+    "event": "pot:heat-mid",
+    "file": "AU02_mid_loop"
+  },
+  {
+    "id": "AU03",
+    "event": "pot:heat-high",
+    "file": "AU03_high_loop"
+  },
+  {
+    "id": "AU04",
+    "event": "pot:stir",
+    "file": "AU04_stir"
+  },
+  {
+    "id": "AU05",
+    "event": "pot:window",
+    "file": "AU05_window"
+  },
+  {
+    "id": "AU06",
+    "event": "pot:scorch",
+    "file": "AU06_scorch"
+  },
+  {
+    "id": "AU07",
+    "event": "pot:wash",
+    "file": "AU07_wash"
+  },
+  {
+    "id": "AU11",
+    "event": "shop:open",
+    "file": "AU11_bell"
+  },
+  {
+    "id": "AU12",
+    "event": "shop:sit",
+    "file": "AU12_sit"
+  },
+  {
+    "id": "AU13",
+    "event": "shop:leave",
+    "file": "AU13_leave"
+  },
+  {
+    "id": "AU14",
+    "event": "shop:coin",
+    "file": "AU14_coin"
+  },
+  {
+    "id": "AU15",
+    "event": "shop:close",
+    "file": "AU15_close"
+  },
+  {
+    "id": "AU16",
+    "event": "shop:wipe",
+    "file": "AU16_wipe"
+  }
+]

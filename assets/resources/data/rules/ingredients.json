@@ -1,0 +1,134 @@
+[
+  {
+    "id": "I01",
+    "name": "大米",
+    "unit": "份",
+    "buyPrice": 4,
+    "freshHours": 72,
+    "prep": "wash",
+    "tags": [
+      "米"
+    ]
+  },
+  {
+    "id": "I02",
+    "name": "小米",
+    "unit": "份",
+    "buyPrice": 4,
+    "freshHours": 72,
+    "prep": "wash",
+    "tags": [
+      "米"
+    ]
+  },
+  {
+    "id": "I03",
+    "name": "瘦肉",
+    "unit": "份",
+    "buyPrice": 8,
+    "freshHours": 24,
+    "prep": "cut",
+    "tags": [
+      "肉"
+    ]
+  },
+  {
+    "id": "I04",
+    "name": "皮蛋",
+    "unit": "份",
+    "buyPrice": 6,
+    "freshHours": 48,
+    "prep": "cut",
+    "tags": [
+      "蛋"
+    ]
+  },
+  {
+    "id": "I05",
+    "name": "南瓜",
+    "unit": "份",
+    "buyPrice": 5,
+    "freshHours": 48,
+    "prep": "cut",
+    "tags": [
+      "菜"
+    ]
+  },
+  {
+    "id": "I06",
+    "name": "青菜",
+    "unit": "把",
+    "buyPrice": 3,
+    "freshHours": 24,
+    "prep": "wash",
+    "tags": [
+      "菜"
+    ]
+  },
+  {
+    "id": "I07",
+    "name": "虾",
+    "unit": "份",
+    "buyPrice": 12,
+    "freshHours": 24,
+    "prep": "wash",
+    "tags": [
+      "海鲜"
+    ]
+  },
+  {
+    "id": "I08",
+    "name": "鱼片",
+    "unit": "份",
+    "buyPrice": 12,
+    "freshHours": 24,
+    "prep": "none",
+    "tags": [
+      "海鲜"
+    ]
+  },
+  {
+    "id": "I09",
+    "name": "牛肉",
+    "unit": "份",
+    "buyPrice": 14,
+    "freshHours": 24,
+    "prep": "cut",
+    "tags": [
+      "肉"
+    ]
+  },
+  {
+    "id": "I10",
+    "name": "红豆",
+    "unit": "份",
+    "buyPrice": 4,
+    "freshHours": 72,
+    "prep": "soak",
+    "tags": [
+      "豆"
+    ]
+  },
+  {
+    "id": "I11",
+    "name": "芝麻",
+    "unit": "份",
+    "buyPrice": 5,
+    "freshHours": 72,
+    "prep": "none",
+    "tags": [
+      "杂粮"
+    ]
+  },
+  {
+    "id": "I12",
+    "name": "鸡丝",
+    "unit": "份",
+    "buyPrice": 9,
+    "freshHours": 24,
+    "prep": "none",
+    "tags": [
+      "肉"
+    ]
+  }
+]

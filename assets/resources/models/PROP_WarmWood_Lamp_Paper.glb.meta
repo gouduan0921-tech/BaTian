@@ -1,0 +1,165 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30",
+  "files": [],
+  "subMetas": {
+    "33697": {
+      "importer": "gltf-material",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@33697",
+      "displayName": "",
+      "id": "33697",
+      "name": "MAT_UsedIron.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "43269": {
+      "importer": "gltf-mesh",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@43269",
+      "displayName": "",
+      "id": "43269",
+      "name": "柱体.006.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 60
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0f48f": {
+      "importer": "gltf-mesh",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@0f48f",
+      "displayName": "",
+      "id": "0f48f",
+      "name": "柱体.008.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 76
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fea3": {
+      "importer": "gltf-mesh",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@9fea3",
+      "displayName": "",
+      "id": "9fea3",
+      "name": "柱体.007.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 44
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bc220": {
+      "importer": "gltf-material",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@bc220",
+      "displayName": "",
+      "id": "bc220",
+      "name": "MAT_WarmWood.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "136f0": {
+      "importer": "gltf-material",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@136f0",
+      "displayName": "",
+      "id": "136f0",
+      "name": "MAT_PaperLamp.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1c009": {
+      "importer": "gltf-scene",
+      "uuid": "42d3593b-a730-4c61-8437-05db3d4dba30@1c009",
+      "displayName": "",
+      "id": "1c009",
+      "name": "PROP_WarmWood_Lamp_Paper.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "42d3593b-a730-4c61-8437-05db3d4dba30@0f48f",
+        "42d3593b-a730-4c61-8437-05db3d4dba30@43269",
+        "42d3593b-a730-4c61-8437-05db3d4dba30@9fea3"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "42d3593b-a730-4c61-8437-05db3d4dba30@bc220",
+        "42d3593b-a730-4c61-8437-05db3d4dba30@136f0",
+        "42d3593b-a730-4c61-8437-05db3d4dba30@33697"
+      ],
+      "scenes": [
+        "42d3593b-a730-4c61-8437-05db3d4dba30@1c009"
+      ]
+    }
+  }
+}

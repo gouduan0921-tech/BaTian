@@ -1,0 +1,225 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980",
+  "files": [],
+  "subMetas": {
+    "f25d5": {
+      "importer": "gltf-mesh",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@f25d5",
+      "displayName": "",
+      "id": "f25d5",
+      "name": "柱体.533.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1308
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3c305": {
+      "importer": "gltf-embeded-image",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@3c305",
+      "displayName": "",
+      "id": "3c305",
+      "name": "IndigoLinen_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "9fcc516f-7cae-41ce-930c-91ea24969980@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "9fcc516f-7cae-41ce-930c-91ea24969980@3c305"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e0fd0": {
+      "importer": "gltf-material",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@e0fd0",
+      "displayName": "",
+      "id": "e0fd0",
+      "name": "BT_IndigoLinen.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fbe55": {
+      "importer": "gltf-material",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@fbe55",
+      "displayName": "",
+      "id": "fbe55",
+      "name": "BT_LetterGold.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e622c": {
+      "importer": "gltf-scene",
+      "uuid": "9fcc516f-7cae-41ce-930c-91ea24969980@e622c",
+      "displayName": "",
+      "id": "e622c",
+      "name": "PROP_NightBlue_Curtain_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "WornOak_B",
+        "uri": "9fcc516f-7cae-41ce-930c-91ea24969980@9fcef"
+      },
+      {
+        "name": "IndigoLinen_B",
+        "uri": "9fcc516f-7cae-41ce-930c-91ea24969980@3c305"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "9fcc516f-7cae-41ce-930c-91ea24969980@f25d5"
+      ],
+      "skeletons": [],
+      "textures": [
+        "9fcc516f-7cae-41ce-930c-91ea24969980@3effa",
+        "9fcc516f-7cae-41ce-930c-91ea24969980@221a5"
+      ],
+      "materials": [
+        "9fcc516f-7cae-41ce-930c-91ea24969980@c0c2f",
+        "9fcc516f-7cae-41ce-930c-91ea24969980@e0fd0",
+        "9fcc516f-7cae-41ce-930c-91ea24969980@fbe55"
+      ],
+      "scenes": [
+        "9fcc516f-7cae-41ce-930c-91ea24969980@e622c"
+      ]
+    }
+  }
+}

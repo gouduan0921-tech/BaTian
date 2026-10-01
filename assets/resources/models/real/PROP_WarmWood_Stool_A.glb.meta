@@ -1,0 +1,208 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8",
+  "files": [],
+  "subMetas": {
+    "15357": {
+      "importer": "gltf-material",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@15357",
+      "displayName": "",
+      "id": "15357",
+      "name": "BT_HoneyOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a7dfd": {
+      "importer": "gltf-mesh",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a7dfd",
+      "displayName": "",
+      "id": "a7dfd",
+      "name": "Oak stool seat.005.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 660
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9022a": {
+      "importer": "gltf-embeded-image",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a",
+      "displayName": "",
+      "id": "9022a",
+      "name": "HoneyOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "db517": {
+      "importer": "gltf-scene",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@db517",
+      "displayName": "",
+      "id": "db517",
+      "name": "PROP_WarmWood_Stool_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "HoneyOak_B",
+        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a"
+      },
+      {
+        "name": "WornOak_B",
+        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a7dfd"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@3effa",
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@221a5"
+      ],
+      "materials": [
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@15357",
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@c0c2f"
+      ],
+      "scenes": [
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@db517"
+      ]
+    }
+  }
+}

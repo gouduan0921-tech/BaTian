@@ -1,0 +1,194 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c",
+  "files": [],
+  "subMetas": {
+    "ec237": {
+      "importer": "gltf-mesh",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@ec237",
+      "displayName": "",
+      "id": "ec237",
+      "name": "Hollow flowerpot.015.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 552
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "213b8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8",
+      "displayName": "",
+      "id": "213b8",
+      "name": "Terracotta_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "14cad": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@14cad",
+      "displayName": "",
+      "id": "14cad",
+      "name": "BT_Terracotta.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8bb30": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@8bb30",
+      "displayName": "",
+      "id": "8bb30",
+      "name": "BT_Soil.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1ad6f": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@1ad6f",
+      "displayName": "",
+      "id": "1ad6f",
+      "name": "BT_Leaf.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ae26c": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@ae26c",
+      "displayName": "",
+      "id": "ae26c",
+      "name": "BT_YoungLeaf.005.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "106f6": {
+      "importer": "gltf-scene",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@106f6",
+      "displayName": "",
+      "id": "106f6",
+      "name": "PROP_WarmWood_Plant_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Terracotta_B",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@ec237"
+      ],
+      "skeletons": [],
+      "textures": [
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@e39f7"
+      ],
+      "materials": [
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@14cad",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@8bb30",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@1ad6f",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@ae26c"
+      ],
+      "scenes": [
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@106f6"
+      ]
+    }
+  }
+}

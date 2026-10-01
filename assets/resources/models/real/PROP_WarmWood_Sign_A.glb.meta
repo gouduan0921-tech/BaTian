@@ -1,0 +1,242 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4",
+  "files": [],
+  "subMetas": {
+    "63f8e": {
+      "importer": "gltf-mesh",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@63f8e",
+      "displayName": "",
+      "id": "63f8e",
+      "name": "立方体.2321.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1568
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "28ade": {
+      "importer": "gltf-embeded-image",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@28ade",
+      "displayName": "",
+      "id": "28ade",
+      "name": "SmokedOak_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@28ade"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "061e8": {
+      "importer": "gltf-material",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@061e8",
+      "displayName": "",
+      "id": "061e8",
+      "name": "BT_SmokedOak.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e9894": {
+      "importer": "gltf-material",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@e9894",
+      "displayName": "",
+      "id": "e9894",
+      "name": "BT_AgedBrass.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fbe55": {
+      "importer": "gltf-material",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@fbe55",
+      "displayName": "",
+      "id": "fbe55",
+      "name": "BT_LetterGold.005.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4465a": {
+      "importer": "gltf-scene",
+      "uuid": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@4465a",
+      "displayName": "",
+      "id": "4465a",
+      "name": "PROP_WarmWood_Sign_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "WornOak_B",
+        "uri": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@9fcef"
+      },
+      {
+        "name": "SmokedOak_B",
+        "uri": "53896d48-57f9-4e1f-93a1-164efb8ba7c4@28ade"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@63f8e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@3effa",
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@221a5"
+      ],
+      "materials": [
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@c0c2f",
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@061e8",
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@e9894",
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@fbe55"
+      ],
+      "scenes": [
+        "53896d48-57f9-4e1f-93a1-164efb8ba7c4@4465a"
+      ]
+    }
+  }
+}

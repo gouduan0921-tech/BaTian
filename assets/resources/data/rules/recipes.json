@@ -1,0 +1,445 @@
+[
+  {
+    "id": "R01",
+    "name": "白粥",
+    "unlockDay": 1,
+    "cost": 4,
+    "price": 16,
+    "cookSeconds": 50,
+    "scorchMul": 0.8,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      }
+    ],
+    "adds": [],
+    "seasoning": "plain",
+    "tags": [
+      "清淡"
+    ],
+    "color": "#F3E2C4",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R02",
+    "name": "皮蛋瘦肉粥",
+    "unlockDay": 1,
+    "cost": 18,
+    "price": 34,
+    "cookSeconds": 60,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I03",
+        "count": 1
+      },
+      {
+        "id": "I04",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I03",
+        "atDoneness": 0.45
+      },
+      {
+        "id": "I04",
+        "atDoneness": 0.8
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "咸香"
+    ],
+    "color": "#C4A574",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R03",
+    "name": "小米南瓜粥",
+    "unlockDay": 2,
+    "cost": 9,
+    "price": 26,
+    "cookSeconds": 55,
+    "scorchMul": 1.3,
+    "ingredients": [
+      {
+        "id": "I02",
+        "count": 1
+      },
+      {
+        "id": "I05",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I05",
+        "atDoneness": 0.4
+      }
+    ],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜"
+    ],
+    "color": "#E2B15A",
+    "heatHint": "low",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R04",
+    "name": "青菜瘦肉粥",
+    "unlockDay": 2,
+    "cost": 15,
+    "price": 30,
+    "cookSeconds": 58,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I03",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I03",
+        "atDoneness": 0.45
+      },
+      {
+        "id": "I06",
+        "atDoneness": 0.78
+      }
+    ],
+    "seasoning": "plain",
+    "tags": [
+      "清淡"
+    ],
+    "color": "#C9D1A0",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R05",
+    "name": "海鲜粥",
+    "unlockDay": 3,
+    "cost": 19,
+    "price": 48,
+    "cookSeconds": 62,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      },
+      {
+        "id": "I07",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I06",
+        "atDoneness": 0.6
+      },
+      {
+        "id": "I07",
+        "atDoneness": 0.78
+      }
+    ],
+    "seasoning": "plain",
+    "tags": [
+      "鲜"
+    ],
+    "color": "#E8C9A8",
+    "heatHint": "mid",
+    "freshPenalty": 2
+  },
+  {
+    "id": "R06",
+    "name": "红豆粥",
+    "unlockDay": 3,
+    "cost": 8,
+    "price": 24,
+    "cookSeconds": 70,
+    "scorchMul": 1.1,
+    "ingredients": [
+      {
+        "id": "I10",
+        "count": 1
+      },
+      {
+        "id": "I01",
+        "count": 1
+      }
+    ],
+    "adds": [],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜"
+    ],
+    "color": "#9C4A44",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R07",
+    "name": "鸡丝粥",
+    "unlockDay": 4,
+    "cost": 16,
+    "price": 36,
+    "cookSeconds": 60,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I12",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I12",
+        "atDoneness": 0.6
+      },
+      {
+        "id": "I06",
+        "atDoneness": 0.78
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "咸香"
+    ],
+    "color": "#E6C48A",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R08",
+    "name": "黑芝麻糊粥",
+    "unlockDay": 4,
+    "cost": 9,
+    "price": 28,
+    "cookSeconds": 58,
+    "scorchMul": 1.3,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I11",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I11",
+        "atDoneness": 0.5
+      }
+    ],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜"
+    ],
+    "color": "#3A3128",
+    "heatHint": "low",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R09",
+    "name": "牛肉粥",
+    "unlockDay": 5,
+    "cost": 21,
+    "price": 52,
+    "cookSeconds": 68,
+    "scorchMul": 1.1,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I09",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I09",
+        "atDoneness": 0.55
+      },
+      {
+        "id": "I06",
+        "atDoneness": 0.78
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "浓"
+    ],
+    "color": "#A87A56",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R10",
+    "name": "鱼片粥",
+    "unlockDay": 5,
+    "cost": 19,
+    "price": 50,
+    "cookSeconds": 60,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      },
+      {
+        "id": "I08",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I06",
+        "atDoneness": 0.6
+      },
+      {
+        "id": "I08",
+        "atDoneness": 0.8
+      }
+    ],
+    "seasoning": "plain",
+    "tags": [
+      "鲜"
+    ],
+    "color": "#F2E4D0",
+    "heatHint": "mid",
+    "freshPenalty": 2
+  },
+  {
+    "id": "R11",
+    "name": "八宝粥",
+    "unlockDay": 6,
+    "cost": 17,
+    "price": 40,
+    "cookSeconds": 75,
+    "scorchMul": 1.2,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I02",
+        "count": 1
+      },
+      {
+        "id": "I10",
+        "count": 1
+      },
+      {
+        "id": "I11",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I11",
+        "atDoneness": 0.65
+      }
+    ],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜"
+    ],
+    "color": "#B8744A",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R12",
+    "name": "招牌粥",
+    "unlockDay": 7,
+    "cost": 28,
+    "price": 58,
+    "cookSeconds": 72,
+    "scorchMul": 1.1,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I12",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      },
+      {
+        "id": "I07",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I12",
+        "atDoneness": 0.35
+      },
+      {
+        "id": "I06",
+        "atDoneness": 0.6
+      },
+      {
+        "id": "I07",
+        "atDoneness": 0.8
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "浓",
+      "招牌"
+    ],
+    "color": "#D9B25A",
+    "heatHint": "mid",
+    "freshPenalty": 2
+  }
+]

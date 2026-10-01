@@ -1,0 +1,153 @@
+[
+  {
+    "id": "S01",
+    "customerId": "C02",
+    "conditions": [
+      {
+        "type": "favor",
+        "customerId": "C02",
+        "min": 4
+      },
+      {
+        "type": "served",
+        "customerId": "C02",
+        "recipeId": "R01"
+      }
+    ],
+    "lines": [
+      "明天还要赶工。",
+      "你早点把粥熬上就行。"
+    ],
+    "reward": {
+      "type": "guest",
+      "customerId": "C02",
+      "wave": "morning",
+      "first": true
+    }
+  },
+  {
+    "id": "S02",
+    "customerId": "C06",
+    "conditions": [
+      {
+        "type": "favor",
+        "customerId": "C06",
+        "min": 6
+      },
+      {
+        "type": "served",
+        "customerId": "C06",
+        "recipeId": "R04",
+        "result": "perfect"
+      }
+    ],
+    "lines": [
+      "孩子把青菜吃完了。",
+      "这罐给你，装葱用。"
+    ],
+    "reward": {
+      "type": "decor",
+      "id": "D12"
+    }
+  },
+  {
+    "id": "S03",
+    "customerId": "C05",
+    "conditions": [
+      {
+        "type": "favor",
+        "customerId": "C05",
+        "min": 6
+      },
+      {
+        "type": "served",
+        "customerId": "C05",
+        "tag": "浓",
+        "wave": "evening"
+      }
+    ],
+    "lines": [
+      "我只在傍晚来。",
+      "灯留暗一点就好。"
+    ],
+    "reward": {
+      "type": "style",
+      "id": "night-blue",
+      "fallback": {
+        "type": "decor",
+        "id": "D21"
+      }
+    }
+  },
+  {
+    "id": "S04",
+    "customerId": "C04",
+    "conditions": [
+      {
+        "type": "streak",
+        "customerId": "C04",
+        "recipeIds": [
+          "R05",
+          "R10"
+        ],
+        "result": "perfect",
+        "days": 2
+      }
+    ],
+    "lines": [
+      "纸条上只写着：鱼片要晚放。"
+    ],
+    "reward": {
+      "type": "proficiency",
+      "recipeId": "R10",
+      "amount": 4
+    }
+  },
+  {
+    "id": "S05",
+    "customerId": "C07",
+    "conditions": [
+      {
+        "type": "served",
+        "customerId": "C07",
+        "recipeId": "R12",
+        "result": "perfect"
+      },
+      {
+        "type": "dayAtmosphere",
+        "min": 40
+      }
+    ],
+    "lines": [
+      "明天我带一个人来。",
+      "不用写长评。"
+    ],
+    "reward": {
+      "type": "guest",
+      "customerId": "C07",
+      "wave": "lunch",
+      "first": false
+    }
+  },
+  {
+    "id": "S06",
+    "customerId": "C08",
+    "conditions": [
+      {
+        "type": "favor",
+        "customerId": "C08",
+        "min": 12
+      },
+      {
+        "type": "codex",
+        "min": 8
+      }
+    ],
+    "lines": [
+      "把你最拿手的那道，写在菜单最上面。"
+    ],
+    "reward": {
+      "type": "pin"
+    }
+  }
+]

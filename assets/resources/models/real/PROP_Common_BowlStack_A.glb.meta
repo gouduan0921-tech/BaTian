@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb",
+  "files": [],
+  "subMetas": {
+    "c869d": {
+      "importer": "gltf-mesh",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@c869d",
+      "displayName": "",
+      "id": "c869d",
+      "name": "立方体.2332.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 4940
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fcef": {
+      "importer": "gltf-embeded-image",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@9fcef",
+      "displayName": "",
+      "id": "9fcef",
+      "name": "WornOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a835855b-0c02-41a1-907f-5e8215123ceb@9fcef"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0c2f": {
+      "importer": "gltf-material",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@c0c2f",
+      "displayName": "",
+      "id": "c0c2f",
+      "name": "BT_WornOak.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e5b3c": {
+      "importer": "gltf-material",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@e5b3c",
+      "displayName": "",
+      "id": "e5b3c",
+      "name": "BT_CeladonGlaze.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "584cb": {
+      "importer": "gltf-scene",
+      "uuid": "a835855b-0c02-41a1-907f-5e8215123ceb@584cb",
+      "displayName": "",
+      "id": "584cb",
+      "name": "PROP_Common_BowlStack_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "WornOak_B",
+        "uri": "a835855b-0c02-41a1-907f-5e8215123ceb@9fcef"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "a835855b-0c02-41a1-907f-5e8215123ceb@c869d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "a835855b-0c02-41a1-907f-5e8215123ceb@e39f7"
+      ],
+      "materials": [
+        "a835855b-0c02-41a1-907f-5e8215123ceb@c0c2f",
+        "a835855b-0c02-41a1-907f-5e8215123ceb@1834c",
+        "a835855b-0c02-41a1-907f-5e8215123ceb@e5b3c"
+      ],
+      "scenes": [
+        "a835855b-0c02-41a1-907f-5e8215123ceb@584cb"
+      ]
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3",
+  "files": [],
+  "subMetas": {
+    "5dbb3": {
+      "importer": "gltf-mesh",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@5dbb3",
+      "displayName": "",
+      "id": "5dbb3",
+      "name": "Hollow flowerpot.016.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 600
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "213b8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@213b8",
+      "displayName": "",
+      "id": "213b8",
+      "name": "Terracotta_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "07ff446a-17d6-4a67-a432-faad07652aa3@213b8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "14cad": {
+      "importer": "gltf-material",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@14cad",
+      "displayName": "",
+      "id": "14cad",
+      "name": "BT_Terracotta.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8bb30": {
+      "importer": "gltf-material",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@8bb30",
+      "displayName": "",
+      "id": "8bb30",
+      "name": "BT_Soil.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ae26c": {
+      "importer": "gltf-material",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@ae26c",
+      "displayName": "",
+      "id": "ae26c",
+      "name": "BT_YoungLeaf.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2436b": {
+      "importer": "gltf-scene",
+      "uuid": "07ff446a-17d6-4a67-a432-faad07652aa3@2436b",
+      "displayName": "",
+      "id": "2436b",
+      "name": "PROP_WarmWood_Scallion_Sill.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Terracotta_B",
+        "uri": "07ff446a-17d6-4a67-a432-faad07652aa3@213b8"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "07ff446a-17d6-4a67-a432-faad07652aa3@5dbb3"
+      ],
+      "skeletons": [],
+      "textures": [
+        "07ff446a-17d6-4a67-a432-faad07652aa3@e39f7"
+      ],
+      "materials": [
+        "07ff446a-17d6-4a67-a432-faad07652aa3@14cad",
+        "07ff446a-17d6-4a67-a432-faad07652aa3@8bb30",
+        "07ff446a-17d6-4a67-a432-faad07652aa3@ae26c"
+      ],
+      "scenes": [
+        "07ff446a-17d6-4a67-a432-faad07652aa3@2436b"
+      ]
+    }
+  }
+}

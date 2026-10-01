@@ -1,0 +1,17 @@
+{
+  "platform": "web-desktop",
+  "buildPath": "project://build",
+  "debug": false,
+  "md5Cache": false,
+  "sourceMaps": false,
+  "name": "BaTian",
+  "outputName": "web-desktop",
+  "mainBundleCompressionType": "merge_dep",
+  "startScene": "e418a392-8939-4acf-b32a-923acdc28bd9",
+  "scenes": [
+    {
+      "url": "db://assets/scenes/Store.scene",
+      "uuid": "e418a392-8939-4acf-b32a-923acdc28bd9"
+    }
+  ]
+}

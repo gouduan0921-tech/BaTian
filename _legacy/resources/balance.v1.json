@@ -1,0 +1,414 @@
+{
+  "version": "1.0",
+  "status": "初始设计值，待玩家测试",
+  "currency": "游戏金币",
+  "session": {
+    "initialWallet": 1200,
+    "shiftSeconds": 300,
+    "arrivalCutoffSeconds": 240,
+    "maxActiveOrders": 3,
+    "initialBurners": 1,
+    "busyRetrySeconds": 5,
+    "rescueFloor": 100,
+    "fixedStepMs": 50
+  },
+  "cooking": {
+    "prepSeconds": 4,
+    "serveSeconds": 2,
+    "garnishSeconds": 4,
+    "perfectSeconds": 8,
+    "burnSeconds": 20,
+    "baseQuality": 50,
+    "tipRate": 0.2
+  },
+  "actions": {
+    "A0": "标准备料；0秒额外操作，20分",
+    "A1": "爆炒翻锅；8秒，3个提示各1秒窗口，全中20分，1-2中10分，0中0分",
+    "A2": "流沙搅拌；8秒，累计按住4秒20分，2-4秒10分，不足2秒0分",
+    "A3": "双色铺面；8秒放两色，均正确20分，单色10分",
+    "A4": "海鲜排阵；8秒放虾贝鲍，3件20分，1-2件10分"
+  },
+  "recipes": [
+    {
+      "id": "R01",
+      "name": "皮蛋瘦肉粥",
+      "unlockDay": 1,
+      "price": 32,
+      "cost": 10,
+      "cookSeconds": 16,
+      "standardSeconds": 26,
+      "action": "A0",
+      "tags": [
+        "savory",
+        "classic"
+      ],
+      "garnishes": [
+        "葱花",
+        "油条碎"
+      ]
+    },
+    {
+      "id": "R02",
+      "name": "小米南瓜粥",
+      "unlockDay": 1,
+      "price": 28,
+      "cost": 8,
+      "cookSeconds": 16,
+      "standardSeconds": 26,
+      "action": "A0",
+      "tags": [
+        "sweet",
+        "light"
+      ],
+      "garnishes": [
+        "南瓜薄片",
+        "芝麻"
+      ]
+    },
+    {
+      "id": "R03",
+      "name": "瑶柱鸡丝粥",
+      "unlockDay": 2,
+      "price": 40,
+      "cost": 13,
+      "cookSeconds": 18,
+      "standardSeconds": 28,
+      "action": "A0",
+      "tags": [
+        "savory",
+        "classic"
+      ],
+      "garnishes": [
+        "葱花",
+        "姜丝"
+      ]
+    },
+    {
+      "id": "R04",
+      "name": "地狱火爆椒牛肉粥",
+      "unlockDay": 2,
+      "price": 48,
+      "cost": 16,
+      "cookSeconds": 20,
+      "standardSeconds": 38,
+      "action": "A1",
+      "tags": [
+        "savory",
+        "spicy"
+      ],
+      "garnishes": [
+        "香菜",
+        "椒圈"
+      ]
+    },
+    {
+      "id": "R05",
+      "name": "五红杂粮粥",
+      "unlockDay": 3,
+      "price": 34,
+      "cost": 10,
+      "cookSeconds": 18,
+      "standardSeconds": 28,
+      "action": "A0",
+      "tags": [
+        "sweet",
+        "light"
+      ],
+      "garnishes": [
+        "枸杞",
+        "花生"
+      ]
+    },
+    {
+      "id": "R06",
+      "name": "番茄牛腩粥",
+      "unlockDay": 3,
+      "price": 46,
+      "cost": 15,
+      "cookSeconds": 22,
+      "standardSeconds": 32,
+      "action": "A0",
+      "tags": [
+        "savory",
+        "classic"
+      ],
+      "garnishes": [
+        "葱花",
+        "番茄瓣"
+      ]
+    },
+    {
+      "id": "R07",
+      "name": "流沙咸蛋黄蟹粥",
+      "unlockDay": 4,
+      "price": 68,
+      "cost": 24,
+      "cookSeconds": 24,
+      "standardSeconds": 42,
+      "action": "A2",
+      "tags": [
+        "savory",
+        "seafood",
+        "signature"
+      ],
+      "garnishes": [
+        "蟹肉簇",
+        "葱花"
+      ]
+    },
+    {
+      "id": "R08",
+      "name": "紫薯芋泥双色粥",
+      "unlockDay": 4,
+      "price": 42,
+      "cost": 12,
+      "cookSeconds": 18,
+      "standardSeconds": 36,
+      "action": "A3",
+      "tags": [
+        "sweet",
+        "photo"
+      ],
+      "garnishes": [
+        "芋圆",
+        "椰片"
+      ]
+    },
+    {
+      "id": "R09",
+      "name": "香菇时蔬粥",
+      "unlockDay": 5,
+      "price": 32,
+      "cost": 9,
+      "cookSeconds": 16,
+      "standardSeconds": 26,
+      "action": "A0",
+      "tags": [
+        "savory",
+        "light"
+      ],
+      "garnishes": [
+        "菇片",
+        "青菜"
+      ]
+    },
+    {
+      "id": "R10",
+      "name": "黑金松露鸡丝粥",
+      "unlockDay": 5,
+      "price": 72,
+      "cost": 25,
+      "cookSeconds": 22,
+      "standardSeconds": 32,
+      "action": "A0",
+      "tags": [
+        "savory",
+        "signature",
+        "photo"
+      ],
+      "garnishes": [
+        "松露片",
+        "细葱"
+      ]
+    },
+    {
+      "id": "R11",
+      "name": "龙王金鲍粥",
+      "unlockDay": 6,
+      "price": 88,
+      "cost": 32,
+      "cookSeconds": 26,
+      "standardSeconds": 44,
+      "action": "A4",
+      "tags": [
+        "savory",
+        "seafood",
+        "signature",
+        "photo"
+      ],
+      "garnishes": [
+        "瑶柱丝",
+        "细葱"
+      ]
+    },
+    {
+      "id": "R12",
+      "name": "霸王海鲜全家福粥",
+      "unlockDay": 7,
+      "price": 108,
+      "cost": 40,
+      "cookSeconds": 30,
+      "standardSeconds": 48,
+      "action": "A4",
+      "tags": [
+        "savory",
+        "seafood",
+        "signature",
+        "share"
+      ],
+      "garnishes": [
+        "葱花",
+        "姜丝"
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": "C01",
+      "name": "街坊熟客",
+      "unlockDay": 1,
+      "acceptedTags": [
+        "*"
+      ],
+      "patienceBonusSeconds": 65
+    },
+    {
+      "id": "C02",
+      "name": "赶时间的上班族",
+      "unlockDay": 2,
+      "acceptedTags": [
+        "classic",
+        "light"
+      ],
+      "patienceBonusSeconds": 40
+    },
+    {
+      "id": "C03",
+      "name": "嗜辣食客",
+      "unlockDay": 2,
+      "acceptedTags": [
+        "spicy"
+      ],
+      "patienceBonusSeconds": 50
+    },
+    {
+      "id": "C04",
+      "name": "甜品爱好者",
+      "unlockDay": 3,
+      "acceptedTags": [
+        "sweet"
+      ],
+      "patienceBonusSeconds": 60
+    },
+    {
+      "id": "C05",
+      "name": "拍照达人",
+      "unlockDay": 4,
+      "acceptedTags": [
+        "photo",
+        "signature"
+      ],
+      "patienceBonusSeconds": 70
+    },
+    {
+      "id": "C06",
+      "name": "夜宵搭子",
+      "unlockDay": 6,
+      "acceptedTags": [
+        "seafood",
+        "share"
+      ],
+      "patienceBonusSeconds": 75
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "U01",
+      "name": "第二炉位",
+      "requiredCompletedDays": 1,
+      "price": 300,
+      "effect": {
+        "burnerCount": 2
+      }
+    },
+    {
+      "id": "U02",
+      "name": "厚底好锅",
+      "requiredCompletedDays": 2,
+      "price": 450,
+      "effect": {
+        "perfectWindowSeconds": 12
+      }
+    },
+    {
+      "id": "U03",
+      "name": "顺手备料台",
+      "requiredCompletedDays": 3,
+      "price": 600,
+      "effect": {
+        "prepSeconds": 2
+      }
+    },
+    {
+      "id": "U04",
+      "name": "金字招牌",
+      "requiredCompletedDays": 2,
+      "price": 200,
+      "effect": {
+        "goldSign": true
+      }
+    },
+    {
+      "id": "U05",
+      "name": "暖光灯笼",
+      "requiredCompletedDays": 4,
+      "price": 250,
+      "effect": {
+        "warmLanterns": true
+      }
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "arrivalIntervalSeconds": 45,
+      "scheduledArrivals": 6
+    },
+    {
+      "day": 2,
+      "arrivalIntervalSeconds": 40,
+      "scheduledArrivals": 7
+    },
+    {
+      "day": 3,
+      "arrivalIntervalSeconds": 38,
+      "scheduledArrivals": 7
+    },
+    {
+      "day": 4,
+      "arrivalIntervalSeconds": 36,
+      "scheduledArrivals": 7
+    },
+    {
+      "day": 5,
+      "arrivalIntervalSeconds": 34,
+      "scheduledArrivals": 8
+    },
+    {
+      "day": 6,
+      "arrivalIntervalSeconds": 32,
+      "scheduledArrivals": 8
+    },
+    {
+      "day": 7,
+      "arrivalIntervalSeconds": 30,
+      "scheduledArrivals": 9
+    }
+  ],
+  "prototypeRecipes": [
+    "R01",
+    "R04",
+    "R07",
+    "R08",
+    "R12"
+  ],
+  "polishedSliceRecipes": [
+    "R01",
+    "R04",
+    "R07"
+  ],
+  "endless": {
+    "usesDay": 7,
+    "arrivalIntervalSeconds": 30
+  }
+}

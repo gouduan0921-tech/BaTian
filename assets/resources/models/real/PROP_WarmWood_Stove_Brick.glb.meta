@@ -1,0 +1,225 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9",
+  "files": [],
+  "subMetas": {
+    "21c57": {
+      "importer": "gltf-mesh",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@21c57",
+      "displayName": "",
+      "id": "21c57",
+      "name": "立方体.2355.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1324
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "213b8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@213b8",
+      "displayName": "",
+      "id": "213b8",
+      "name": "Terracotta_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "c67fc": {
+      "importer": "gltf-embeded-image",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@c67fc",
+      "displayName": "",
+      "id": "c67fc",
+      "name": "Grout_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@213b8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@c67fc"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "14cad": {
+      "importer": "gltf-material",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@14cad",
+      "displayName": "",
+      "id": "14cad",
+      "name": "BT_Terracotta.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5577c": {
+      "importer": "gltf-material",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@5577c",
+      "displayName": "",
+      "id": "5577c",
+      "name": "BT_Grout.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8dfb9": {
+      "importer": "gltf-material",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@8dfb9",
+      "displayName": "",
+      "id": "8dfb9",
+      "name": "BT_BrushedSteel.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c89f3": {
+      "importer": "gltf-scene",
+      "uuid": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@c89f3",
+      "displayName": "",
+      "id": "c89f3",
+      "name": "PROP_WarmWood_Stove_Brick.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Terracotta_B",
+        "uri": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@213b8"
+      },
+      {
+        "name": "Grout_B",
+        "uri": "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@c67fc"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@21c57"
+      ],
+      "skeletons": [],
+      "textures": [
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@3effa",
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@221a5"
+      ],
+      "materials": [
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@14cad",
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@5577c",
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@8dfb9"
+      ],
+      "scenes": [
+        "75281c92-4d7f-4d52-adf7-fc99b40ca1c9@c89f3"
+      ]
+    }
+  }
+}

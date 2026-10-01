@@ -1,0 +1,191 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46",
+  "files": [],
+  "subMetas": {
+    "13010": {
+      "importer": "gltf-embeded-image",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010",
+      "displayName": "",
+      "id": "13010",
+      "name": "Congee_A.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "47f85": {
+      "importer": "gltf-mesh",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@47f85",
+      "displayName": "",
+      "id": "47f85",
+      "name": "FOOD_Common_PlainCongee.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 768
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ef752": {
+      "importer": "gltf-embeded-image",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752",
+      "displayName": "",
+      "id": "ef752",
+      "name": "Congee_A_N.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4091a": {
+      "importer": "gltf-material",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4091a",
+      "displayName": "",
+      "id": "4091a",
+      "name": "BT2_Congee.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dad3a4": {
+      "importer": "gltf-scene",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@dad3a4",
+      "displayName": "",
+      "id": "dad3a4",
+      "name": "FOOD_Common_PlainCongee.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Congee_A_N",
+        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752"
+      },
+      {
+        "name": "Congee_A",
+        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@47f85"
+      ],
+      "skeletons": [],
+      "textures": [
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@3effa",
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@221a5"
+      ],
+      "materials": [
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4091a"
+      ],
+      "scenes": [
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@dad3a4"
+      ]
+    }
+  }
+}

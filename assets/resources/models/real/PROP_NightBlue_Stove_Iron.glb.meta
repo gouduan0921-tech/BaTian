@@ -1,0 +1,242 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f",
+  "files": [],
+  "subMetas": {
+    "48392": {
+      "importer": "gltf-mesh",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@48392",
+      "displayName": "",
+      "id": "48392",
+      "name": "立方体.2431.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1324
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "beaa8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@beaa8",
+      "displayName": "",
+      "id": "beaa8",
+      "name": "SeasonedIron_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "c67fc": {
+      "importer": "gltf-embeded-image",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@c67fc",
+      "displayName": "",
+      "id": "c67fc",
+      "name": "Grout_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "af143a7a-3733-47ef-97ee-75253d1b764f@beaa8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "af143a7a-3733-47ef-97ee-75253d1b764f@c67fc"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c5229": {
+      "importer": "gltf-material",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@c5229",
+      "displayName": "",
+      "id": "c5229",
+      "name": "BT_SeasonedIron.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5577c": {
+      "importer": "gltf-material",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@5577c",
+      "displayName": "",
+      "id": "5577c",
+      "name": "BT_Grout.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e9894": {
+      "importer": "gltf-material",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@e9894",
+      "displayName": "",
+      "id": "e9894",
+      "name": "BT_AgedBrass.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8dfb9": {
+      "importer": "gltf-material",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@8dfb9",
+      "displayName": "",
+      "id": "8dfb9",
+      "name": "BT_BrushedSteel.005.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f22a2": {
+      "importer": "gltf-scene",
+      "uuid": "af143a7a-3733-47ef-97ee-75253d1b764f@f22a2",
+      "displayName": "",
+      "id": "f22a2",
+      "name": "PROP_NightBlue_Stove_Iron.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "SeasonedIron_B",
+        "uri": "af143a7a-3733-47ef-97ee-75253d1b764f@beaa8"
+      },
+      {
+        "name": "Grout_B",
+        "uri": "af143a7a-3733-47ef-97ee-75253d1b764f@c67fc"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "af143a7a-3733-47ef-97ee-75253d1b764f@48392"
+      ],
+      "skeletons": [],
+      "textures": [
+        "af143a7a-3733-47ef-97ee-75253d1b764f@3effa",
+        "af143a7a-3733-47ef-97ee-75253d1b764f@221a5"
+      ],
+      "materials": [
+        "af143a7a-3733-47ef-97ee-75253d1b764f@c5229",
+        "af143a7a-3733-47ef-97ee-75253d1b764f@5577c",
+        "af143a7a-3733-47ef-97ee-75253d1b764f@e9894",
+        "af143a7a-3733-47ef-97ee-75253d1b764f@8dfb9"
+      ],
+      "scenes": [
+        "af143a7a-3733-47ef-97ee-75253d1b764f@f22a2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "f6d092f9-e492-4bee-8f34-b1a6008aac0e",
+  "files": [],
+  "subMetas": {
+    "49b7c": {
+      "importer": "gltf-mesh",
+      "uuid": "f6d092f9-e492-4bee-8f34-b1a6008aac0e@49b7c",
+      "displayName": "",
+      "id": "49b7c",
+      "name": "柱体.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1244
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ecac2": {
+      "importer": "gltf-material",
+      "uuid": "f6d092f9-e492-4bee-8f34-b1a6008aac0e@ecac2",
+      "displayName": "",
+      "id": "ecac2",
+      "name": "MAT_Pot_Sample.001.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "acf04": {
+      "importer": "gltf-scene",
+      "uuid": "f6d092f9-e492-4bee-8f34-b1a6008aac0e@acf04",
+      "displayName": "",
+      "id": "acf04",
+      "name": "PROP_Pot_Sample.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "f6d092f9-e492-4bee-8f34-b1a6008aac0e@49b7c"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f6d092f9-e492-4bee-8f34-b1a6008aac0e@ecac2"
+      ],
+      "scenes": [
+        "f6d092f9-e492-4bee-8f34-b1a6008aac0e@acf04"
+      ]
+    }
+  }
+}

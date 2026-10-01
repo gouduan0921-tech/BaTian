@@ -1,0 +1,144 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "0f1da31b-9731-442e-853a-0dff0f938351",
+  "files": [],
+  "subMetas": {
+    "f5544": {
+      "importer": "gltf-mesh",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@f5544",
+      "displayName": "",
+      "id": "f5544",
+      "name": "Hollow flowerpot.017.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 552
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8bb30": {
+      "importer": "gltf-material",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@8bb30",
+      "displayName": "",
+      "id": "8bb30",
+      "name": "BT_Soil.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1ad6f": {
+      "importer": "gltf-material",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@1ad6f",
+      "displayName": "",
+      "id": "1ad6f",
+      "name": "BT_Leaf.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ae26c": {
+      "importer": "gltf-material",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@ae26c",
+      "displayName": "",
+      "id": "ae26c",
+      "name": "BT_YoungLeaf.005.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ac5fd": {
+      "importer": "gltf-scene",
+      "uuid": "0f1da31b-9731-442e-853a-0dff0f938351@ac5fd",
+      "displayName": "",
+      "id": "ac5fd",
+      "name": "PROP_MorningWhite_Pot_Mint.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "0f1da31b-9731-442e-853a-0dff0f938351@f5544"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "0f1da31b-9731-442e-853a-0dff0f938351@1834c",
+        "0f1da31b-9731-442e-853a-0dff0f938351@8bb30",
+        "0f1da31b-9731-442e-853a-0dff0f938351@1ad6f",
+        "0f1da31b-9731-442e-853a-0dff0f938351@ae26c"
+      ],
+      "scenes": [
+        "0f1da31b-9731-442e-853a-0dff0f938351@ac5fd"
+      ]
+    }
+  }
+}

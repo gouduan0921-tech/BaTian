@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656",
+  "files": [],
+  "subMetas": {
+    "575a5": {
+      "importer": "gltf-mesh",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@575a5",
+      "displayName": "",
+      "id": "575a5",
+      "name": "立方体.2394.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1324
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c67fc": {
+      "importer": "gltf-embeded-image",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@c67fc",
+      "displayName": "",
+      "id": "c67fc",
+      "name": "Grout_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@c67fc"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1834c": {
+      "importer": "gltf-material",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@1834c",
+      "displayName": "",
+      "id": "1834c",
+      "name": "BT_WarmPorcelain.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5577c": {
+      "importer": "gltf-material",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@5577c",
+      "displayName": "",
+      "id": "5577c",
+      "name": "BT_Grout.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8dfb9": {
+      "importer": "gltf-material",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@8dfb9",
+      "displayName": "",
+      "id": "8dfb9",
+      "name": "BT_BrushedSteel.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1de1a": {
+      "importer": "gltf-scene",
+      "uuid": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@1de1a",
+      "displayName": "",
+      "id": "1de1a",
+      "name": "PROP_MorningWhite_Stove_Tile.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Grout_B",
+        "uri": "f6360bbb-f635-4e5d-b122-1ca4aaa10656@c67fc"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@575a5"
+      ],
+      "skeletons": [],
+      "textures": [
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@e39f7"
+      ],
+      "materials": [
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@1834c",
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@5577c",
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@8dfb9"
+      ],
+      "scenes": [
+        "f6360bbb-f635-4e5d-b122-1ca4aaa10656@1de1a"
+      ]
+    }
+  }
+}

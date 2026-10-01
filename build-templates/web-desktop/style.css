@@ -1,0 +1,34 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #241c17;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.header, .footer { display: none; }
+
+#GameDiv {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9)) !important;
+  height: min(100vh, calc(100vw * 9 / 16)) !important;
+  margin: 0 auto;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#Cocos3dGameContainer, #GameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}

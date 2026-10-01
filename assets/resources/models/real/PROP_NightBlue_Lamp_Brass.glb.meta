@@ -1,0 +1,225 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87",
+  "files": [],
+  "subMetas": {
+    "981e2": {
+      "importer": "gltf-mesh",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@981e2",
+      "displayName": "",
+      "id": "981e2",
+      "name": "Copper shade.011.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 588
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "28ade": {
+      "importer": "gltf-embeded-image",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@28ade",
+      "displayName": "",
+      "id": "28ade",
+      "name": "SmokedOak_B.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "4d235": {
+      "importer": "gltf-embeded-image",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@4d235",
+      "displayName": "",
+      "id": "4d235",
+      "name": "RicePaper_B.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "cbd5daad-8dd2-464f-806f-15b542091f87@28ade"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "cbd5daad-8dd2-464f-806f-15b542091f87@4d235"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e9894": {
+      "importer": "gltf-material",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@e9894",
+      "displayName": "",
+      "id": "e9894",
+      "name": "BT_AgedBrass.005.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "061e8": {
+      "importer": "gltf-material",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@061e8",
+      "displayName": "",
+      "id": "061e8",
+      "name": "BT_SmokedOak.005.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f91b8": {
+      "importer": "gltf-material",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@f91b8",
+      "displayName": "",
+      "id": "f91b8",
+      "name": "BT_RicePaper.005.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ededd": {
+      "importer": "gltf-scene",
+      "uuid": "cbd5daad-8dd2-464f-806f-15b542091f87@ededd",
+      "displayName": "",
+      "id": "ededd",
+      "name": "PROP_NightBlue_Lamp_Brass.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "SmokedOak_B",
+        "uri": "cbd5daad-8dd2-464f-806f-15b542091f87@28ade"
+      },
+      {
+        "name": "RicePaper_B",
+        "uri": "cbd5daad-8dd2-464f-806f-15b542091f87@4d235"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "cbd5daad-8dd2-464f-806f-15b542091f87@981e2"
+      ],
+      "skeletons": [],
+      "textures": [
+        "cbd5daad-8dd2-464f-806f-15b542091f87@3effa",
+        "cbd5daad-8dd2-464f-806f-15b542091f87@221a5"
+      ],
+      "materials": [
+        "cbd5daad-8dd2-464f-806f-15b542091f87@e9894",
+        "cbd5daad-8dd2-464f-806f-15b542091f87@061e8",
+        "cbd5daad-8dd2-464f-806f-15b542091f87@f91b8"
+      ],
+      "scenes": [
+        "cbd5daad-8dd2-464f-806f-15b542091f87@ededd"
+      ]
+    }
+  }
+}

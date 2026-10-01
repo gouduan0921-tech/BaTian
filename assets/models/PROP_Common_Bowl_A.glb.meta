@@ -1,0 +1,148 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "714df715-a9ac-4592-8373-d8085958b84b",
+  "files": [],
+  "subMetas": {
+    "66683": {
+      "importer": "gltf-mesh",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@66683",
+      "displayName": "",
+      "id": "66683",
+      "name": "Glazed_Rim_mesh.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 288
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "abaae": {
+      "importer": "gltf-mesh",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@abaae",
+      "displayName": "",
+      "id": "abaae",
+      "name": "柱体.002.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 156
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "24cbd": {
+      "importer": "gltf-mesh",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@24cbd",
+      "displayName": "",
+      "id": "24cbd",
+      "name": "Curved_Ceramic_Bowl_mesh.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 864
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1fe26": {
+      "importer": "gltf-material",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@1fe26",
+      "displayName": "",
+      "id": "1fe26",
+      "name": "MAT_Porcelain.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9a066": {
+      "importer": "gltf-material",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@9a066",
+      "displayName": "",
+      "id": "9a066",
+      "name": "MAT_Cream.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "06fd3": {
+      "importer": "gltf-scene",
+      "uuid": "714df715-a9ac-4592-8373-d8085958b84b@06fd3",
+      "displayName": "",
+      "id": "06fd3",
+      "name": "PROP_Common_Bowl_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "714df715-a9ac-4592-8373-d8085958b84b@abaae",
+        "714df715-a9ac-4592-8373-d8085958b84b@24cbd",
+        "714df715-a9ac-4592-8373-d8085958b84b@66683"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "714df715-a9ac-4592-8373-d8085958b84b@1fe26",
+        "714df715-a9ac-4592-8373-d8085958b84b@9a066"
+      ],
+      "scenes": [
+        "714df715-a9ac-4592-8373-d8085958b84b@06fd3"
+      ]
+    }
+  }
+}

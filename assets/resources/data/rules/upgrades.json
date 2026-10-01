@@ -1,0 +1,76 @@
+[
+  {
+    "id": "U01",
+    "name": "第二口锅",
+    "requiredCompletedDays": 1,
+    "price": 150,
+    "effect": {
+      "pots": 1
+    }
+  },
+  {
+    "id": "U02",
+    "name": "第三口锅",
+    "requiredCompletedDays": 3,
+    "price": 300,
+    "requires": "U01",
+    "effect": {
+      "pots": 1
+    }
+  },
+  {
+    "id": "U03",
+    "name": "第四口锅",
+    "requiredCompletedDays": 6,
+    "price": 600,
+    "requires": "U02",
+    "effect": {
+      "pots": 1
+    }
+  },
+  {
+    "id": "U04",
+    "name": "双人桌",
+    "requiredCompletedDays": 2,
+    "price": 120,
+    "effect": {
+      "seats": 2
+    }
+  },
+  {
+    "id": "U05",
+    "name": "窗边座",
+    "requiredCompletedDays": 4,
+    "price": 200,
+    "effect": {
+      "seats": 2
+    }
+  },
+  {
+    "id": "U06",
+    "name": "宽案板",
+    "requiredCompletedDays": 2,
+    "price": 100,
+    "effect": {
+      "prepSlots": 1
+    }
+  },
+  {
+    "id": "U07",
+    "name": "进货账",
+    "requiredCompletedDays": 3,
+    "price": 150,
+    "effect": {
+      "buySlots": 2
+    }
+  },
+  {
+    "id": "U08",
+    "name": "保温台",
+    "requiredCompletedDays": 5,
+    "price": 240,
+    "effect": {
+      "holdScoreSeconds": 20
+    }
+  }
+]

@@ -1,0 +1,304 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881",
+  "files": [],
+  "subMetas": {
+    "53282": {
+      "importer": "gltf-material",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@53282",
+      "displayName": "",
+      "id": "53282",
+      "name": "BT2_HoneyOak.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50c06": {
+      "importer": "gltf-mesh",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@50c06",
+      "displayName": "",
+      "id": "50c06",
+      "name": "PROP_WarmWood_Tray_A.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 860
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2b694": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694",
+      "displayName": "",
+      "id": "2b694",
+      "name": "Honey_A_N.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1edfd": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd",
+      "displayName": "",
+      "id": "1edfd",
+      "name": "Honey_A.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "186d3": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3",
+      "displayName": "",
+      "id": "186d3",
+      "name": "Oak_A_N.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "04c28": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28",
+      "displayName": "",
+      "id": "04c28",
+      "name": "Oak_A.image",
+      "userData": {
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c9908": {
+      "importer": "gltf-material",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@c9908",
+      "displayName": "",
+      "id": "c9908",
+      "name": "BT2_WornOak.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9de16": {
+      "importer": "gltf-scene",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@9de16",
+      "displayName": "",
+      "id": "9de16",
+      "name": "PROP_WarmWood_Tray_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Honey_A_N",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694"
+      },
+      {
+        "name": "Honey_A",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd"
+      },
+      {
+        "name": "Oak_A_N",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3"
+      },
+      {
+        "name": "Oak_A",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "41f9cb5f-ede7-41a5-8294-50590304c881@50c06"
+      ],
+      "skeletons": [],
+      "textures": [
+        "41f9cb5f-ede7-41a5-8294-50590304c881@3effa",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@221a5",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@0089c",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@9b633"
+      ],
+      "materials": [
+        "41f9cb5f-ede7-41a5-8294-50590304c881@53282",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@c9908"
+      ],
+      "scenes": [
+        "41f9cb5f-ede7-41a5-8294-50590304c881@9de16"
+      ]
+    }
+  }
+}

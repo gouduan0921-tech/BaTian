@@ -1,0 +1,175 @@
+{
+  "version": "balance-2",
+  "session": {
+    "fixedStepMs": 50,
+    "catchUpSteps": 4,
+    "prepSeconds": 90,
+    "shiftSeconds": 480,
+    "arrivalCutoffSeconds": 420,
+    "closeSeconds": 60,
+    "gameHourSeconds": 60,
+    "overnightHours": 16,
+    "initialWallet": 200,
+    "rent": 30,
+    "rentStartsOnDay": 3,
+    "rescueFloor": 40,
+    "rescueRice": 2,
+    "initialPots": 1,
+    "initialSeats": 2,
+    "initialPrepSlots": 1,
+    "initialBuyKinds": 4,
+    "debtBuyKinds": 2,
+    "unitCap": 8,
+    "passCapacity": 3,
+    "autosaveSeconds": 30
+  },
+  "actions": {
+    "wash": 4,
+    "cut": 5,
+    "soak": 20,
+    "none": 0,
+    "stirWindup": 0.4,
+    "serve": 4,
+    "plate": 3,
+    "deliver": 1,
+    "wipe": 2,
+    "potWash": 6
+  },
+  "heat": {
+    "low": {
+      "doneness": 0.008,
+      "scorch": 0.002,
+      "simmerTarget": 0.33,
+      "simmerRate": 0.01
+    },
+    "mid": {
+      "doneness": 0.014,
+      "scorch": 0.006,
+      "simmerTarget": 0.66,
+      "simmerRate": 0.02
+    },
+    "high": {
+      "doneness": 0.022,
+      "scorch": 0.016,
+      "simmerTarget": 1.0,
+      "simmerRate": 0.03
+    }
+  },
+  "stir": {
+    "decayFocus": 0.04,
+    "decayBlur": 0.064,
+    "gain": 0.45,
+    "repeatSeconds": 0.8,
+    "repeatGainScale": 0.5,
+    "warn": 0.35,
+    "lowStirScorch": 0.01
+  },
+  "gates": {
+    "serveMin": 0.72,
+    "serveMax": 0.88,
+    "center": 0.8,
+    "burn": 0.85
+  },
+  "score": {
+    "base": 80,
+    "perfect": 20,
+    "over": -10,
+    "raw": -15,
+    "burnt": -40,
+    "freshStep": -5,
+    "missing": -8,
+    "mistime": -4,
+    "mistimeCap": 2,
+    "addWindow": 0.08,
+    "seasonMismatch": -8,
+    "coolStartSeconds": 15,
+    "coolStepSeconds": 10,
+    "coolStep": -5,
+    "coolCap": -15,
+    "max": 100,
+    "pickyQualityCare": 0.8,
+    "tipRate": 0.15,
+    "tipMinScore": 95,
+    "signatureTipScale": 2,
+    "signatureAtmosphere": 40
+  },
+  "demand": {
+    "extraDayBase": 12,
+    "extraPerShopLevel": 2,
+    "maxArrivals": 18,
+    "waves": [
+      {
+        "id": "morning",
+        "name": "清晨",
+        "start": 0,
+        "end": 120,
+        "share": 0.25
+      },
+      {
+        "id": "forenoon",
+        "name": "午前",
+        "start": 120,
+        "end": 240,
+        "share": 0.2
+      },
+      {
+        "id": "lunch",
+        "name": "午市",
+        "start": 240,
+        "end": 360,
+        "share": 0.35
+      },
+      {
+        "id": "evening",
+        "name": "傍晚",
+        "start": 360,
+        "end": 420,
+        "share": 0.2
+      }
+    ],
+    "arrivalJitter": 0.2,
+    "criticDailyCap": 1,
+    "basePatience": 70,
+    "expectPrep": 8,
+    "expectAdd": 8,
+    "ordersBase": 1,
+    "ordersPerPot": 1,
+    "ordersMax": 5,
+    "doorQueue": 3,
+    "doorWaitSeconds": 15,
+    "closePatienceScale": 2,
+    "dineSeconds": 20,
+    "tagMatch": 3,
+    "budgetBase": 30,
+    "budgetPerCompletedDay": 4,
+    "budgetStep": 10,
+    "pricePenalty": 2,
+    "chapterCriticDay": 7
+  },
+  "favor": {
+    "match": 2,
+    "serve": 1,
+    "fail": -1,
+    "dailyGainCap": 3,
+    "max": 20,
+    "regularUnlockFavor": 6
+  },
+  "skill": {
+    "perfect": 2,
+    "over": 1,
+    "raw": 0,
+    "burnt": -1,
+    "practicePerfect": 1,
+    "practiceCap": 8,
+    "tiers": [
+      {
+        "min": 8,
+        "warn": 0.38
+      },
+      {
+        "min": 20,
+        "addWindow": 0.1
+      }
+    ]
+  }
+}

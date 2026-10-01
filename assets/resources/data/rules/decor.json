@@ -1,0 +1,408 @@
+[
+  {
+    "id": "D01",
+    "name": "纸灯",
+    "kind": "main",
+    "slot": "window",
+    "style": "warm-wood",
+    "price": 80,
+    "atmosphere": {
+      "warmth": 10,
+      "clean": 0,
+      "aroma": 0,
+      "light": 22
+    },
+    "mesh": "PROP_WarmWood_Lamp_Paper"
+  },
+  {
+    "id": "D04",
+    "name": "暖木门帘",
+    "kind": "main",
+    "slot": "door",
+    "style": "warm-wood",
+    "price": 60,
+    "atmosphere": {
+      "warmth": 8,
+      "clean": 6,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Curtain_A"
+  },
+  {
+    "id": "D05",
+    "name": "暖木方桌",
+    "kind": "main",
+    "slot": "hall",
+    "style": "warm-wood",
+    "price": 120,
+    "atmosphere": {
+      "warmth": 16,
+      "clean": 4,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Table_Square"
+  },
+  {
+    "id": "D06",
+    "name": "木柜台",
+    "kind": "main",
+    "slot": "counter",
+    "style": "warm-wood",
+    "price": 100,
+    "atmosphere": {
+      "warmth": 4,
+      "clean": 12,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Counter_A"
+  },
+  {
+    "id": "D07",
+    "name": "砖灶台",
+    "kind": "main",
+    "slot": "kitchen",
+    "style": "warm-wood",
+    "price": 140,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 8,
+      "aroma": 12,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Stove_Brick"
+  },
+  {
+    "id": "D03",
+    "name": "晨光窗",
+    "kind": "main",
+    "slot": "window",
+    "style": "morning-white",
+    "price": 150,
+    "atmosphere": {
+      "warmth": 6,
+      "clean": 0,
+      "aroma": 0,
+      "light": 34
+    },
+    "mesh": "PROP_MorningWhite_Window_Morning"
+  },
+  {
+    "id": "D17",
+    "name": "白门灯",
+    "kind": "main",
+    "slot": "door",
+    "style": "morning-white",
+    "price": 90,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 10,
+      "aroma": 0,
+      "light": 6
+    },
+    "mesh": "PROP_MorningWhite_DoorLamp_A"
+  },
+  {
+    "id": "D18",
+    "name": "浅木圆桌",
+    "kind": "main",
+    "slot": "hall",
+    "style": "morning-white",
+    "price": 160,
+    "atmosphere": {
+      "warmth": 12,
+      "clean": 10,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_MorningWhite_Table_Round"
+  },
+  {
+    "id": "D19",
+    "name": "白瓷台面",
+    "kind": "main",
+    "slot": "counter",
+    "style": "morning-white",
+    "price": 150,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 18,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_MorningWhite_Counter_Porcelain"
+  },
+  {
+    "id": "D20",
+    "name": "白砖灶台",
+    "kind": "main",
+    "slot": "kitchen",
+    "style": "morning-white",
+    "price": 180,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 14,
+      "aroma": 14,
+      "light": 0
+    },
+    "mesh": "PROP_MorningWhite_Stove_Tile"
+  },
+  {
+    "id": "D02",
+    "name": "铜壁灯",
+    "kind": "main",
+    "slot": "window",
+    "style": "night-blue",
+    "price": 120,
+    "atmosphere": {
+      "warmth": 12,
+      "clean": 0,
+      "aroma": 0,
+      "light": 26
+    },
+    "mesh": "PROP_NightBlue_Lamp_Brass"
+  },
+  {
+    "id": "D08",
+    "name": "夜蓝布帘",
+    "kind": "main",
+    "slot": "door",
+    "style": "night-blue",
+    "price": 90,
+    "atmosphere": {
+      "warmth": 10,
+      "clean": 6,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_NightBlue_Curtain_A"
+  },
+  {
+    "id": "D09",
+    "name": "深色长桌",
+    "kind": "main",
+    "slot": "hall",
+    "style": "night-blue",
+    "price": 180,
+    "atmosphere": {
+      "warmth": 18,
+      "clean": 6,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_NightBlue_Table_Long"
+  },
+  {
+    "id": "D15",
+    "name": "铜包柜台",
+    "kind": "main",
+    "slot": "counter",
+    "style": "night-blue",
+    "price": 150,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 14,
+      "aroma": 0,
+      "light": 6
+    },
+    "mesh": "PROP_NightBlue_Counter_Brass"
+  },
+  {
+    "id": "D16",
+    "name": "铁灶台",
+    "kind": "main",
+    "slot": "kitchen",
+    "style": "night-blue",
+    "price": 200,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 10,
+      "aroma": 16,
+      "light": 0
+    },
+    "mesh": "PROP_NightBlue_Stove_Iron"
+  },
+  {
+    "id": "D11",
+    "name": "窗台葱",
+    "kind": "small",
+    "slot": "window",
+    "style": "warm-wood",
+    "price": 30,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 2,
+      "aroma": 4,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Scallion_Sill"
+  },
+  {
+    "id": "D12",
+    "name": "柜台小罐",
+    "kind": "small",
+    "slot": "counter",
+    "style": "warm-wood",
+    "price": 0,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 3,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_WarmWood_Jar_Counter"
+  },
+  {
+    "id": "D21",
+    "name": "铜风铃",
+    "kind": "small",
+    "slot": "door",
+    "style": "night-blue",
+    "price": 40,
+    "atmosphere": {
+      "warmth": 4,
+      "clean": 0,
+      "aroma": 0,
+      "light": 0
+    },
+    "mesh": "PROP_NightBlue_Chime_Brass"
+  },
+  {
+    "id": "D22",
+    "name": "夜蓝菜单牌",
+    "kind": "small",
+    "slot": "counter",
+    "style": "night-blue",
+    "price": 40,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 2,
+      "aroma": 0,
+      "light": 2
+    },
+    "mesh": "PROP_NightBlue_MenuBoard_A"
+  },
+  {
+    "id": "D23",
+    "name": "薄荷小盆",
+    "kind": "small",
+    "slot": "window",
+    "style": "morning-white",
+    "price": 40,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 3,
+      "aroma": 3,
+      "light": 0
+    },
+    "mesh": "PROP_MorningWhite_Pot_Mint"
+  },
+  {
+    "id": "D24",
+    "name": "瓷花瓶",
+    "kind": "small",
+    "slot": "hall",
+    "style": "morning-white",
+    "price": 50,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 2,
+      "aroma": 0,
+      "light": 3
+    },
+    "mesh": "PROP_MorningWhite_Vase_Porcelain"
+  },
+  {
+    "id": "D10",
+    "name": "粗瓷碗",
+    "kind": "tableware",
+    "slot": null,
+    "style": "common",
+    "price": 0,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 0,
+      "aroma": 0,
+      "light": 0
+    },
+    "look": {
+      "bonus": 0,
+      "tags": [],
+      "wave": null,
+      "otherWave": 0
+    },
+    "mesh": "PROP_Common_Bowl_Coarse"
+  },
+  {
+    "id": "D13",
+    "name": "暖釉碗",
+    "kind": "tableware",
+    "slot": null,
+    "style": "warm-wood",
+    "price": 100,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 0,
+      "aroma": 0,
+      "light": 0
+    },
+    "look": {
+      "bonus": 2,
+      "tags": [
+        "咸香",
+        "浓"
+      ],
+      "wave": null,
+      "otherWave": 0
+    },
+    "mesh": "PROP_WarmWood_Bowl_Glaze"
+  },
+  {
+    "id": "D25",
+    "name": "白瓷碗",
+    "kind": "tableware",
+    "slot": null,
+    "style": "morning-white",
+    "price": 100,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 0,
+      "aroma": 0,
+      "light": 0
+    },
+    "look": {
+      "bonus": 2,
+      "tags": [
+        "清淡",
+        "清甜",
+        "鲜"
+      ],
+      "wave": null,
+      "otherWave": 0
+    },
+    "mesh": "PROP_MorningWhite_Bowl_Porcelain"
+  },
+  {
+    "id": "D14",
+    "name": "深蓝盏",
+    "kind": "tableware",
+    "slot": null,
+    "style": "night-blue",
+    "price": 120,
+    "atmosphere": {
+      "warmth": 0,
+      "clean": 0,
+      "aroma": 0,
+      "light": 0
+    },
+    "look": {
+      "bonus": 3,
+      "tags": [],
+      "wave": "evening",
+      "otherWave": 1
+    },
+    "mesh": "PROP_NightBlue_Bowl_Deep"
+  }
+]

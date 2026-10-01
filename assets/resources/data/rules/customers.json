@@ -1,0 +1,157 @@
+[
+  {
+    "id": "C01",
+    "name": "赶路人",
+    "unlockDay": 1,
+    "patienceBonus": -15,
+    "acceptedTags": [
+      "清淡"
+    ],
+    "priceCare": 0.4,
+    "qualityCare": 0.3,
+    "atmosphereCare": 0.1,
+    "tracksFavor": false,
+    "waveWeights": {
+      "morning": 4,
+      "forenoon": 2,
+      "lunch": 3,
+      "evening": 1
+    }
+  },
+  {
+    "id": "C02",
+    "name": "街坊",
+    "unlockDay": 1,
+    "patienceBonus": 10,
+    "acceptedTags": [
+      "咸香"
+    ],
+    "priceCare": 0.5,
+    "qualityCare": 0.5,
+    "atmosphereCare": 0.4,
+    "tracksFavor": true,
+    "waveWeights": {
+      "morning": 3,
+      "forenoon": 2,
+      "lunch": 2,
+      "evening": 2
+    }
+  },
+  {
+    "id": "C03",
+    "name": "学生",
+    "unlockDay": 2,
+    "patienceBonus": -5,
+    "acceptedTags": [
+      "清甜"
+    ],
+    "priceCare": 0.9,
+    "qualityCare": 0.3,
+    "atmosphereCare": 0.2,
+    "tracksFavor": false,
+    "waveWeights": {
+      "morning": 2,
+      "forenoon": 1,
+      "lunch": 3,
+      "evening": 1
+    }
+  },
+  {
+    "id": "C04",
+    "name": "老饕",
+    "unlockDay": 3,
+    "patienceBonus": 5,
+    "acceptedTags": [
+      "鲜",
+      "浓"
+    ],
+    "priceCare": 0.2,
+    "qualityCare": 0.9,
+    "atmosphereCare": 0.3,
+    "tracksFavor": false,
+    "waveWeights": {
+      "morning": 0,
+      "forenoon": 1,
+      "lunch": 2,
+      "evening": 2
+    }
+  },
+  {
+    "id": "C05",
+    "name": "夜班人",
+    "unlockDay": 5,
+    "patienceBonus": 20,
+    "acceptedTags": [
+      "浓"
+    ],
+    "priceCare": 0.3,
+    "qualityCare": 0.6,
+    "atmosphereCare": 0.5,
+    "tracksFavor": true,
+    "waveWeights": {
+      "morning": 0,
+      "forenoon": 0,
+      "lunch": 1,
+      "evening": 4
+    }
+  },
+  {
+    "id": "C06",
+    "name": "家长",
+    "unlockDay": 2,
+    "patienceBonus": 8,
+    "acceptedTags": [
+      "清淡",
+      "清甜"
+    ],
+    "priceCare": 0.5,
+    "qualityCare": 0.5,
+    "atmosphereCare": 0.4,
+    "tracksFavor": true,
+    "waveWeights": {
+      "morning": 1,
+      "forenoon": 3,
+      "lunch": 2,
+      "evening": 1
+    }
+  },
+  {
+    "id": "C07",
+    "name": "食评",
+    "unlockDay": 5,
+    "patienceBonus": 0,
+    "acceptedTags": [
+      "招牌"
+    ],
+    "priceCare": 0.2,
+    "qualityCare": 0.8,
+    "atmosphereCare": 0.9,
+    "tracksFavor": false,
+    "waveWeights": {
+      "morning": 0,
+      "forenoon": 1,
+      "lunch": 1,
+      "evening": 1
+    }
+  },
+  {
+    "id": "C08",
+    "name": "常客",
+    "unlockDay": 0,
+    "patienceBonus": 15,
+    "acceptedTags": [],
+    "priceCare": 0.4,
+    "qualityCare": 0.7,
+    "atmosphereCare": 0.6,
+    "tracksFavor": true,
+    "waveWeights": {
+      "morning": 1,
+      "forenoon": 1,
+      "lunch": 1,
+      "evening": 1
+    },
+    "unlockFavor": {
+      "C02": 6
+    }
+  }
+]

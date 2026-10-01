@@ -1,0 +1,150 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b",
+  "files": [],
+  "subMetas": {
+    "26657": {
+      "importer": "gltf-mesh",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@26657",
+      "displayName": "",
+      "id": "26657",
+      "name": "立方体.014.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "33697": {
+      "importer": "gltf-material",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@33697",
+      "displayName": "",
+      "id": "33697",
+      "name": "MAT_UsedIron.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "49b7c": {
+      "importer": "gltf-mesh",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@49b7c",
+      "displayName": "",
+      "id": "49b7c",
+      "name": "柱体.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 124
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "69dc9": {
+      "importer": "gltf-mesh",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@69dc9",
+      "displayName": "",
+      "id": "69dc9",
+      "name": "立方体.015.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f532": {
+      "importer": "gltf-mesh",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@1f532",
+      "displayName": "",
+      "id": "1f532",
+      "name": "柱体.001.mesh",
+      "userData": {
+        "gltfIndex": 3,
+        "triangleCount": 124
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0cd18": {
+      "importer": "gltf-scene",
+      "uuid": "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@0cd18",
+      "displayName": "",
+      "id": "0cd18",
+      "name": "PROP_Common_Pot_A.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@49b7c",
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@26657",
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@69dc9",
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@1f532"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@33697"
+      ],
+      "scenes": [
+        "06f9ff17-3d8f-4d77-9bf0-afbb2218ec0b@0cd18"
+      ]
+    }
+  }
+}

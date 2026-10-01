@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04",
+  "files": [],
+  "subMetas": {
+    "66449": {
+      "importer": "gltf-material",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@66449",
+      "displayName": "",
+      "id": "66449",
+      "name": "BT2_WarmPorcelain.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f7e89": {
+      "importer": "gltf-mesh",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@f7e89",
+      "displayName": "",
+      "id": "f7e89",
+      "name": "PROP_NightBlue_Bowl_Deep.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 2576
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f0c0e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@f0c0e",
+      "displayName": "",
+      "id": "f0c0e",
+      "name": "Stoneware_A.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@f0c0e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "217bb": {
+      "importer": "gltf-material",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@217bb",
+      "displayName": "",
+      "id": "217bb",
+      "name": "BT2_IndigoGlaze.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ab481": {
+      "importer": "gltf-material",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@ab481",
+      "displayName": "",
+      "id": "ab481",
+      "name": "BT2_CoarseStoneware.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "57dd7": {
+      "importer": "gltf-scene",
+      "uuid": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@57dd7",
+      "displayName": "",
+      "id": "57dd7",
+      "name": "PROP_NightBlue_Bowl_Deep.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Stoneware_A",
+        "uri": "ac92ad12-3e08-4318-8ff7-bd57999a8f04@f0c0e"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@f7e89"
+      ],
+      "skeletons": [],
+      "textures": [
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@e39f7"
+      ],
+      "materials": [
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@217bb",
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@66449",
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@ab481"
+      ],
+      "scenes": [
+        "ac92ad12-3e08-4318-8ff7-bd57999a8f04@57dd7"
+      ]
+    }
+  }
+}

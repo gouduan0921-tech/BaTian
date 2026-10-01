@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78",
+  "files": [],
+  "subMetas": {
+    "66449": {
+      "importer": "gltf-material",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@66449",
+      "displayName": "",
+      "id": "66449",
+      "name": "BT2_WarmPorcelain.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0740c": {
+      "importer": "gltf-mesh",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@0740c",
+      "displayName": "",
+      "id": "0740c",
+      "name": "PROP_MorningWhite_Bowl_Porcelain.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 3024
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f0c0e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@f0c0e",
+      "displayName": "",
+      "id": "f0c0e",
+      "name": "Stoneware_A.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7d934c65-1eb4-418e-959f-a957bfa87c78@f0c0e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ab481": {
+      "importer": "gltf-material",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@ab481",
+      "displayName": "",
+      "id": "ab481",
+      "name": "BT2_CoarseStoneware.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1a721": {
+      "importer": "gltf-material",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@1a721",
+      "displayName": "",
+      "id": "1a721",
+      "name": "BT2_CobaltLine.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d7886": {
+      "importer": "gltf-scene",
+      "uuid": "7d934c65-1eb4-418e-959f-a957bfa87c78@d7886",
+      "displayName": "",
+      "id": "d7886",
+      "name": "PROP_MorningWhite_Bowl_Porcelain.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Stoneware_A",
+        "uri": "7d934c65-1eb4-418e-959f-a957bfa87c78@f0c0e"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@0740c"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@e39f7"
+      ],
+      "materials": [
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@66449",
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@ab481",
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@1a721"
+      ],
+      "scenes": [
+        "7d934c65-1eb4-418e-959f-a957bfa87c78@d7886"
+      ]
+    }
+  }
+}
