@@ -1,16 +1,22 @@
+import { chapterLine } from './LongTermText';
 import { _decorator, Color, Component, Label, Node, Prefab, UITransform, Vec3 } from 'cc';
 import { baseIngredients, Heat, Recipe } from '../core/Config';
+import { goalProgressText, goalStatus, goalText } from '../rules/Goals';
+import { skillInfo } from '../rules/Skill';
 import { nextAdd, PotState } from '../rules/Pot';
 import { Shift } from '../rules/Shift';
 import {
     CUSTOMER_LINE, CUSTOMER_LOOK, GameContext, HEAT_WORD, RESULT_WORD, SEASON_WORD,
 } from '../view/GameContext';
 import { OrderRow } from './OrderRow';
+import { HudFx } from './HudFx';
 import { PassSlot } from './PassSlot';
 import { PotPin } from './PotPin';
+import { GuestBubble } from './GuestBubble';
 import { RoundRect } from './RoundRect';
 import { UiBar } from './UiBar';
 import { UiButton } from './UiButton';
+import { UiIcon } from './UiIcon';
 import { bigNum, fmtTime, PALETTE, setActive, setText, syncList } from './UiKit';
 
 const { ccclass, property } = _decorator;
@@ -34,12 +40,12 @@ export function potHint(sh: Shift, i: number, ingredientName: (id: string) => st
     if (pot.phase === 'washing') return { text: `洗锅中，还要 ${Math.ceil(pot.washLeft)} 秒`, needs: false, urgent: false };
     if (pot.phase === 'empty') return { text: st.phase === 'prep' ? '开门后才能下锅' : '空锅，挑一道粥下锅', needs: false, urgent: false };
     if (!r) return { text: '', needs: false, urgent: false };
-    if (pot.phase === 'burnt') return { text: '糊了，倒掉洗锅', needs: true, urgent: true };
-    if (pot.scorch > 0.7) return { text: '快糊了，搅一搅或关小火', needs: true, urgent: true };
+    if (pot.phase === 'burnt') return { text: '糊底了 · 倒掉洗锅', needs: true, urgent: true };
+    if (pot.scorch > 0.7) return { text: '快糊底 · 搅拌或文火', needs: true, urgent: true };
     if (pot.phase === 'over') return { text: '过火了，赶紧盛', needs: true, urgent: true };
     if (pot.phase === 'window') {
-        return pot.seasoning ? { text: '刚刚好，可以盛碗了', needs: true, urgent: false }
-            : { text: `刚刚好，先调${SEASON_WORD[r.seasoning]}再盛`, needs: true, urgent: false };
+        return pot.seasoning ? { text: '好了 · 现在盛碗', needs: true, urgent: false }
+            : { text: `好了 · 先调${SEASON_WORD[r.seasoning]}`, needs: true, urgent: false };
     }
     const next = nextAdd(pot, r);
     if (next && pot.doneness >= next.atDoneness - sh.addTolerance(r.id)) return { text: `该加${ingredientName(next.id)}了`, needs: true, urgent: false };
@@ -136,9 +142,29 @@ export class HudView extends Component {
     @property(Label) prepLabel: Label | null = null;
     @property(Node) prepList: Node | null = null;
     @property(Node) wipeList: Node | null = null;
+    // 今日小目标（左上小签，点开看三件）
+    @property(UiButton) goalChip: UiButton | null = null;
+    @property(Node) goalPanel: Node | null = null;
+    @property([Label]) goalLabels: Label[] = [];
+    @property([Label]) goalValues: Label[] = [];
+    @property([UiIcon]) goalIcons: UiIcon[] = [];
+    @property(HudFx) fx: HudFx | null = null;
+    /** 小目标清单下方一行：本章进度（文档 30） */
+    @property(Label) chapterLabel: Label | null = null;
+
+    @property(Node) bubbleRoot: Node | null = null;
+    @property(Prefab) bubblePrefab: Prefab | null = null;
+    /** 气泡离客人脚底的高度（世界单位） */
+    @property bubbleHeight = 1.75;
 
     private ctx: GameContext | null = null;
     private toastLeft = 0;
+    private goalPanelLeft = 0;
+    private openConfirmLeft = 0;
+    private goalsDone = new Set<string>();
+    private goalsDay = -1;
+    private streak = 0;
+    private lastDt = 0;
     private readonly tmp = new Vec3();
     private readonly ui = new Vec3();
 
@@ -165,11 +191,22 @@ export class HudView extends Component {
         this.bookTool?.bind(() => ctx.open('recipes'));
         this.decorTool?.bind(() => ctx.open('light'));
         this.menuTool?.bind(() => ctx.open('settings'));
+        this.goalChip?.bind(() => { this.goalPanelLeft = this.goalPanelLeft > 0 ? 0 : 6; });
         this.endButton?.bind(() => {
             const sh = this.shift;
             if (!sh) return;
             if (ctx.flow.mode === 'practice') { ctx.flow.endPractice(); return; }
-            if (sh.phase === 'prep') sh.open();
+            if (sh.phase === 'prep') {
+                // 没有任何能卖的粥时先问一句（文档 12 §4），两秒内再点一次才开门
+                const nothing = !sh.orderable().length && sh.state.pots.every(p => p.phase === 'empty');
+                if (nothing && this.openConfirmLeft <= 0) {
+                    this.openConfirmLeft = 3;
+                    ctx.toast('今天没有能卖的粥，仍然开门？再点一次「开门迎客」');
+                    return;
+                }
+                this.openConfirmLeft = 0;
+                sh.open();
+            }
             else if (sh.phase === 'closing') sh.endClosing();
             else ctx.toast('还在营业。打烊后再看账。');
         });
@@ -192,7 +229,34 @@ export class HudView extends Component {
         this.toastLeft = 2.4;
     }
 
+    /** 送达：铜钱浮起、结果章、连续刚好计数（只是表现）。 */
+    onDelivered(e: { revenue: number; tip: number; score: number; result: string }): void {
+        const fx = this.fx;
+        if (!fx) return;
+        fx.reduceMotion = !!this.ctx?.flow.settings.reduceMotion;
+        this.streak = e.result === 'perfect' ? this.streak + 1 : 0;
+        // 从出餐台左边一点升起，落在店里的空处，不压右侧的点单卡
+        const at = this.passPanel ? this.passPanel.position.clone() : new Vec3(520, -170, 0);
+        at.x -= 190;
+        at.y += 30;
+        fx.float(`+${e.revenue}${e.tip ? `  小费 ${e.tip}` : ''}`, at, new Color(0xf5, 0xd6, 0x94, 255));
+        const word = RESULT_WORD[e.result] ?? '';
+        if (e.result === 'perfect') fx.showStamp(this.streak >= 2 ? `连着 ${this.streak} 碗` : '刚好', this.streak >= 2 ? `刚好 · ${e.score} 分` : `${e.score} 分`, 'good');
+        else fx.showStamp(word, `${e.score} 分`, e.result === 'burnt' ? 'bad' : 'warn');
+    }
+
+    /** 客人等不及走了：连续刚好断掉，给一声提醒。 */
+    onGuestLeave(reason: string): void {
+        if (reason === 'impatient') {
+            this.streak = 0;
+            this.fx?.showStamp('走了一位', '等太久了', 'bad');
+        }
+    }
+
     update(dt: number): void {
+        this.lastDt = dt;
+        if (this.goalPanelLeft > 0) this.goalPanelLeft -= dt;
+        if (this.openConfirmLeft > 0) this.openConfirmLeft -= dt;
         if (this.toastLeft > 0) {
             this.toastLeft -= dt;
             if (this.toastLeft <= 0) setActive(this.toast, false);
@@ -215,14 +279,16 @@ export class HudView extends Component {
         setActive(this.shopNote, !cook);
         setActive(this.focusCard, !cook);
         setActive(this.cookPanel, cook);
-        setActive(this.pinRoot, !cook);
+        setActive(this.pinRoot, true);
 
         if (cook) this.renderCook(sh); else this.renderFocus(sh);
-        this.renderPins(sh, !cook);
+        this.renderPins(sh, true);
+        this.renderBubbles(sh, !cook);
         this.renderOrders(sh);
         this.renderPass(sh);
         this.renderPrep(sh, cook);
         this.renderHint(sh, cook);
+        this.renderGoals(sh, cook);
 
         // 右下：开门 / 打烊看看账 / 结束练习
         const end = practice ? ['结束练习', 'back'] : st.phase === 'prep' ? ['开门迎客', 'door'] : st.phase === 'closing' ? ['打烊看看账', 'moon'] : ['打烊看看账', 'moon'];
@@ -244,7 +310,7 @@ export class HudView extends Component {
         this.openDot?.setColor(st.phase === 'service' ? OPEN_DOT : SHUT_DOT);
         const wallet = ctx.flow.progress?.state.wallet ?? 0;
         const today = st.ledger.revenue + st.ledger.tips;
-        setText(this.walletLabel, practice ? '—' : String(wallet));
+        setText(this.walletLabel, practice ? '—' : String(this.fx ? this.fx.rollWallet(wallet + today, this.lastDt) : wallet));
         setText(this.walletToday, practice ? '练习' : today ? `今日 +${today}` : '铜钱');
     }
 
@@ -266,12 +332,64 @@ export class HudView extends Component {
             cam.convertToUINode(this.tmp, this.pinRoot!, this.ui);
             // 木牌底下的小圆点落在锅口上；相邻的锅牌一高一低错开
             const crowded = st.pots.length >= 3;
-            pin.node.setPosition(this.ui.x, this.ui.y + 54 + (crowded && i % 2 === 0 ? 30 : 0), 0);
+            if (ctx.view === 'cook') {
+                // 特写时所有锅都保留在固定一排，镜头外的锅也能看到文字警告。
+                pin.node.setPosition((i - (st.pots.length - 1) / 2) * 160, rootT.height / 2 - 195, 0);
+            } else {
+                pin.node.setPosition(this.ui.x, this.ui.y + 54 + (crowded && i % 2 === 0 ? 30 : 0), 0);
+            }
             const r = sh.recipe(p.recipeId);
             const h = potHint(sh, i, this.ingName);
             const empty = p.phase === 'empty';
             pin.render(i, r?.name ?? (p.phase === 'washing' ? '洗锅' : '空锅'), empty ? (st.phase === 'prep' ? '开门后下锅' : '点我下锅') : h.text, h.needs, h.urgent, i === st.focus,
                 () => { sh.setFocus(i); ctx.setView('cook'); }, crowded && !h.needs && i !== st.focus);
+        });
+    }
+
+    /** 客人头顶：等粥的写粥名 + 耐心条；送达、离开时冒一句反应。 */
+    private renderBubbles(sh: Shift, visible: boolean): void {
+        const ctx = this.ctx!;
+        const store = ctx.store;
+        const cam = store?.camera;
+        const st = sh.state;
+        type Item = { id: string; node: Node; text: string; tone: 'order' | 'good' | 'warn' | 'bad'; patience: number | null; key: string };
+        const items: Item[] = [];
+        if (visible && store && cam && this.bubbleRoot) {
+            for (const id of store.guestIds()) {
+                const node = store.guestNode(id);
+                if (!node) continue;
+                const r = store.reactionOf(id);
+                if (r) { items.push({ id, node, text: r.text, tone: r.tone, patience: null, key: `r:${id}:${r.text}` }); continue; }
+                const g = st.guests[id];
+                if (!g || g.state !== 'seated' || g.served || !g.orderId) continue;
+                const o = st.orders.find(x => x.id === g.orderId);
+                if (!o || o.state !== 'waiting') continue;
+                const name = sh.recipe(o.recipeId)?.name ?? '';
+                const text = g.request ? `订的${name}` : o.reorder ? `再来碗${name}` : name;
+                items.push({ id, node, text, tone: 'order', patience: o.patienceMax > 0 ? o.patienceLeft / o.patienceMax : null, key: `o:${o.id}` });
+            }
+        }
+        const bubbles = syncList(this.bubbleRoot, this.bubblePrefab, items.length, GuestBubble);
+        const reduce = !!ctx.flow.settings.reduceMotion;
+        // 先算每个气泡的落点，挨得太近的往上错开一层，免得两句话叠在一起
+        const spots = items.map(it => {
+            it.node.getWorldPosition(this.tmp);
+            this.tmp.y += this.bubbleHeight * it.node.worldScale.y;
+            cam!.convertToUINode(this.tmp, this.bubbleRoot!, this.ui);
+            return { x: this.ui.x, y: this.ui.y + 18 };
+        });
+        const order = spots.map((_, i) => i).sort((a, b) => spots[a].y - spots[b].y || spots[a].x - spots[b].x);
+        const placed: { x: number; y: number }[] = [];
+        for (const i of order) {
+            const p = spots[i];
+            for (let guard = 0; guard < 4 && placed.some(q => Math.abs(q.x - p.x) < 120 && Math.abs(q.y - p.y) < 46); guard++) p.y += 48;
+            placed.push(p);
+        }
+        items.forEach((it, i) => {
+            const b = bubbles[i];
+            if (!b) return;
+            b.node.setPosition(spots[i].x, spots[i].y, 0);
+            b.render(it.key, it.text, it.tone, it.patience, reduce);
         });
     }
 
@@ -326,7 +444,8 @@ export class HudView extends Component {
         const g = cfg.balance.gates;
         const h = potHint(sh, st.focus, this.ingName);
         setText(this.cookTitle, r?.name ?? (pot.phase === 'washing' ? '洗锅中' : '空锅 · 挑一道粥'));
-        setText(this.cookRight, `${bigNum(st.focus + 1)}号锅${r ? ` · ${SEASON_WORD[r.seasoning]}` : ''}`);
+        const skill = r ? skillInfo(this.ctx!.config, sh.skillPoints(r.id)) : null;
+        setText(this.cookRight, `${bigNum(st.focus + 1)}号锅${r ? ` · ${SEASON_WORD[r.seasoning]} · ${skill!.name}` : ''}`);
         setText(this.cookStatus, h.text);
         if (this.cookStatus) this.cookStatus.color = h.urgent ? PALETTE.burnt : PALETTE.ink;
         const cooking = isCooking(pot);
@@ -523,12 +642,54 @@ export class HudView extends Component {
         if (st.setup.practice) return cook ? '练习不计铜钱，熬糊了也没关系。' : '点一口锅，凑近看看。';
         if (st.phase === 'prep') return '先把米洗好，再点右下角「开门迎客」。';
         if (st.phase === 'closing') return '打烊了，把最后几碗送完。';
+        // 第二口锅解锁后的第一天：另一口在熬时提醒一句（文档 12 §7）
+        if (!flow.settings.potTipDone && st.pots.length >= 2 && !cook
+            && st.pots.some((p, i) => i !== st.focus && p.phase !== 'empty' && p.phase !== 'washing')) {
+            return '没看着的那口会自己变稠，记得回去搅。';
+        }
         if (flow.settings.tutorialDone) return cook ? '' : '点一口锅，看看熬得怎么样了';
         const pot = st.pots[st.focus];
         if (pot.phase === 'empty' && !st.pass.length) return cook ? '挑一道粥下锅。' : '点锅上的木牌，凑近下锅。';
         if (st.pass.length) return '点出餐台的碗，送给等这碗的街坊。';
         if (pot.phase === 'cooking') return cook ? '盯着熟度条，到了绿色区间就盛。' : '点一口锅，看看熬得怎么样了';
         return '';
+    }
+
+    /** 今日小目标：左上小签显示完成数，点开列三件；达成时浮一句并发提示。 */
+    private renderGoals(sh: Shift, cook: boolean): void {
+        const ctx = this.ctx!;
+        const goals = sh.state.setup.goals ?? [];
+        setActive(this.goalChip?.node, goals.length > 0 && !cook);
+        if (!goals.length) { setActive(this.goalPanel, false); return; }
+        if (this.goalsDay !== sh.state.setup.day) {
+            this.goalsDay = sh.state.setup.day;
+            this.goalsDone.clear();
+            this.streak = 0;
+            this.goalPanelLeft = 6;
+        }
+        const closed = sh.phase === 'closing' || sh.phase === 'done';
+        const name = (id: string) => ctx.config.recipe.get(id)?.name ?? id;
+        const all = goals.map(g => goalStatus(g, sh.state, sh.dayAtmosphere, closed));
+        const done = all.filter(x => x.done).length;
+        this.goalChip?.setText(`小目标 ${done}/${goals.length}`);
+        for (const st of all) {
+            if (st.done && !this.goalsDone.has(st.goal.id)) {
+                this.goalsDone.add(st.goal.id);
+                this.showToast(`小目标做到了：${goalText(st.goal, name)}  +${st.goal.reward}`);
+                ctx.play('shop:goal');
+                this.goalPanelLeft = 3;
+            }
+        }
+        setActive(this.goalPanel, this.goalPanelLeft > 0 && !cook);
+        const p = ctx.flow.progress;
+        setText(this.chapterLabel, p && !sh.state.setup.practice ? chapterLine(ctx.config, p) : '');
+        all.forEach((st, i) => {
+            setText(this.goalLabels[i], goalText(st.goal, name));
+            setText(this.goalValues[i], `${goalProgressText(st)}  +${st.goal.reward}`);
+            const ic = this.goalIcons[i];
+            if (ic) ic.setIcon(st.done ? 'check' : st.failed ? 'close' : 'star')
+                .setColor(st.done ? PALETTE.jade : st.failed ? PALETTE.burnt : PALETTE.gold);
+        });
     }
 }
 

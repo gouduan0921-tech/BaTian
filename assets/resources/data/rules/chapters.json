@@ -1,0 +1,78 @@
+[
+  {
+    "id": "CH2",
+    "name": "白露 · 秋粥",
+    "season": "autumn",
+    "recipeId": "R13",
+    "reward": 60,
+    "intro": "桂花开了，山药上了早市。街坊说，秋天该喝一碗甜口的。",
+    "goals": [
+      {
+        "type": "served",
+        "recipeId": "R13",
+        "count": 18
+      },
+      {
+        "type": "perfect",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "id": "CH3",
+    "name": "冬至 · 暖粥",
+    "season": "winter",
+    "recipeId": "R14",
+    "reward": 80,
+    "intro": "天冷了，腊肉挂上了檐下。熟客们开始提前来订粥。",
+    "goals": [
+      {
+        "type": "served",
+        "recipeId": "R14",
+        "count": 18
+      },
+      {
+        "type": "requests",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "CH4",
+    "name": "清明 · 春粥",
+    "season": "spring",
+    "recipeId": "R15",
+    "reward": 100,
+    "intro": "荠菜冒头，巷口的雨下个不停。春天的粥要鲜。",
+    "goals": [
+      {
+        "type": "served",
+        "recipeId": "R15",
+        "count": 18
+      },
+      {
+        "type": "fullGoalDays",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "CH5",
+    "name": "小暑 · 消暑粥",
+    "season": "summer",
+    "recipeId": "R16",
+    "reward": 120,
+    "intro": "蝉叫起来了，一锅绿豆粥放凉，是夏天最好的招呼。",
+    "goals": [
+      {
+        "type": "served",
+        "recipeId": "R16",
+        "count": 18
+      },
+      {
+        "type": "calmDays",
+        "count": 4
+      }
+    ]
+  }
+]

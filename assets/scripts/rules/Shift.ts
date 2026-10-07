@@ -1,4 +1,5 @@
-import { baseIngredients, Customer, GameConfig, Heat, Recipe, Seasoning, WaveId, waveAt } from '../core/Config';
+import { skillTierUp } from './Skill';
+import { baseIngredients, Customer, GameConfig, Heat, Recipe, Season, Seasoning, WaveId, waveAt } from '../core/Config';
 import { SeededRng } from '../simulation/SeededRng';
 import { Arrival, CRITIC_ID } from './Arrivals';
 import { AtmoReading, DecorPlacement, readAtmosphere, tPrime } from './Atmosphere';
@@ -32,6 +33,10 @@ export interface ShiftSetup {
     proficiency: Record<string, number>;
     practice: boolean;
     weightShift?: Record<string, number>;
+    /** 当日小目标（旧存档没有此项） */
+    goals?: import('./Goals').Goal[];
+    /** 当天所在章的季节；在季的时令粥更受欢迎（文档 30 §2.2） */
+    season?: Season | null;
 }
 
 export interface Guest {
@@ -46,6 +51,8 @@ export interface Guest {
     served: boolean;
     reordered: boolean;
     onlyRecipe?: string;
+    /** 街坊请托约好的客人（文档 30 §3） */
+    request?: boolean;
     reason?: LeaveReason;
 }
 
@@ -116,6 +123,8 @@ export interface ShiftState {
     skillDelta: Record<string, number>;
     perfectRecipes: string[];
     seenCustomers: string[];
+    /** 今天已送到约好熟客手里的请托碗数（旧存档没有此项） */
+    requestServed?: number;
     atmoSum: number;
     atmoCount: number;
     atmoTimer: number;
@@ -133,6 +142,8 @@ export type ShiftEvent =
     | { type: 'stir'; pot: number }
     | { type: 'prep:done'; ingredientId: string }
     | { type: 'wiped'; seat: number }
+    | { type: 'skill:up'; recipe: string; tier: number }
+    | { type: 'request:served'; recipe: string; served: number }
     | { type: 'reject'; reason: string };
 
 export function newShiftState(config: GameConfig, setup: ShiftSetup, arrivals: Arrival[]): ShiftState {
@@ -328,6 +339,7 @@ export class Shift {
                 id: this.id('G'), customerId: a.customerId, wave: a.wave, state: 'door', seat: -1,
                 doorLeft: this.bal.demand.doorWaitSeconds, orderId: null, dineLeft: 0, served: false, reordered: false,
                 onlyRecipe: a.onlyRecipe,
+                ...(a.request ? { request: true } : {}),
             };
             st.guests[g.id] = g;
             if (!st.seenCustomers.includes(g.customerId)) st.seenCustomers.push(g.customerId);
@@ -386,7 +398,8 @@ export class Shift {
 
     private placeOrder(g: Guest, recipe: Recipe, reorder: boolean): void {
         const c = this.config.customer.get(g.customerId)!;
-        const patience = patienceFor(this.bal, recipe, c);
+        // 约好的熟客多等一会儿（文档 30 §3）
+        const patience = patienceFor(this.bal, recipe, c) * (g.request ? this.bal.requests.patienceMul : 1);
         const o: Order = { id: this.id('O'), guestId: g.id, recipeId: recipe.id, patienceLeft: patience, patienceMax: patience, state: 'waiting', reorder };
         this.state.orders.push(o);
         g.orderId = o.id;
@@ -409,13 +422,16 @@ export class Shift {
         }
         const c = this.config.customer.get(g.customerId)!;
         const d = this.bal.demand;
-        const tagged = cands.filter(r => matchesTaste(c, r));
+        // 在季的时令粥和合口味的粥一样会被优先考虑（文档 30 §2.2）
+        const season = this.state.setup.season ?? null;
+        const inSeason = (r: Recipe) => !!r.season && r.season === season;
+        const tagged = cands.filter(r => matchesTaste(c, r) || inSeason(r));
         if (tagged.length) cands = tagged;
         const budget = d.budgetBase + d.budgetPerCompletedDay * this.state.setup.completedDays;
         let best: Recipe | null = null;
         let bestScore = -Infinity;
         for (const r of cands) {
-            const s = (matchesTaste(c, r) && c.acceptedTags.length ? d.tagMatch : 0)
+            const s = (matchesTaste(c, r) && c.acceptedTags.length ? d.tagMatch : 0) + (inSeason(r) ? d.seasonalBonus : 0)
                 - d.pricePenalty * c.priceCare * Math.max(0, r.price - budget) / d.budgetStep
                 + this.rng.next();
             if (s > bestScore) { bestScore = s; best = r; }
@@ -726,10 +742,16 @@ export class Shift {
         }
         const key = `${c.id}|${recipe.id}|${result}|${g.wave}`;
         st.served[key] = (st.served[key] ?? 0) + 1;
+        if (g.request && recipe.id === g.onlyRecipe) {
+            st.requestServed = (st.requestServed ?? 0) + 1;
+            this.events.push({ type: 'request:served', recipe: recipe.id, served: st.requestServed });
+        }
         const dayKey = `${c.id}|${recipe.id}|${result}`;
         if (!st.todayKeys.includes(dayKey)) st.todayKeys.push(dayKey);
         const sk = this.bal.skill;
+        const before = this.skillPoints(recipe.id);
         st.skillDelta[recipe.id] = (st.skillDelta[recipe.id] ?? 0) + ({ perfect: sk.perfect, over: sk.over, raw: sk.raw, burnt: sk.burnt }[result]);
+        this.noteSkillUp(recipe.id, before);
         if (result === 'perfect' && !st.perfectRecipes.includes(recipe.id)) st.perfectRecipes.push(recipe.id);
         this.events.push({ type: 'delivered', order: order.id, revenue: res.revenue, tip: res.tip, score, result });
     }
@@ -740,7 +762,14 @@ export class Shift {
         const now = this.skillPoints(recipeId);
         if (now >= sk.practiceCap) return;
         this.state.skillDelta[recipeId] = (this.state.skillDelta[recipeId] ?? 0) + Math.min(sk.practicePerfect, sk.practiceCap - now);
+        this.noteSkillUp(recipeId, now);
         if (!this.state.perfectRecipes.includes(recipeId)) this.state.perfectRecipes.push(recipeId);
+    }
+
+    /** 熟练跨档时发事件，界面据此提示「练到顺手了」（规则效果已由 warnLine / addTolerance 实时生效）。 */
+    private noteSkillUp(recipeId: string, before: number): void {
+        const tier = skillTierUp(this.config, before, this.skillPoints(recipeId));
+        if (tier !== null) this.events.push({ type: 'skill:up', recipe: recipeId, tier });
     }
 
     wipe(seat: number): string | null {

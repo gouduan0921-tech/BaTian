@@ -10,6 +10,18 @@ import { ModelSlot } from './ModelSlot';
 
 const { ccclass, property } = _decorator;
 
+export interface GuestReaction { text: string; tone: 'good' | 'warn' | 'bad'; left: number }
+
+const LEAVE_LINE: Record<string, [string, 'good' | 'warn' | 'bad']> = {
+    served: ['吃饱了，多谢', 'good'],
+    impatient: ['等不及了……', 'bad'],
+    'sold-out': ['卖完了啊', 'warn'],
+    'no-seat': ['没位子，下回', 'warn'],
+    busy: ['人太多了', 'warn'],
+    rejected: ['那算了', 'warn'],
+    closed: ['明天再来', 'good'],
+};
+
 export type StorePick = { kind: 'pot'; index: number } | { kind: 'seat'; index: number };
 
 /**
@@ -29,16 +41,53 @@ export class StoreView extends Component {
     @property(Prefab) guestPrefab: Prefab | null = null;
     @property([DecorSlotView]) slots: DecorSlotView[] = [];
     @property([Node]) passBowls: Node[] = [];
+    /** 备料台边的时令陈列（子节点按时令食材 id 命名），只亮当季那一件（文档 30 §2）。 */
+    @property(Node) seasonStand: Node | null = null;
 
     private readonly guests = new Map<string, GuestView>();
     private readonly pool: GuestView[] = [];
     private readonly tmp = new Vec3();
+    private effectsPaused = false;
+    private motionReduced = false;
+    /** 客人头顶的一句话（送达「好吃」、等不及「哼」……），由 HudView 画成气泡 */
+    private readonly reactions = new Map<string, GuestReaction>();
+
+    /** 某位客人的一句反应，seconds 秒后消失。 */
+    react(guestId: string, text: string, tone: 'good' | 'warn' | 'bad', seconds = 1.8): void {
+        if (!text) return;
+        this.reactions.set(guestId, { text, tone, left: seconds });
+    }
+
+    /** 客人离店：按原因说一句，边说边往门口走。 */
+    onGuestLeave(guestId: string, reason: string): void {
+        const line = LEAVE_LINE[reason];
+        if (line) this.react(guestId, line[0], line[1], 2.2);
+    }
+
+    /** 当前要显示反应气泡的客人（包括正在离开的）。 */
+    reactionOf(guestId: string): GuestReaction | null {
+        const r = this.reactions.get(guestId);
+        return r && r.left > 0 ? r : null;
+    }
+
+    /** 客人模型节点（含正在走出门的），找不到返回 null。 */
+    guestNode(guestId: string): Node | null {
+        const v = this.guests.get(guestId);
+        return v && v.node.activeInHierarchy ? v.node : null;
+    }
+
+    /** 所有在场景里的客人 id（含正在离开的）。 */
+    guestIds(): string[] { return Array.from(this.guests.keys()); }
 
     /** 每帧调用；shift 为空时只画装修与空锅。 */
-    render(config: GameConfig, progress: Progress | null, shift: Shift | null, dt: number): void {
+    render(config: GameConfig, progress: Progress | null, shift: Shift | null, dt: number, paused = false, reduceMotion = false): void {
+        this.effectsPaused = paused;
+        this.motionReduced = reduceMotion;
         const bal = config.balance;
         const potCount = shift ? shift.state.pots.length : progress?.pots ?? 1;
         this.pots.forEach((view, i) => {
+            view.steam?.faceCamera(this.camera);
+            if (view.steam) { view.steam.paused = paused; view.steam.reduceMotion = reduceMotion; }
             const pot = shift ? shift.state.pots[i] ?? null : null;
             const owned = i < potCount;
             view.render(bal, owned ? pot ?? emptyVisual(i) : null, pot ? shift!.recipe(pot.recipeId) : null,
@@ -51,6 +100,12 @@ export class StoreView extends Component {
         this.passBowls.forEach((n, i) => { n.active = !!shift && i < shift.state.pass.length; });
         const bowlId = shift?.state.setup.tableware ?? progress?.state.tableware ?? 'D10';
         for (const n of this.passBowls) n.getComponent(ModelSlot)?.showVariant(bowlId);
+
+        if (this.seasonStand) {
+            const season = shift ? shift.state.setup.season ?? null : progress?.season() ?? null;
+            const want = season ? config.ingredients.find(x => x.season === season)?.id ?? '' : '';
+            for (const c of this.seasonStand.children) if (c.active !== (c.name === want)) c.active = c.name === want;
+        }
         for (const n of this.dirtyBowls) n.getComponentInChildren(ModelSlot)?.showVariant(bowlId);
 
         const placement = shift?.state.setup.placement ?? progress?.state.placement;
@@ -76,6 +131,10 @@ export class StoreView extends Component {
         }
 
         this.renderGuests(shift);
+        for (const [id, r] of this.reactions) {
+            r.left -= dt;
+            if (r.left <= 0 || (!this.guests.has(id) && !shift)) this.reactions.delete(id);
+        }
     }
 
     private renderGuests(shift: Shift | null): void {
@@ -93,6 +152,9 @@ export class StoreView extends Component {
                     v.setup(g.id, g.customerId, CUSTOMER_TINT[g.customerId] ?? '#888888', this.doorAnchor?.worldPosition ?? Vec3.ZERO);
                     this.guests.set(g.id, v);
                 }
+                v.animationsPaused = this.effectsPaused;
+                v.reduceMotion = this.motionReduced;
+                v.setSeated(g.state === 'seated');
                 if (g.state === 'door') {
                     const idx = st.queue.indexOf(g.id);
                     const door = this.doorAnchor?.worldPosition ?? Vec3.ZERO;
@@ -105,6 +167,8 @@ export class StoreView extends Component {
             }
         }
         for (const [id, v] of this.guests) {
+            v.animationsPaused = this.effectsPaused;
+            v.reduceMotion = this.motionReduced;
             if (live.has(id)) continue;
             if (!v.leaving) {
                 v.leaving = true;

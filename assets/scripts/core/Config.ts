@@ -11,6 +11,7 @@ export type SlotId = 'door' | 'hall' | 'counter' | 'kitchen' | 'window';
 export type StyleId = 'warm-wood' | 'night-blue' | 'morning-white';
 export type AtmoKey = 'warmth' | 'clean' | 'aroma' | 'light';
 export type AtmoPart = AtmoKey | 'crowd';
+export type Season = 'autumn' | 'winter' | 'spring' | 'summer';
 
 export const HEATS: Heat[] = ['low', 'mid', 'high'];
 export const SLOTS: SlotId[] = ['door', 'hall', 'counter', 'kitchen', 'window'];
@@ -18,6 +19,11 @@ export const WAVES: WaveId[] = ['morning', 'forenoon', 'lunch', 'evening'];
 export const STYLES: StyleId[] = ['warm-wood', 'night-blue', 'morning-white'];
 export const SEASONINGS: Seasoning[] = ['plain', 'savory', 'sweet'];
 export const ATMO_PARTS: AtmoPart[] = ['warmth', 'clean', 'aroma', 'light', 'crowd'];
+export const SEASONS: Season[] = ['autumn', 'winter', 'spring', 'summer'];
+export const SEASON_NAMES: Record<Season, string> = { autumn: '秋', winter: '冬', spring: '春', summer: '夏' };
+export const CHAPTER_GOAL_TYPES = ['served', 'perfect', 'requests', 'fullGoalDays', 'calmDays'] as const;
+export const MILESTONE_TYPES = ['perfectTotal', 'recipesLit', 'masterCount', 'servedTotal', 'bestDayIncome', 'daysCompleted', 'storiesHeard',
+    'requestsDone', 'favorMax', 'chaptersDone', 'keptRecipes', 'stylesUnlocked', 'decorOwned', 'fullGoalDays'] as const;
 export const UPGRADE_KEYS = ['pots', 'seats', 'prepSlots', 'buySlots', 'holdScoreSeconds'];
 
 export interface HeatCoef { doneness: number; scorch: number; simmerTarget: number; simmerRate: number }
@@ -31,6 +37,8 @@ export interface Balance {
         rentStartsOnDay: number; rescueFloor: number; rescueRice: number; initialPots: number; initialSeats: number;
         initialPrepSlots: number; initialBuyKinds: number; debtBuyKinds: number; unitCap: number; passCapacity: number;
         autosaveSeconds: number;
+        /** 铺面变大房租跟着涨：每多一口锅、每多一个座位加多少（文档 04 §6）；不填为 0 */
+        rentPerPot?: number; rentPerSeat?: number;
     };
     actions: { wash: number; cut: number; soak: number; none: number; stirWindup: number; serve: number; plate: number; deliver: number; wipe: number; potWash: number };
     heat: Record<Heat, HeatCoef>;
@@ -46,18 +54,43 @@ export interface Balance {
         basePatience: number; expectPrep: number; expectAdd: number; ordersBase: number; ordersPerPot: number; ordersMax: number;
         doorQueue: number; doorWaitSeconds: number; closePatienceScale: number; dineSeconds: number; tagMatch: number; budgetBase: number;
         budgetPerCompletedDay: number; budgetStep: number; pricePenalty: number; chapterCriticDay: number;
+        /** 在季时令粥的点单加权（文档 30 §2.2） */
+        seasonalBonus: number;
     };
     favor: { match: number; serve: number; fail: number; dailyGainCap: number; max: number; regularUnlockFavor: number };
     skill: { perfect: number; over: number; raw: number; burnt: number; practicePerfect: number; practiceCap: number; tiers: Array<{ min: number; warn?: number; addWindow?: number }> };
+    /** 每日小目标（文档 08 §8）：第 startDay 日起每天 count 个，打烊时按完成发铜钱 */
+    goals: {
+        startDay: number; count: number; serveShare: number; perfectBase: number; perfectPerDay: number; perfectCap: number;
+        tipsBase: number; tipsPerDay: number; atmosphereMin: number; reward: number; rewardHard: number; bonusAll: number;
+    };
+    /** 街坊请托（文档 30 §3） */
+    requests: {
+        startDay: number; chance: number; minFavor: number; countEarly: number; countLate: number; lateFromDay: number;
+        rewardRate: number; patienceMul: number; favor: number;
+    };
+    /** 四时章节（文档 30 §2）：第 startDay 日起每 length 日一章，每过一年目标与奖励 × (1 + yearScale × 年数) */
+    chapters: { startDay: number; length: number; yearScale: number };
 }
 
-export interface Ingredient { id: string; name: string; unit: string; buyPrice: number; freshHours: number; prep: PrepKind; tags: string[] }
+export interface Ingredient {
+    id: string; name: string; unit: string; buyPrice: number; freshHours: number; prep: PrepKind; tags: string[]; season?: Season;
+    /** 单日进货上限；不填用 balance.session.unitCap（米、小米这类几乎每碗都要的底料单独放宽） */
+    dailyCap?: number;
+}
 export interface RecipeIngredient { id: string; count: number }
 export interface RecipeAdd { id: string; atDoneness: number }
 export interface Recipe {
     id: string; name: string; unlockDay: number; cost: number; price: number; cookSeconds: number; scorchMul: number;
     ingredients: RecipeIngredient[]; adds: RecipeAdd[]; seasoning: Seasoning; tags: string[]; color: string; heatHint: Heat; freshPenalty: number;
+    /** 时令粥：只在对应季节的章节开放（收进粥谱后常年开放） */
+    season?: Season;
 }
+export type ChapterGoalType = typeof CHAPTER_GOAL_TYPES[number];
+export interface ChapterGoalCfg { type: ChapterGoalType; count: number; recipeId?: string }
+export interface ChapterCfg { id: string; name: string; season: Season; recipeId: string; reward: number; intro: string; goals: ChapterGoalCfg[] }
+export type MilestoneType = typeof MILESTONE_TYPES[number];
+export interface MilestoneCfg { id: string; group: string; name: string; desc: string; condition: { type: MilestoneType; min: number }; reward: number }
 export interface Customer {
     id: string; name: string; unlockDay: number; unlockFavor?: Record<string, number>; patienceBonus: number; acceptedTags: string[];
     priceCare: number; qualityCare: number; atmosphereCare: number; tracksFavor: boolean; waveWeights: Record<WaveId, number>;
@@ -109,6 +142,8 @@ export interface GameConfig {
     stories: Story[];
     activities: Activity[];
     audio: AudioCue[];
+    chapters: ChapterCfg[];
+    milestones: MilestoneCfg[];
     ingredient: Map<string, Ingredient>;
     recipe: Map<string, Recipe>;
     customer: Map<string, Customer>;
@@ -119,6 +154,7 @@ export interface GameConfig {
 
 export const CONFIG_FILES = [
     'balance', 'ingredients', 'recipes', 'customers', 'days', 'upgrades', 'styles', 'decor', 'atmosphere', 'stories', 'activities', 'audio',
+    'chapters', 'milestones',
 ] as const;
 export type ConfigFile = typeof CONFIG_FILES[number];
 
@@ -174,12 +210,17 @@ export function parseConfig(raw: Partial<Record<ConfigFile, unknown>>): GameConf
         'signatureTipScale', 'signatureAtmosphere'], 'balance', 'score');
     numbers(balance.demand, ['extraDayBase', 'extraPerShopLevel', 'maxArrivals', 'arrivalJitter', 'criticDailyCap', 'basePatience',
         'expectPrep', 'expectAdd', 'ordersBase', 'ordersPerPot', 'ordersMax', 'doorQueue', 'doorWaitSeconds', 'closePatienceScale',
-        'dineSeconds', 'tagMatch', 'budgetBase', 'budgetPerCompletedDay', 'budgetStep', 'pricePenalty', 'chapterCriticDay'], 'balance', 'demand');
+        'dineSeconds', 'tagMatch', 'budgetBase', 'budgetPerCompletedDay', 'budgetStep', 'pricePenalty', 'chapterCriticDay', 'seasonalBonus'], 'balance', 'demand');
     const waves = list<WaveCfg>(balance.demand.waves, 'balance');
     need(waves.length === 4 && waves.every((w, i) => w.id === WAVES[i]), 'balance', 'demand.waves', '必须按 morning/forenoon/lunch/evening 排列');
     need(Math.abs(waves.reduce((s, w) => s + w.share, 0) - 1) < 0.001, 'balance', 'demand.waves', '份额和必须为 1');
     numbers(balance.favor, ['match', 'serve', 'fail', 'dailyGainCap', 'max', 'regularUnlockFavor'], 'balance', 'favor');
     numbers(balance.skill, ['perfect', 'over', 'raw', 'burnt', 'practicePerfect', 'practiceCap'], 'balance', 'skill');
+    numbers(balance.goals, ['startDay', 'count', 'serveShare', 'perfectBase', 'perfectPerDay', 'perfectCap', 'tipsBase', 'tipsPerDay',
+        'atmosphereMin', 'reward', 'rewardHard', 'bonusAll'], 'balance', 'goals');
+    numbers(balance.requests, ['startDay', 'chance', 'minFavor', 'countEarly', 'countLate', 'lateFromDay', 'rewardRate', 'patienceMul', 'favor'], 'balance', 'requests');
+    numbers(balance.chapters, ['startDay', 'length', 'yearScale'], 'balance', 'chapters');
+    need(balance.chapters.length > 0 && balance.chapters.startDay > 0, 'balance', 'chapters', 'startDay 与 length 必须为正');
 
     const ingredients = list<Ingredient>(raw.ingredients, 'ingredients');
     uniqueIds(ingredients, 'ingredients', 'I');
@@ -188,6 +229,8 @@ export function parseConfig(raw: Partial<Record<ConfigFile, unknown>>): GameConf
         need(num(i.buyPrice) && i.buyPrice > 0, 'ingredients', i.id, 'buyPrice 应为正数');
         need([24, 48, 72].includes(i.freshHours), 'ingredients', i.id, 'freshHours 只能是 24/48/72');
         need(['wash', 'cut', 'soak', 'none'].includes(i.prep), 'ingredients', i.id, 'prep 枚举非法');
+        need(i.season === undefined || SEASONS.includes(i.season), 'ingredients', i.id, 'season 枚举非法');
+        need(i.dailyCap === undefined || (Number.isInteger(i.dailyCap) && i.dailyCap > 0), 'ingredients', i.id, 'dailyCap 应为正整数');
     }
     const ingredient = new Map(ingredients.map(i => [i.id, i]));
 
@@ -216,6 +259,11 @@ export function parseConfig(raw: Partial<Record<ConfigFile, unknown>>): GameConf
         need(HEATS.includes(r.heatHint), 'recipes', r.id, 'heatHint 枚举非法');
         need(r.freshPenalty === 1 || r.freshPenalty === 2, 'recipes', r.id, 'freshPenalty 只能是 1 或 2');
         need(/^#[0-9A-Fa-f]{6}$/.test(r.color), 'recipes', r.id, 'color 应为 #RRGGBB');
+        need(r.season === undefined || SEASONS.includes(r.season), 'recipes', r.id, 'season 枚举非法');
+        for (const it of r.ingredients) {
+            const sea = ingredient.get(it.id)!.season;
+            need(!sea || sea === r.season, 'recipes', r.id, `时令食材 ${it.id} 只能用在同季的时令粥里`);
+        }
     }
     const recipe = new Map(recipes.map(r => [r.id, r]));
 
@@ -301,8 +349,36 @@ export function parseConfig(raw: Partial<Record<ConfigFile, unknown>>): GameConf
     }
     const audio = list<AudioCue>(raw.audio, 'audio');
 
+    // 四时章节与小店手账（文档 30）
+    const chapters = list<ChapterCfg>(raw.chapters, 'chapters');
+    need(chapters.length > 0, 'chapters', '', '至少要有一章');
+    const chapterIds = new Set<string>();
+    for (const c of chapters) {
+        need(typeof c.id === 'string' && !chapterIds.has(c.id), 'chapters', c.id, 'id 缺失或重复');
+        chapterIds.add(c.id);
+        need(SEASONS.includes(c.season), 'chapters', c.id, 'season 枚举非法');
+        const sr = recipe.get(c.recipeId);
+        need(sr && sr.season === c.season, 'chapters', c.id, `时令粥 ${c.recipeId} 不存在或季节不符`);
+        need(num(c.reward) && c.reward >= 0, 'chapters', c.id, 'reward 非法');
+        need(Array.isArray(c.goals) && c.goals.length > 0, 'chapters', c.id, 'goals 为空');
+        for (const g of c.goals) {
+            need((CHAPTER_GOAL_TYPES as readonly string[]).includes(g.type), 'chapters', c.id, `目标类型 ${g.type} 非法`);
+            need(num(g.count) && g.count > 0, 'chapters', c.id, '目标 count 非法');
+            if (g.type === 'served') need(recipe.has(g.recipeId ?? ''), 'chapters', c.id, `目标粥谱 ${g.recipeId} 不存在`);
+        }
+    }
+    const milestones = list<MilestoneCfg>(raw.milestones, 'milestones');
+    const msIds = new Set<string>();
+    for (const m of milestones) {
+        need(typeof m.id === 'string' && !msIds.has(m.id), 'milestones', m.id, 'id 缺失或重复');
+        msIds.add(m.id);
+        need((MILESTONE_TYPES as readonly string[]).includes(m.condition?.type), 'milestones', m.id, '条件类型非法');
+        need(num(m.condition.min) && m.condition.min > 0, 'milestones', m.id, 'min 非法');
+        need(num(m.reward) && m.reward >= 0, 'milestones', m.id, 'reward 非法');
+    }
+
     return {
-        balance, ingredients, recipes, customers, days, upgrades, styles, decor, atmosphere, stories, activities, audio,
+        balance, ingredients, recipes, customers, days, upgrades, styles, decor, atmosphere, stories, activities, audio, chapters, milestones,
         ingredient, recipe, customer, upgrade, decorById, story: new Map(stories.map(s => [s.id, s])),
     };
 }

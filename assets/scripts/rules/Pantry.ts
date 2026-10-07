@@ -124,7 +124,7 @@ export class Pantry {
         for (const b of this.state.batches) {
             if (b.raw + b.ready > 0 && b.hoursLeft - hours <= 1e-9) out.set(b.id, (out.get(b.id) ?? 0) + b.raw + b.ready);
         }
-        return [...out].map(([id, count]) => ({ id, count }));
+        return Array.from(out).map(([id, count]) => ({ id, count }));
     }
 
     /** 清晨移除过期批次，返回被移除的份数。 */
@@ -136,6 +136,6 @@ export class Pantry {
             if (n > 0) removed.set(b.id, (removed.get(b.id) ?? 0) + n);
             return false;
         });
-        return [...removed].map(([id, count]) => ({ id, count }));
+        return Array.from(removed).map(([id, count]) => ({ id, count }));
     }
 }

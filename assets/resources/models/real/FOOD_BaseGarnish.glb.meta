@@ -1,0 +1,1737 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9",
+  "files": [],
+  "subMetas": {
+    "10486": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@10486",
+      "displayName": "",
+      "id": "10486",
+      "name": "UnnamedTexture-16.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@23efd"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "14738": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@14738",
+      "displayName": "",
+      "id": "14738",
+      "name": "UnnamedTexture-20.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@60cfd"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "25439": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@25439",
+      "displayName": "",
+      "id": "25439",
+      "name": "I12.mesh",
+      "userData": {
+        "gltfIndex": 10,
+        "triangleCount": 8280
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "41766": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@41766",
+      "displayName": "",
+      "id": "41766",
+      "name": "BT6_EggCutYolk_Normal.image",
+      "userData": {
+        "gltfIndex": 6,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "44999": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@44999",
+      "displayName": "",
+      "id": "44999",
+      "name": "I07.mesh",
+      "userData": {
+        "gltfIndex": 5,
+        "triangleCount": 6600
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50743": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@50743",
+      "displayName": "",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@49dc3"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "55257": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@55257",
+      "displayName": "",
+      "id": "55257",
+      "name": "UnnamedTexture-12.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@bcde4"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "57777": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@57777",
+      "displayName": "",
+      "id": "57777",
+      "name": "BT5_Food_Fish.material",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "96902": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@96902",
+      "displayName": "",
+      "id": "96902",
+      "name": "BT5_Food_Chicken_Base.image",
+      "userData": {
+        "gltfIndex": 25,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "98962": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@98962",
+      "displayName": "",
+      "id": "98962",
+      "name": "UnnamedTexture-19.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@9767e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6ec37": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@6ec37",
+      "displayName": "",
+      "id": "6ec37",
+      "name": "I02.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 7680
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "574d6": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@574d6",
+      "displayName": "",
+      "id": "574d6",
+      "name": "I03.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 5760
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6ddd4": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@6ddd4",
+      "displayName": "",
+      "id": "6ddd4",
+      "name": "Century egg cut wedges.001.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 1632
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7c166": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@7c166",
+      "displayName": "",
+      "id": "7c166",
+      "name": "Pumpkin cut chunks.001.mesh",
+      "userData": {
+        "gltfIndex": 3,
+        "triangleCount": 1692
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c09cb": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@c09cb",
+      "displayName": "",
+      "id": "c09cb",
+      "name": "I06.mesh",
+      "userData": {
+        "gltfIndex": 4,
+        "triangleCount": 2760
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "002ad": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@002ad",
+      "displayName": "",
+      "id": "002ad",
+      "name": "I08.mesh",
+      "userData": {
+        "gltfIndex": 6,
+        "triangleCount": 3360
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6593d": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@6593d",
+      "displayName": "",
+      "id": "6593d",
+      "name": "Beef detail.mesh",
+      "userData": {
+        "gltfIndex": 7,
+        "triangleCount": 6000
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "36d30": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@36d30",
+      "displayName": "",
+      "id": "36d30",
+      "name": "I10.mesh",
+      "userData": {
+        "gltfIndex": 8,
+        "triangleCount": 3360
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c56b5": {
+      "importer": "gltf-mesh",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@c56b5",
+      "displayName": "",
+      "id": "c56b5",
+      "name": "I11.mesh",
+      "userData": {
+        "gltfIndex": 9,
+        "triangleCount": 10800
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2e232": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@2e232",
+      "displayName": "",
+      "id": "2e232",
+      "name": "BT5_Food_Millet_Normal.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "157f9": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@157f9",
+      "displayName": "",
+      "id": "157f9",
+      "name": "BT5_Food_Millet_Base.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "2c691": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@2c691",
+      "displayName": "",
+      "id": "2c691",
+      "name": "BT5_Food_Pork_Normal.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "62cff": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@62cff",
+      "displayName": "",
+      "id": "62cff",
+      "name": "BT5_Food_Pork_Base.image",
+      "userData": {
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "36a4c": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@36a4c",
+      "displayName": "",
+      "id": "36a4c",
+      "name": "BT6_EggJelly_Normal.image",
+      "userData": {
+        "gltfIndex": 4,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "49dc3": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@49dc3",
+      "displayName": "",
+      "id": "49dc3",
+      "name": "BT6_EggJelly_Base.image",
+      "userData": {
+        "gltfIndex": 5,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "045f2": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@045f2",
+      "displayName": "",
+      "id": "045f2",
+      "name": "BT6_EggCutYolk_Base.image",
+      "userData": {
+        "gltfIndex": 7,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e9ae0": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@e9ae0",
+      "displayName": "",
+      "id": "e9ae0",
+      "name": "BT6_SoftPumpkin_Normal.image",
+      "userData": {
+        "gltfIndex": 8,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "cf206": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@cf206",
+      "displayName": "",
+      "id": "cf206",
+      "name": "BT6_SoftPumpkin_Base.image",
+      "userData": {
+        "gltfIndex": 9,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "b91f3": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@b91f3",
+      "displayName": "",
+      "id": "b91f3",
+      "name": "BT5_Food_Vegetable_Normal.image",
+      "userData": {
+        "gltfIndex": 10,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "e8e7a": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@e8e7a",
+      "displayName": "",
+      "id": "e8e7a",
+      "name": "BT5_Food_Vegetable_Base.image",
+      "userData": {
+        "gltfIndex": 11,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "bcde4": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@bcde4",
+      "displayName": "",
+      "id": "bcde4",
+      "name": "BT5_LeafVein_Normal.image",
+      "userData": {
+        "gltfIndex": 12,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "44d71": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@44d71",
+      "displayName": "",
+      "id": "44d71",
+      "name": "BT5_LeafVein_Base.image",
+      "userData": {
+        "gltfIndex": 13,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "d8c77": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@d8c77",
+      "displayName": "",
+      "id": "d8c77",
+      "name": "BT5_Food_Shrimp_Normal.image",
+      "userData": {
+        "gltfIndex": 14,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "bf322": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@bf322",
+      "displayName": "",
+      "id": "bf322",
+      "name": "BT5_Food_Shrimp_Base.image",
+      "userData": {
+        "gltfIndex": 15,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "23efd": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@23efd",
+      "displayName": "",
+      "id": "23efd",
+      "name": "BT5_Food_Fish_Normal.image",
+      "userData": {
+        "gltfIndex": 16,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "8c51c": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@8c51c",
+      "displayName": "",
+      "id": "8c51c",
+      "name": "BT5_Food_Fish_Base.image",
+      "userData": {
+        "gltfIndex": 17,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "459c6": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@459c6",
+      "displayName": "",
+      "id": "459c6",
+      "name": "BT5_Food_Beef_Normal.image",
+      "userData": {
+        "gltfIndex": 18,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "9767e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9767e",
+      "displayName": "",
+      "id": "9767e",
+      "name": "BT5_Food_Beef_Base.image",
+      "userData": {
+        "gltfIndex": 19,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "60cfd": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@60cfd",
+      "displayName": "",
+      "id": "60cfd",
+      "name": "BT5_Food_RedBean_Normal.image",
+      "userData": {
+        "gltfIndex": 20,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "54faa": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@54faa",
+      "displayName": "",
+      "id": "54faa",
+      "name": "BT5_Food_RedBean_Base.image",
+      "userData": {
+        "gltfIndex": 21,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "db9a0": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@db9a0",
+      "displayName": "",
+      "id": "db9a0",
+      "name": "BT5_Food_Sesame_Normal.image",
+      "userData": {
+        "gltfIndex": 22,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "246b8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@246b8",
+      "displayName": "",
+      "id": "246b8",
+      "name": "BT5_Food_Sesame_Base.image",
+      "userData": {
+        "gltfIndex": 23,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "b5034": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@b5034",
+      "displayName": "",
+      "id": "b5034",
+      "name": "BT5_Food_Chicken_Normal.image",
+      "userData": {
+        "gltfIndex": 24,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@2e232"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@157f9"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@2c691"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@62cff"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@36a4c"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "99ea5": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@99ea5",
+      "displayName": "",
+      "id": "99ea5",
+      "name": "UnnamedTexture-6.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@41766"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "006bd": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@006bd",
+      "displayName": "",
+      "id": "006bd",
+      "name": "UnnamedTexture-7.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@045f2"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "531b0": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@531b0",
+      "displayName": "",
+      "id": "531b0",
+      "name": "UnnamedTexture-8.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@e9ae0"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9c3d2": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9c3d2",
+      "displayName": "",
+      "id": "9c3d2",
+      "name": "UnnamedTexture-9.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@cf206"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f7e17": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@f7e17",
+      "displayName": "",
+      "id": "f7e17",
+      "name": "UnnamedTexture-10.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@b91f3"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a2905": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@a2905",
+      "displayName": "",
+      "id": "a2905",
+      "name": "UnnamedTexture-11.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@e8e7a"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "809d9": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@809d9",
+      "displayName": "",
+      "id": "809d9",
+      "name": "UnnamedTexture-13.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@44d71"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b4841": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@b4841",
+      "displayName": "",
+      "id": "b4841",
+      "name": "UnnamedTexture-14.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@d8c77"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3c999": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@3c999",
+      "displayName": "",
+      "id": "3c999",
+      "name": "UnnamedTexture-15.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@bf322"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d4524": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@d4524",
+      "displayName": "",
+      "id": "d4524",
+      "name": "UnnamedTexture-17.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@8c51c"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d932b": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@d932b",
+      "displayName": "",
+      "id": "d932b",
+      "name": "UnnamedTexture-18.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@459c6"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0c93e": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@0c93e",
+      "displayName": "",
+      "id": "0c93e",
+      "name": "UnnamedTexture-21.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@54faa"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50f7f": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@50f7f",
+      "displayName": "",
+      "id": "50f7f",
+      "name": "UnnamedTexture-22.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@db9a0"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d0968": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@d0968",
+      "displayName": "",
+      "id": "d0968",
+      "name": "UnnamedTexture-23.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@246b8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0dd94": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@0dd94",
+      "displayName": "",
+      "id": "0dd94",
+      "name": "UnnamedTexture-24.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@b5034"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bcb27": {
+      "importer": "texture",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@bcb27",
+      "displayName": "",
+      "id": "bcb27",
+      "name": "UnnamedTexture-25.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b24317b9-6605-4392-a10b-a07721ea16c9@96902"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "67edf": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@67edf",
+      "displayName": "",
+      "id": "67edf",
+      "name": "BT5_Food_Millet.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9f3d2": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9f3d2",
+      "displayName": "",
+      "id": "9f3d2",
+      "name": "BT5_Food_Pork.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9c2b9": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@9c2b9",
+      "displayName": "",
+      "id": "9c2b9",
+      "name": "BT6_EggJelly.001.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "499fd": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@499fd",
+      "displayName": "",
+      "id": "499fd",
+      "name": "BT6_EggCutYolk.001.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fcda8": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@fcda8",
+      "displayName": "",
+      "id": "fcda8",
+      "name": "BT6_SoftPumpkin.001.material",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c22be": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@c22be",
+      "displayName": "",
+      "id": "c22be",
+      "name": "BT5_Food_Vegetable.material",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "02f7a": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@02f7a",
+      "displayName": "",
+      "id": "02f7a",
+      "name": "BT5_LeafVein.material",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "931c7": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@931c7",
+      "displayName": "",
+      "id": "931c7",
+      "name": "BT5_Food_Shrimp.material",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "737a7": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@737a7",
+      "displayName": "",
+      "id": "737a7",
+      "name": "BT5_Food_Beef.material",
+      "userData": {
+        "gltfIndex": 9
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59ce": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@e59ce",
+      "displayName": "",
+      "id": "e59ce",
+      "name": "BT5_Food_RedBean.material",
+      "userData": {
+        "gltfIndex": 10
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "810c5": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@810c5",
+      "displayName": "",
+      "id": "810c5",
+      "name": "BT5_Food_Sesame.material",
+      "userData": {
+        "gltfIndex": 11
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "018e8": {
+      "importer": "gltf-material",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@018e8",
+      "displayName": "",
+      "id": "018e8",
+      "name": "BT5_Food_Chicken.material",
+      "userData": {
+        "gltfIndex": 12
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7dacb": {
+      "importer": "gltf-scene",
+      "uuid": "b24317b9-6605-4392-a10b-a07721ea16c9@7dacb",
+      "displayName": "",
+      "id": "7dacb",
+      "name": "FOOD_BaseGarnish.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "BT5_Food_Millet_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@2e232"
+      },
+      {
+        "name": "BT5_Food_Millet_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@157f9"
+      },
+      {
+        "name": "BT5_Food_Pork_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@2c691"
+      },
+      {
+        "name": "BT5_Food_Pork_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@62cff"
+      },
+      {
+        "name": "BT6_EggJelly_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@36a4c"
+      },
+      {
+        "name": "BT6_EggJelly_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@49dc3"
+      },
+      {
+        "name": "BT6_EggCutYolk_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@41766"
+      },
+      {
+        "name": "BT6_EggCutYolk_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@045f2"
+      },
+      {
+        "name": "BT6_SoftPumpkin_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@e9ae0"
+      },
+      {
+        "name": "BT6_SoftPumpkin_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@cf206"
+      },
+      {
+        "name": "BT5_Food_Vegetable_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@b91f3"
+      },
+      {
+        "name": "BT5_Food_Vegetable_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@e8e7a"
+      },
+      {
+        "name": "BT5_LeafVein_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@bcde4"
+      },
+      {
+        "name": "BT5_LeafVein_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@44d71"
+      },
+      {
+        "name": "BT5_Food_Shrimp_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@d8c77"
+      },
+      {
+        "name": "BT5_Food_Shrimp_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@bf322"
+      },
+      {
+        "name": "BT5_Food_Fish_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@23efd"
+      },
+      {
+        "name": "BT5_Food_Fish_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@8c51c"
+      },
+      {
+        "name": "BT5_Food_Beef_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@459c6"
+      },
+      {
+        "name": "BT5_Food_Beef_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@9767e"
+      },
+      {
+        "name": "BT5_Food_RedBean_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@60cfd"
+      },
+      {
+        "name": "BT5_Food_RedBean_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@54faa"
+      },
+      {
+        "name": "BT5_Food_Sesame_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@db9a0"
+      },
+      {
+        "name": "BT5_Food_Sesame_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@246b8"
+      },
+      {
+        "name": "BT5_Food_Chicken_Normal",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@b5034"
+      },
+      {
+        "name": "BT5_Food_Chicken_Base",
+        "uri": "b24317b9-6605-4392-a10b-a07721ea16c9@96902"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "b24317b9-6605-4392-a10b-a07721ea16c9@6ec37",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@574d6",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@6ddd4",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@7c166",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@c09cb",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@44999",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@002ad",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@6593d",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@36d30",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@c56b5",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@25439"
+      ],
+      "skeletons": [],
+      "textures": [
+        "b24317b9-6605-4392-a10b-a07721ea16c9@3effa",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@221a5",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@0089c",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@9b633",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@9b782",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@50743",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@99ea5",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@006bd",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@531b0",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@9c3d2",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@f7e17",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@a2905",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@55257",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@809d9",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@b4841",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@3c999",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@10486",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@d4524",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@d932b",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@98962",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@14738",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@0c93e",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@50f7f",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@d0968",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@0dd94",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@bcb27"
+      ],
+      "materials": [
+        "b24317b9-6605-4392-a10b-a07721ea16c9@67edf",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@9f3d2",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@9c2b9",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@499fd",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@fcda8",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@c22be",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@02f7a",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@931c7",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@57777",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@737a7",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@e59ce",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@810c5",
+        "b24317b9-6605-4392-a10b-a07721ea16c9@018e8"
+      ],
+      "scenes": [
+        "b24317b9-6605-4392-a10b-a07721ea16c9@7dacb"
+      ]
+    }
+  }
+}

@@ -76,11 +76,11 @@ MAT_SOUP = stable_uuid('mat:M_Soup')
 STANDARD_EFFECT = 'c8f66d17-351a-48da-a12c-0212d28575c4'
 TRANSPARENT_EFFECT = '1baf0fc9-befa-459c-8bdd-af1a450a0319'
 
-def material(name, uid, effect, tech, props, passes):
+def material(name, uid, effect, tech, props, passes, defines=None):
     write_json(f'assets/materials/{name}.mtl', {
         '__type__': 'cc.Material', '_name': '', '_objFlags': 0, '_native': '',
         '_effectAsset': {'__uuid__': effect}, '_techIdx': tech,
-        '_defines': [{} for _ in range(passes)],
+        '_defines': [dict(defines or {})] + [{} for _ in range(passes - 1)],
         '_states': [{'blendState': {'targets': [{}]}, 'depthStencilState': {}, 'rasterizerState': {}} for _ in range(passes)],
         '_props': [props] + [{} for _ in range(passes - 1)],
     })
@@ -92,7 +92,20 @@ def color(hexs, a=255):
 
 material('M_Matte', MAT_MATTE, STANDARD_EFFECT, 0, {'mainColor': color('#FFFFFF'), 'roughness': 0.85, 'metallic': 0.0}, 1)
 material('M_Steam', MAT_STEAM, TRANSPARENT_EFFECT, 1, {'mainColor': color('#FFFFFF', 140), 'roughness': 1.0, 'metallic': 0.0}, 3)
-material('M_Soup', MAT_SOUP, STANDARD_EFFECT, 0, {'mainColor': color('#FFFFFF'), 'roughness': 0.38, 'metallic': 0.0, 'emissive': color('#4A4236'), 'emissiveScale': {'__type__': 'cc.Vec3', 'x': 1, 'y': 1, 'z': 1}}, 1)
+# 粥面：熬开的米粒贴图 + 法线（美术源文件/正式物件/tex_v2 的 Congee_A），颜色由 PotView 按熟度乘上去；
+# 只留一点点自发光，免得在暗处发灰，但不再像一块白板
+CONGEE_TEX = '1c6e8745-10d1-405c-a3db-ab9d9bb76b0c@6c48a'
+CONGEE_NRM = 'c00f1fbc-366c-4dba-b263-bb96447be38a@3c318'
+material('M_Soup', MAT_SOUP, STANDARD_EFFECT, 0, {'mainColor': color('#FFFFFF'), 'roughness': 0.42, 'metallic': 0.0,
+         'mainTexture': {'__uuid__': CONGEE_TEX, '__expectedType__': 'cc.Texture2D'},
+         'normalMap': {'__uuid__': CONGEE_NRM, '__expectedType__': 'cc.Texture2D'}, 'normalStrength': 0.8,
+         'tilingOffset': {'__type__': 'cc.Vec4', 'x': 2, 'y': 2, 'z': 0, 'w': 0},
+         'albedoScale': {'__type__': 'cc.Vec3', 'x': 1.14, 'y': 1.2, 'z': 1.36},
+         'emissive': color('#42392D'), 'emissiveScale': {'__type__': 'cc.Vec3', 'x': 1, 'y': 1, 'z': 1}}, 1,
+         defines={'USE_ALBEDO_MAP': True, 'USE_NORMAL_MAP': True})
+# 粥面上的配料（鸡丝、青菜、肉末）：纯色，PotView 按食材上色
+MAT_GARNISH = stable_uuid('mat:M_Garnish')
+material('M_Garnish', MAT_GARNISH, STANDARD_EFFECT, 0, {'mainColor': color('#FFFFFF'), 'roughness': 0.5, 'metallic': 0.0, 'emissive': color('#221C14'), 'emissiveScale': {'__type__': 'cc.Vec3', 'x': 1, 'y': 1, 'z': 1}}, 1)
 material('M_Glow', MAT_GLOW, STANDARD_EFFECT, 0, {'mainColor': color('#FFFFFF'), 'roughness': 1.0, 'metallic': 0.0, 'emissive': color('#FF9A3C'), 'emissiveScale': {'__type__': 'cc.Vec3', 'x': 1, 'y': 1, 'z': 1}}, 1)
 
 # ───────────── 节点与组件构建 ─────────────
@@ -324,6 +337,15 @@ def list_node(name, w, h, pos, kind=2, spacing=6, cols=0, cell=None, ax=0.5, ay=
     """列表容器：kind 1 横排 2 竖排 3 网格。默认锚在顶部向下长。"""
     return N(name, pos=pos, comps=[ui_transform(w, h, ax, ay), layout(kind, spacing, 0, cols, cell, spacing_y=spacing_y)])
 
+def scroll_list(name, w, h, pos, spacing=3):
+    """可滚动的竖排列表：外层裁切 + ScrollView，内层 Content 随行数长高（鼠标滚轮、拖动都能滚）。返回 (外层, Content)。"""
+    view = N(name, pos=pos, comps=[ui_transform(w, h, 0.5, 1), C('cc.Graphics'),
+                                    C('cc.Mask', _type=0, _inverted=False, _segments=64, _alphaThreshold=0.1)])
+    content = view.child(N('Content', comps=[ui_transform(w, h, 0.5, 1), layout(2, spacing)]))
+    view.add(C('cc.ScrollView', bounceDuration=0.23, brake=0.75, elastic=True, inertia=True, horizontal=False, vertical=True,
+               cancelInnerEvents=True, scrollEvents=[], _content=content, _horizontalScrollBar=None, _verticalScrollBar=None))
+    return view, content
+
 def placed(node, pos):
     node.pos = pos
     return node
@@ -417,7 +439,7 @@ def modal_root(name):
 # ───────────── 部件预制体 ─────────────
 BUTTON = save_prefab('prefabs/ui/parts/UiButton', button('UiButton', '按钮', 146, 44, kind='ceramic', sub=True))
 
-def list_row(name='ListRow', w=560, h=52):
+def list_row(name='ListRow', w=560, h=52, secondary=True):
     n = N(name)
     small = h < 44
     for c in rect_comps(w, h, '#EEE2C9', radius=11, stroke=LINE, stroke_w=1, edge=3, edge_col='#C7B693'):
@@ -425,15 +447,21 @@ def list_row(name='ListRow', w=560, h=52):
     sw = n.child(box('Swatch', 6, h - 20, WOOD, pos=(-w / 2 + 12, 0, 0), radius=3))
     title = n.child(label('Title', '名称', 13 if small else 14, INK, w * 0.5, 18, pos=(-w / 2 + 24, 7 if small else 9, 0), align=0, ax=0, overflow=2, wrap=False, bold=True))
     detail = n.child(label('Detail', '', 10 if small else 11, '#8B7858', w * 0.56, 14, pos=(-w / 2 + 24, -8 if small else -11, 0), align=0, ax=0, overflow=2, wrap=False))
-    info = n.child(label('Info', '', 13, '#52472F', 130, 20, pos=(w / 2 - 158, 0, 0), align=2, ax=1, overflow=2, wrap=False, font=NUMFONT))
+    # 没有副按钮的窄行：右侧信息贴着主按钮，说明文字也收窄，免得和信息叠在一起
+    info_x = w / 2 - 158 if secondary else w / 2 - 96
+    if not secondary:
+        detail.get('cc.Label').fields['_overflow'] = 2
+        detail.comps[0].fields['_contentSize']['width'] = w - 150
+        title.comps[0].fields['_contentSize']['width'] = w - 150
+    info = n.child(label('Info', '', 13, '#52472F', 110 if not secondary else 130, 20, pos=(info_x, 9 if not secondary else 0, 0), align=2, ax=1, overflow=2, wrap=False, font=NUMFONT))
     bh = 26 if small else 32
-    sec = n.child(button('Secondary', '+4', 54, bh, pos=(w / 2 - 128, 0, 0), kind='ceramic', size=12 if small else 13))
+    sec = n.child(button('Secondary', '+4', 54, bh, pos=(w / 2 - 128, 0, 0), kind='ceramic', size=12 if small else 13)) if secondary else None
     pri = n.child(button('Primary', '+1', 76, bh, pos=(w / 2 - 50, 0, 0), kind='jade', size=12 if small else 13))
     n.add(C(cls('ListRow'), title=title.get('cc.Label'), detail=detail.get('cc.Label'), info=info.get('cc.Label'),
-            swatch=sw.get(cls('RoundRect')), primary=pri.get(cls('UiButton')), secondary=sec.get(cls('UiButton'))))
+            swatch=sw.get(cls('RoundRect')), primary=pri.get(cls('UiButton')), secondary=sec.get(cls('UiButton')) if sec else None))
     return n
 ROW = save_prefab('prefabs/ui/parts/ListRow', list_row())
-save_prefab('prefabs/ui/parts/ListRowNarrow', list_row('ListRowNarrow', 400, 58))
+save_prefab('prefabs/ui/parts/ListRowNarrow', list_row('ListRowNarrow', 340, 58, secondary=False))
 save_prefab('prefabs/ui/parts/ListRowCompact', list_row('ListRowCompact', 560, 36))
 
 def bill_row():
@@ -448,6 +476,18 @@ def bill_row():
     n.add(C(cls('ListRow'), title=title.get('cc.Label'), detail=None, info=info.get('cc.Label'), swatch=None, primary=None, secondary=None))
     return n
 save_prefab('prefabs/ui/parts/BillRow', bill_row())
+
+def skill_row():
+    """打烊页「粥谱熟练」的一行：粥名、档位、档内进度条、今天的变化。"""
+    w = 256
+    n = N('SkillRow', comps=[ui_transform(w, 44)])
+    title = n.child(label('Title', '白粥', 13, INK, 120, 18, pos=(-w / 2, 9, 0), align=0, ax=0, overflow=2, wrap=False, bold=True))
+    tier = n.child(label('Tier', '顺手 12/20', 11, '#7E6B4D', 120, 16, pos=(w / 2 - 44, 9, 0), align=2, ax=1, overflow=2, wrap=False))
+    delta = n.child(label('Delta', '+4', 13, '#7E6B4D', 40, 18, pos=(w / 2, 9, 0), align=2, ax=1, overflow=2, wrap=False, font=NUMFONT, bold=True))
+    b = n.child(bar('Bar', w, 5, (0, -10, 0), track='#D9CCB0', fill='#C59651'))
+    n.add(C(cls('SkillRow'), title=title.get('cc.Label'), tier=tier.get('cc.Label'), delta=delta.get('cc.Label'), bar=b.get(cls('UiBar'))))
+    return n
+save_prefab('prefabs/ui/parts/SkillRow', skill_row())
 
 def order_row():
     """订单卡（设计稿 .order）：头像、姓名、粥、口味要求、右上「在做」、底部耐心条。"""
@@ -519,6 +559,27 @@ def pot_pin():
     return n
 save_prefab('prefabs/ui/parts/PotPin', pot_pin())
 
+def float_text():
+    """送达时浮起的「+36」（HudFx 用）。"""
+    n = N('FloatText', comps=[ui_transform(300, 38), C('cc.UIOpacity', _opacity=255)])
+    lab = n.child(label('Label', '+36', 26, '#FFE3A3', 300, 38, font=NUMFONT, bold=True, overflow=2, wrap=False, shadow=('#0B1C1E', 220)))
+    # 深色描边：落在暗色墙面、木台上都看得清
+    lab.get('cc.Label').fields.update(_enableOutline=True, _outlineColor=color('#3A2412', 235), _outlineWidth=3)
+    return n
+save_prefab('prefabs/ui/parts/FloatText', float_text())
+
+def guest_bubble():
+    """客人头顶的小气泡：粥名 + 耐心条，或一句反应。锚点在气泡尾巴尖上。"""
+    n = N('GuestBubble', comps=[ui_transform(120, 44, 0.5, 0), C('cc.UIOpacity', _opacity=255)])
+    plate = n.child(N('Plate', pos=(0, 30, 0), comps=rect_comps(110, 40, '#F7EEDA', radius=14, stroke=('#2F4A45', 255), stroke_w=1,
+                                                              shadow=5, shadow_col=('#0D2124', 80))))
+    tail = n.child(N('Tail', pos=(0, 9, 0), euler=(0, 0, 45), comps=rect_comps(10, 10, '#F7EEDA', radius=2)))
+    text = plate.child(label('Text', '鸡丝粥', 13, '#2F4A45', 160, 18, pos=(0, 6, 0), bold=True, overflow=2, wrap=False))
+    pat = plate.child(bar('Patience', 86, 4, (0, -10, 0), track=('#D8CBB0', 255), fill='#5F8F6A'))
+    n.add(C(cls('GuestBubble'), plate=plate.get(cls('RoundRect')), text=text.get('cc.Label'), patience=pat.get(cls('UiBar')), tail=tail))
+    return n
+save_prefab('prefabs/ui/parts/GuestBubble', guest_bubble())
+
 def recipe_tile():
     w, h = 168, 124
     n = N('RecipeTile')
@@ -534,6 +595,20 @@ def recipe_tile():
             detail=detail.get('cc.Label'), price=price.get('cc.Label'), mark=mark.get('cc.Label')))
     return n
 save_prefab('prefabs/ui/parts/RecipeTile', recipe_tile())
+
+def milestone_tile():
+    """小店手账的一页（文档 30 §4）：名称、条件与进度，记下的右上角一枚红章。"""
+    w, h = 168, 52
+    n = N('MilestoneTile')
+    for c in rect_comps(w, h, '#E8DCC2', radius=10, stroke=('#CDBB97', 255), stroke_w=1):
+        n.add(c)
+    title = n.child(label('Title', '头一碗刚好', 12, INK, w - 40, 16, pos=(-w / 2 + 10, 10, 0), align=0, ax=0, bold=True, overflow=2, wrap=False))
+    line = n.child(label('Line', '熬出第一碗「刚好」 0/1', 9, '#8F7B57', w - 16, 26, pos=(-w / 2 + 10, -9, 0), align=0, ax=0, overflow=2))
+    stamp = n.child(box('Stamp', 26, 26, ('#000000', 0), pos=(w / 2 - 18, 10, 0), radius=13, stroke=('#B54A35', 255), stroke_w=2))
+    stamp.child(label('Seal', '记', 13, '#B54A35', 26, 26, font=DISPLAY, bold=True))
+    n.add(C(cls('MilestoneTile'), card=n.get(cls('RoundRect')), title=title.get('cc.Label'), line=line.get('cc.Label'), stamp=stamp))
+    return n
+save_prefab('prefabs/ui/parts/MilestoneTile', milestone_tile())
 
 def guest_tile():
     w, h = 168, 196
@@ -600,16 +675,20 @@ def morning_panel():
     c.child(label('Eyebrow', '清 晨 · 进 货 与 菜 单', 11, '#A48451', 400, 18, pos=(0, 298, 0)))
     header = c.child(label('Header', '第 1 日 · 清晨', 24, INK, 1000, 34, pos=(0, 272, 0), font=DISPLAY, bold=True, spacing=2, overflow=2, wrap=False))
     c.child(label('BuyTitle', '进货 · 今天到货，满新鲜', 13, WOOD, 560, 20, pos=(-300, 240, 0), align=0, font=DISPLAY))
-    ing = c.child(list_node('Ingredients', 560, 470, (-300, 226, 0), spacing=3))
+    # 时令粥加进来后最多 16 行，超出卡片时可以滚动
+    ing_view, ing = scroll_list('Ingredients', 560, 466, (-300, 226, 0), spacing=3)
+    c.child(ing_view)
     c.child(label('MenuTitle', '今日菜单', 13, WOOD, 560, 20, pos=(300, 240, 0), align=0, font=DISPLAY))
-    rec = c.child(list_node('Recipes', 560, 470, (300, 226, 0), spacing=3))
-    notice = c.child(label('Notice', '', 12, '#8A7858', 560, 44, pos=(-300, -288, 0), align=0, overflow=2))
+    rec_view, rec = scroll_list('Recipes', 560, 456, (300, 226, 0), spacing=3)
+    c.child(rec_view)
+    notice = c.child(label('Notice', '', 11, '#8A7858', 560, 52, pos=(-300, -290, 0), align=0, overflow=2))
+    goals = c.child(label('Goals', '', 11, '#326B5B', 1120, 18, pos=(0, -256, 0), overflow=2, wrap=False, spacing=1))
     row = c.child(list_node('Buttons', 600, 50, (290, -288, 0), kind=1, spacing=10, ay=0.5))
     title = row.child(button('Title', '回标题', 100, 44, kind='quiet', ic='back'))
     prac = row.child(button('Practice', '练手', 100, 44, kind='ceramic', ic='spoon'))
     dec = row.child(button('Decor', '布置', 100, 44, kind='ceramic', ic='lamp'))
     start = row.child(button('Start', '开始备料', 190, 50, kind='jade', size=16, ic='knife', text_font=DISPLAY, bold=True))
-    n.add(C(cls('MorningPanel'), header=header.get('cc.Label'), notice=notice.get('cc.Label'), ingredientList=ing, recipeList=rec,
+    n.add(C(cls('MorningPanel'), header=header.get('cc.Label'), notice=notice.get('cc.Label'), goals=goals.get('cc.Label'), ingredientList=ing, recipeList=rec,
             rowPrefab=prefab_ref('prefabs/ui/parts/ListRowCompact'), startButton=start.get(cls('UiButton')), decorButton=dec.get(cls('UiButton')),
             practiceButton=prac.get(cls('UiButton')), titleButton=title.get(cls('UiButton'))))
     return n
@@ -621,6 +700,7 @@ def hud():
     n.child(N('ShadeTop', pos=(0, 330, 0), comps=rect_comps(1280, 60, ('#0D2929', 60), radius=0) + [widget(W_TOP | W_LEFT | W_RIGHT)]))
     n.child(N('ShadeBottom', pos=(0, -320, 0), comps=rect_comps(1280, 80, ('#122927', 90), radius=0) + [widget(W_BOT | W_LEFT | W_RIGHT)]))
     pins = n.child(N('Pins', comps=[ui_transform(1280, 720), widget(FULL)]))
+    bubbles = n.child(N('Bubbles', comps=[ui_transform(1280, 720), widget(FULL)]))
 
     # 左上店名
     b = brand(n, (-618, 342, 0))
@@ -765,7 +845,37 @@ def hud():
     tip = cp.child(label('Tip', '米已开花，趁现在把鸡丝下锅。', 11, '#8C795C', 560, 18, pos=(-20, -80, 0), overflow=2, wrap=False, spacing=1))
     crec = cp.child(list_node('Recipes', 710, 160, (0, 46, 0), kind=3, spacing=8, cols=5, cell=(134, 44)))
 
+    # 每日小目标：日子牌右边的小签，点开看三件；左上（工具栏右侧）展开清单
+    gchip = n.child(button('GoalChip', '小目标 0/3', 128, 32, pos=(206, 318, 0), kind='small', ic='star', size=11, icon_size=13))
+    gchip.add(widget(W_TOP | W_CENTER, top=30, hc=212))
+    gpanel = n.child(ceramic('GoalPanel', 320, 158, pos=(-384, 190, 0), radius=15, edge=5, ax=0, ay=1))
+    gpanel.add(widget(W_TOP | W_LEFT, top=112, left=96))
+    gpanel.child(label('Eyebrow', '今 日 小 目 标', 10, '#A48451', 200, 16, pos=(16, -16, 0), align=0, ax=0, spacing=1))
+    glabels, gvalues, gicons = [], [], []
+    for i in range(3):
+        y = -44 - i * 30
+        gicons.append(gpanel.child(icon(f'Icon{i}', 'star', 16, '#C59651', pos=(26, y, 0))))
+        glabels.append(gpanel.child(label(f'Goal{i}', '卖出 6 碗粥', 12, INK, 190, 18, pos=(42, y, 0), align=0, ax=0, overflow=2, wrap=False)))
+        gvalues.append(gpanel.child(label(f'Value{i}', '2/6  +12', 11, '#7E6B4D', 90, 18, pos=(306, y, 0), align=2, ax=1, font=NUMFONT, overflow=2, wrap=False)))
+    # 本章进度（文档 30）：清单最下面一行
+    gchapter = gpanel.child(label('Chapter', '', 10, '#6E7A5E', 296, 16, pos=(16, -138, 0), align=0, ax=0, overflow=2, wrap=False))
+    gpanel.active = False
+
+    # 手感反馈：浮字层 + 结果章（HudFx）
+    floats = n.child(N('Floats', comps=[ui_transform(1280, 720), widget(FULL)]))
+    stamp = n.child(N('Stamp', pos=(0, 150, 0), comps=[ui_transform(180, 72), C('cc.UIOpacity', _opacity=255)]))
+    ring = stamp.child(box('Ring', 176, 68, ('#F7EEDA', 235), radius=16, stroke=('#326B5B', 255), stroke_w=3, shadow=8, shadow_col=('#0D2124', 90)))
+    stitle = stamp.child(label('Title', '刚好', 26, '#326B5B', 170, 34, pos=(0, 9, 0), font=DISPLAY, bold=True, spacing=4, overflow=2, wrap=False))
+    ssub = stamp.child(label('Sub', '92 分', 11, '#7E6B4D', 170, 16, pos=(0, -19, 0), overflow=2, wrap=False, spacing=1))
+    stamp.active = False
+    n.add(C(cls('HudFx'), floatRoot=floats, floatPrefab=prefab_ref('prefabs/ui/parts/FloatText'), stamp=stamp,
+            stampRing=ring.get(cls('RoundRect')), stampTitle=stitle.get('cc.Label'), stampSub=ssub.get('cc.Label')))
+
     n.add(C(cls('HudView'),
+            goalChip=gchip.get(cls('UiButton')), goalPanel=gpanel, goalLabels=[l.get('cc.Label') for l in glabels],
+            goalValues=[v.get('cc.Label') for v in gvalues], goalIcons=[ic.get(cls('UiIcon')) for ic in gicons], fx=n.get(cls('HudFx')),
+            chapterLabel=gchapter.get('cc.Label'),
+            bubbleRoot=bubbles, bubblePrefab=prefab_ref('prefabs/ui/parts/GuestBubble'), bubbleHeight=1.75,
             dayNumber=num.get('cc.Label'), dayTitle=dtitle.get('cc.Label'), daySub=dsub.get('cc.Label'), openDot=dot.get(cls('RoundRect')),
             walletLabel=wv.get('cc.Label'), walletToday=wt.get('cc.Label'),
             tools=tools, shopTool=shop_t.get(cls('UiButton')), bookTool=book_t.get(cls('UiButton')), decorTool=deco_t.get(cls('UiButton')),
@@ -792,7 +902,7 @@ def hud():
 
 def report_panel():
     n = modal_root('ReportPanel')
-    c = n.child(ceramic('Bill', 600, 620, pos=(-200, 0, 0), radius=23, edge=8))
+    c = n.child(ceramic('Bill', 580, 620, pos=(-340, 0, 0), radius=23, edge=8))
     stamp = c.child(box('Stamp', 56, 56, ('#000000', 0), pos=(0, 266, 0), radius=28, stroke=('#A1AD85', 255), stroke_w=2))
     stamp.child(box('Inner', 46, 46, ('#000000', 0), radius=23, stroke=('#A1AD85', 110), stroke_w=1))
     stamp.child(icon('Icon', 'bowl', 28, '#6D855E'))
@@ -812,17 +922,28 @@ def report_panel():
     dbtn = row.child(button('Decor', '布置', 92, 42, kind='ceramic', ic='lamp', size=13))
     nbtn = row.child(button('Next', '歇一晚，明早开张', 196, 46, kind='jade', ic='sun', size=14, text_font=DISPLAY, bold=True))
     share = c.child(button('Share', '留下这张', 104, 32, pos=(226, 268, 0), kind='quiet', ic='image', size=12, icon_size=15))
-    up = n.child(ceramic('Upgrades', 430, 560, pos=(330, 0, 0), radius=20, edge=6))
+    # 中间：粥谱熟练（文档 10 §7 打烊页三列：今日账、粥谱熟练、可购买）
+    sk = n.child(ceramic('Skill', 290, 560, pos=(105, 0, 0), radius=20, edge=6))
+    sk.child(label('Eyebrow', '厨 艺 · 越 熬 越 顺 手', 11, '#A48451', 260, 18, pos=(0, 250, 0)))
+    sk.child(label('Title', '粥谱熟练', 22, INK, 260, 30, pos=(0, 222, 0), font=DISPLAY, bold=True, spacing=3))
+    slist = sk.child(list_node('List', 256, 360, (0, 192, 0), spacing=8))
+    sempty = sk.child(label('Empty', '今天没有出餐，熟练没变。', 12, '#8D7A59', 250, 20, pos=(0, 150, 0)))
+    snote = sk.child(label('Note', '', 11, '#6E7A5E', 256, 76, pos=(0, -226, 0), overflow=2))
+    up = n.child(ceramic('Upgrades', 370, 560, pos=(445, 0, 0), radius=20, edge=6))
     up.child(label('Eyebrow', '添 置 · 明 日 生 效', 11, '#A48451', 300, 18, pos=(0, 250, 0)))
     up.child(label('Title', '明日添置', 22, INK, 300, 30, pos=(0, 222, 0), font=DISPLAY, bold=True, spacing=3))
-    ulist = up.child(list_node('List', 400, 440, (0, 192, 0), spacing=8))
-    uempty = up.child(label('Empty', '能添的都添齐了。', 12, '#8D7A59', 360, 20, pos=(0, 120, 0)))
+    ulist = up.child(list_node('List', 340, 440, (0, 192, 0), spacing=8))
+    uempty = up.child(label('Empty', '能添的都添齐了。', 12, '#8D7A59', 330, 20, pos=(0, 120, 0)))
+    # 右栏下方：请托、手账、章节进度（文档 30）
+    unote = up.child(label('LongNote', '', 11, '#6E7A5E', 330, 120, pos=(0, -205, 0), overflow=2))
     n.add(C(cls('ReportPanel'), eyebrow=eye.get('cc.Label'), title=title.get('cc.Label'), intro=intro.get('cc.Label'),
             stars=[s.get(cls('UiIcon')) for s in stars], rows=rows, billRowPrefab=prefab_ref('prefabs/ui/parts/BillRow'),
             totalLabel=tl.get('cc.Label'), totalValue=tv.get('cc.Label'), footnote=foot.get('cc.Label'),
             upgradeList=ulist, rowPrefab=prefab_ref('prefabs/ui/parts/ListRowNarrow'), upgradeEmpty=uempty.get('cc.Label'),
             nextButton=nbtn.get(cls('UiButton')), decorButton=dbtn.get(cls('UiButton')), storyButton=sbtn.get(cls('UiButton')),
-            titleButton=tbtn.get(cls('UiButton')), shareButton=share.get(cls('UiButton'))))
+            titleButton=tbtn.get(cls('UiButton')), shareButton=share.get(cls('UiButton')),
+            skillList=slist, skillRowPrefab=prefab_ref('prefabs/ui/parts/SkillRow'), skillEmpty=sempty.get('cc.Label'), skillNote=snote.get('cc.Label'),
+            longNote=unote.get('cc.Label')))
     return n
 
 def decor_panel():
@@ -872,7 +993,8 @@ def practice_panel():
     c = n.child(ceramic('Card', 700, 600, radius=23, edge=8))
     dialog_head(c, 300, '不 计 铜 钱', '练练手', None)
     header = c.child(label('Header', '练习', 12, '#8D7A59', 640, 22, pos=(0, 204, 0), overflow=2))
-    lst = c.child(list_node('List', 560, 420, (0, 182, 0), spacing=3))
+    lst_view, lst = scroll_list('List', 560, 420, (0, 182, 0), spacing=3)
+    c.child(lst_view)
     close = c.child(button('Close', '返回', 160, 44, pos=(0, -256, 0), kind='quiet', ic='back', size=14))
     n.add(C(cls('PracticePanel'), header=header.get('cc.Label'), list=lst, rowPrefab=prefab_ref('prefabs/ui/parts/ListRowCompact'),
             closeButton=close.get(cls('UiButton'))))
@@ -883,16 +1005,21 @@ def recipe_book_panel():
     c = n.child(ceramic('Card', 780, 600, radius=23, edge=8))
     _, title, intro = dialog_head(c, 300, '一 碗 一 味 · 慢 慢 点 亮', '小店粥谱', '', 700)
     close = c.child(close_button((352, 262, 0)))
-    tabs = c.child(list_node('Tabs', 170, 32, (-354, 262, 0), kind=1, spacing=8, ax=0, ay=0.5))
+    tabs = c.child(list_node('Tabs', 256, 32, (-354, 262, 0), kind=1, spacing=8, ax=0, ay=0.5))
     t1 = tabs.child(button('RecipesTab', '粥谱', 78, 30, kind='tab', ic='book', size=12, icon_size=14))
     t2 = tabs.child(button('GuestsTab', '街坊', 78, 30, kind='tab', ic='heart', size=12, icon_size=14))
+    t3 = tabs.child(button('NotebookTab', '手账', 78, 30, kind='tab', ic='star', size=12, icon_size=14))
     grid = c.child(list_node('Grid', 708, 410, (0, 182, 0), kind=3, spacing=10, cols=4, cell=(168, 124)))
     ggrid = c.child(list_node('GuestGrid', 708, 410, (0, 182, 0), kind=3, spacing=10, cols=4, cell=(168, 196)))
     ggrid.active = False
+    # 小店手账：27 页，4 列 7 行
+    ngrid = c.child(list_node('NotebookGrid', 708, 410, (0, 182, 0), kind=3, spacing=6, cols=4, cell=(168, 52)))
+    ngrid.active = False
     foot = c.child(label('Foot', '', 11, '#8A7858', 700, 18, pos=(0, -270, 0)))
     n.add(C(cls('RecipeBookPanel'), title=title.get('cc.Label'), intro=intro.get('cc.Label'), recipesTab=t1.get(cls('UiButton')),
             guestsTab=t2.get(cls('UiButton')), grid=grid, tilePrefab=prefab_ref('prefabs/ui/parts/RecipeTile'),
             guestGrid=ggrid, guestTilePrefab=prefab_ref('prefabs/ui/parts/GuestTile'),
+            notebookTab=t3.get(cls('UiButton')), notebookGrid=ngrid, milestoneTilePrefab=prefab_ref('prefabs/ui/parts/MilestoneTile'),
             foot=foot.get('cc.Label'), closeButton=close.get(cls('UiButton'))))
     return n
 
@@ -934,7 +1061,7 @@ save_prefab('prefabs/ui/LightPanel', light_panel())
 def chapter_panel():
     n = modal_root('ChapterPanel')
     c = n.child(ceramic('Card', 640, 600, radius=23, edge=8))
-    c.child(label('Eyebrow', '第 一 章 · 七 日 开 张', 11, '#A48451', 400, 18, pos=(0, 272, 0)))
+    eyebrow = c.child(label('Eyebrow', '第 一 章 · 七 日 开 张', 11, '#A48451', 400, 18, pos=(0, 272, 0)))
     title = c.child(label('Title', '一碗招牌，立住了铺子', 26, INK, 580, 38, pos=(0, 242, 0), font=DISPLAY, bold=True, spacing=3))
     intro = c.child(label('Intro', '', 12, '#8D7A59', 560, 20, pos=(0, 212, 0)))
     days = c.child(list_node('Days', 540, 250, (0, 192, 0), spacing=2))
@@ -944,7 +1071,7 @@ def chapter_panel():
     stats = c.child(label('Stats', '', 12, '#7E6B4D', 540, 18, pos=(0, -138, 0)))
     endless = c.child(label('Endless', '', 12, '#8A7858', 520, 40, pos=(0, -180, 0), overflow=2))
     close = c.child(button('Close', '接着经营', 220, 48, pos=(0, -240, 0), kind='jade', ic='door', size=15, text_font=DISPLAY, bold=True))
-    n.add(C(cls('ChapterPanel'), title=title.get('cc.Label'), intro=intro.get('cc.Label'), dayList=days,
+    n.add(C(cls('ChapterPanel'), eyebrow=eyebrow.get('cc.Label'), title=title.get('cc.Label'), intro=intro.get('cc.Label'), dayList=days,
             rowPrefab=prefab_ref('prefabs/ui/parts/BillRow'), seal=seal.get(cls('UiIcon')), signature=sig.get('cc.Label'),
             stats=stats.get('cc.Label'), endless=endless.get('cc.Label'), closeButton=close.get(cls('UiButton'))))
     return n
@@ -999,17 +1126,17 @@ def pot_node(i):
         rr_ = 0.06 + rnd.random() * 0.22
         long_ = k % 2 == 0
         garnish.child(mesh(f'G{k}', 'box' if long_ else 'sphere', pos=(math.cos(a) * rr_, 0.0, math.sin(a) * rr_),
-                           euler=(0, rnd.random() * 180, 0), scale=(0.16, 0.014, 0.035) if long_ else (0.06, 0.016, 0.05), mat=MAT_SOUP, tint='#E8D2A8', shadow=False))
+                           euler=(0, rnd.random() * 180, 0), scale=(0.16, 0.014, 0.035) if long_ else (0.06, 0.016, 0.05), mat=MAT_GARNISH, tint='#E8D2A8', shadow=False))
     flame = root.child(group('Flame', pos=(0, -0.3, 0.44)))
     for j, x in enumerate([-0.1, 0, 0.1]):
         flame.child(mesh(f'Tongue{j}', 'cone', pos=(x, 0.05, 0), scale=(0.08, 0.12, 0.08), mat=MAT_GLOW, tint='#FFB040', shadow=False))
     st = root.child(steam())
     st.pos = (0, 0.6, 0)
-    # 提醒圈：锅沿上一圈小珠子（该搅了亮暖黄，快糊了变砖红）
+    # 提醒圈：锅沿内侧一圈细小光点（该搅了亮暖黄，快糊了变砖红），PotView 让它呼吸闪动
     ring = root.child(group('Ring', pos=(0, 0.6, 0)))
-    for k in range(18):
-        a = k / 18 * math.pi * 2
-        ring.child(mesh(f'Bead{k}', 'sphere', pos=(math.cos(a) * 0.4, 0, math.sin(a) * 0.4), scale=(0.05, 0.05, 0.05), mat=MAT_GLOW, tint='#E39B3A', shadow=False))
+    for k in range(36):
+        a = k / 36 * math.pi * 2
+        ring.child(mesh(f'Bead{k}', 'sphere', pos=(math.cos(a) * 0.362, 0, math.sin(a) * 0.362), scale=(0.024, 0.014, 0.024), mat=MAT_GLOW, tint='#E39B3A', shadow=False))
     ring.active = False
     focus = root.child(mesh('FocusMark', 'cylinder', pos=(0, -0.395, 0), scale=(1.3, 0.004, 1.18), mat=MAT_GLOW, tint='#FFD27A', shadow=False))
     locked = root.child(group('LockedCover'))

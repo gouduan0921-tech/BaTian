@@ -1,6 +1,7 @@
+import { SKILL_EFFECT, SKILL_NAMES } from '../rules/Skill';
 import {
     _decorator, Camera, Color, Component, DirectionalLight, EventKeyboard, EventTouch, input, Input, instantiate, JsonAsset, KeyCode, Label, Node,
-    Prefab, Quat, resources, SphereLight, sys, Vec3, Vec4,
+    Prefab, Quat, ResolutionPolicy, resources, screen, SphereLight, sys, Vec3, Vec4, view,
 } from 'cc';
 import { CONFIG_FILES, ConfigError, GameConfig, parseConfig } from '../core/Config';
 import { FlowMode, GameFlow } from '../gameplay/GameFlow';
@@ -19,6 +20,14 @@ import { GameContext, LightPreset, PanelId, ViewMode } from './GameContext';
 import { StoreView } from './StoreView';
 
 const { ccclass, property } = _decorator;
+
+/** 送达时客人说的一句（只是表现） */
+const DELIVER_LINE: Record<string, [string, 'good' | 'warn' | 'bad']> = {
+    perfect: ['好吃！', 'good'],
+    over: ['有点烂了', 'warn'],
+    raw: ['米还有点硬', 'warn'],
+    burnt: ['一股糊味……', 'bad'],
+};
 
 interface PanelComp extends Component { setup(ctx: GameContext): void; refresh(): void }
 
@@ -69,6 +78,9 @@ export class GameRoot extends Component implements GameContext {
 
     start(): void {
         this.mountStore();
+        this.fitScreen();
+        screen.on('window-resize', this.fitScreen, this);
+        screen.on('orientation-change', this.fitScreen, this);
         this.say('正在读规则表…');
         const raw: Record<string, unknown> = {};
         let left = CONFIG_FILES.length;
@@ -92,6 +104,31 @@ export class GameRoot extends Component implements GameContext {
         if (this.mainCamera) {
             this.mainCamera.node.getPosition(this.shopPos);
             this.mainCamera.node.getRotation(this.shopRot);
+        }
+    }
+
+    /**
+     * 窄窗口适配（文档 22 §2、验收 T41）：16:9 及更宽时按高度铺满；更窄时改为按宽度铺满，
+     * 界面横向仍按 1280 排，左右卡片不挤；3D 镜头改用横向视角并换算成同样的取景宽度，
+     * 四口锅和它们的警告都留在画面里，多出来的高度留给地面和墙。
+     */
+    private baseFov = -1;
+    private fitScreen(): void {
+        const size = screen.windowSize;
+        if (!size.width || !size.height) return;
+        const design = 1280 / 720;
+        const narrow = size.width / size.height < design - 0.01;
+        view.setDesignResolutionSize(1280, 720, narrow ? ResolutionPolicy.FIXED_WIDTH : ResolutionPolicy.FIXED_HEIGHT);
+        const cam = this.mainCamera;
+        if (!cam) return;
+        if (this.baseFov < 0) this.baseFov = cam.fov;
+        if (narrow) {
+            const half = (this.baseFov * Math.PI) / 360;
+            cam.fovAxis = Camera.FOVAxis.HORIZONTAL;
+            cam.fov = (Math.atan(Math.tan(half) * design) * 360) / Math.PI;
+        } else {
+            cam.fovAxis = Camera.FOVAxis.VERTICAL;
+            cam.fov = this.baseFov;
         }
     }
 
@@ -142,23 +179,41 @@ export class GameRoot extends Component implements GameContext {
 
     private applyLight(preset: LightPreset): void {
         const P = {
-            warm: { sun: '#FFE0B4', lux: 14000, sky: [0.95, 0.80, 0.62], skyLux: 8000, lamp: '#FFBE74', lampLum: 520, clear: '#172D2E' },
-            night: { sun: '#9DB4D6', lux: 6000, sky: [0.50, 0.62, 0.78], skyLux: 4200, lamp: '#FFB060', lampLum: 640, clear: '#0E1D24' },
-            morning: { sun: '#FFF7EA', lux: 21000, sky: [0.92, 0.94, 0.93], skyLux: 12000, lamp: '#FFE9CC', lampLum: 220, clear: '#5E7E7C' },
+            warm: { sun: '#FFE9CC', lux: 34000, sky: [0.78, 0.86, 0.91], skyLux: 14500, ground: [0.44, 0.39, 0.31], lamp: '#FFD29A', lampLum: 120, clear: '#687E7D' },
+            night: { sun: '#ACC7E5', lux: 15000, sky: [0.48, 0.63, 0.85], skyLux: 10000, ground: [0.25, 0.30, 0.40], lamp: '#FFBE7A', lampLum: 240, clear: '#283D50' },
+            morning: { sun: '#FFF4E0', lux: 42000, sky: [0.83, 0.91, 0.96], skyLux: 17000, ground: [0.51, 0.49, 0.43], lamp: '#FFE9CC', lampLum: 65, clear: '#9AAEA9' },
         }[preset] ?? null;
         if (!P) return;
         const hex = (h: string) => { const v = parseInt(h.slice(1), 16); return new Color((v >> 16) & 255, (v >> 8) & 255, v & 255, 255); };
         if (this.mainLight) {
             this.mainLight.color = hex(P.sun);
             this.mainLight.illuminance = P.lux;
+            // One filtered shadow map covers this small shop, including the pot close-up.
+            this.mainLight.shadowEnabled = true;
+            this.mainLight.shadowPcf = 2;
+            this.mainLight.shadowBias = 0.0002;
+            this.mainLight.shadowNormalBias = 0.025;
+            this.mainLight.shadowDistance = 30;
+            this.mainLight.csmLevel = 1;
+            this.mainLight.node.setRotationFromEuler(-58, -28, 0);
         }
         try {
+            const skybox = this.node.scene.globals.skybox;
+            // Apply HDR before selecting reflection: scene activation can inspect the LDR slot first.
+            skybox.useHDR = true;
+            if (skybox.envmap) skybox.envLightingType = 1;
             const amb = this.node.scene.globals.ambient;
             amb.skyIllum = P.skyLux;
-            (amb as unknown as { skyColor: Vec4 }).skyColor = new Vec4(P.sky[0], P.sky[1], P.sky[2], 1);
+            amb.skyColor = new Vec4(P.sky[0], P.sky[1], P.sky[2], 1);
+            amb.groundAlbedo = new Vec4(P.ground[0], P.ground[1], P.ground[2], 1);
+            const shadows = this.node.scene.globals.shadows;
+            shadows.type = 1;
+            shadows.shadowMapSize = 2048;
+            shadows.enabled = true;
         } catch { /* 环境光接口随版本不同，失败时只换主光 */ }
         if (this.mainCamera) this.mainCamera.clearColor = hex(P.clear);
         for (const l of this.store?.node.getComponentsInChildren(SphereLight) ?? []) {
+            if (l.node.name === 'EmberLight') continue;
             l.color = hex(P.lamp);
             l.luminance = P.lampLum;
         }
@@ -195,6 +250,8 @@ export class GameRoot extends Component implements GameContext {
 
     onDestroy(): void {
         input.off(Input.EventType.KEY_DOWN, this.onKey, this);
+        screen.off('window-resize', this.fitScreen, this);
+        screen.off('orientation-change', this.fitScreen, this);
         if (this.ready) this.flow.save();
     }
 
@@ -241,15 +298,17 @@ export class GameRoot extends Component implements GameContext {
         this.view = 'shop';
         const base: Record<FlowMode, PanelId> = { title: 'title', morning: 'morning', shift: 'hud', practice: 'hud', report: 'report' };
         for (const id of ['title', 'morning', 'hud', 'report'] as PanelId[]) this.show(id, id === base[mode]);
-        for (const id of [...this.overlays]) this.close(id);
+        for (const id of Array.from(this.overlays)) this.close(id);
         // 章节回顾在下，短篇在上：先听故事，关掉后看到七日回顾
         if (mode === 'report' && this.flow.dayReport?.chapter) this.open('chapter');
         if (mode === 'report' && this.flow.dayReport?.story) this.open('story');
+        if (mode === 'report' && (this.flow.progress?.pots ?? 1) >= 2) this.flow.settings.potTipDone = true;
         if (mode === 'report' && (this.flow.progress?.state.completedDays ?? 0) >= 3 && !this.flow.settings.tutorialDone) {
             this.flow.settings.tutorialDone = true;
         }
         this.sound?.setMusic(mode === 'shift' || mode === 'practice' ? 'service' : mode === 'title' ? null : 'prep');
         if (mode === 'shift' && this.flow.shift?.phase === 'service') this.play('shop:open');
+        if (mode === 'report') this.play('shop:dayend');
     }
 
     open(id: PanelId): void {
@@ -309,10 +368,16 @@ export class GameRoot extends Component implements GameContext {
         if (!this.ready) return;
         this.flow.tick(dt);
         const sh = this.flow.mode === 'shift' || this.flow.mode === 'practice' ? this.flow.shift : null;
-        this.store?.render(this.config, this.flow.progress, sh, dt);
+        this.store?.render(this.config, this.flow.progress, sh, this.flow.paused ? 0 : dt, this.flow.paused, this.flow.settings.reduceMotion);
         this.driveCamera(dt);
         const focus = sh?.state.pots[sh.state.focus];
         this.sound?.setPotLoop(focus && focus.phase !== 'empty' && focus.phase !== 'washing' && !this.flow.paused ? focus.heat : null);
+        // 环境声：清晨进货、备料时是鸟鸣和早市；开门后换成街坊人声，按在座人数调热闹程度
+        const open = !!sh && !sh.state.setup.practice && sh.phase !== 'prep' && !this.flow.paused;
+        const morning = this.flow.mode === 'morning' || (!!sh && sh.phase === 'prep' && !this.flow.paused);
+        const seated = open ? Object.values(sh!.state.guests).filter(g => g.state === 'seated').length : 0;
+        if (open) this.sound?.setAmbience('street', Math.min(1, seated / Math.max(1, sh!.state.seats.length)));
+        else this.sound?.setAmbience(morning ? 'morning' : null);
     }
 
     private onShiftEvent(e: ShiftEvent): void {
@@ -323,9 +388,36 @@ export class GameRoot extends Component implements GameContext {
             case 'pot:washed': this.play('pot:wash'); break;
             case 'stir': this.play('pot:stir'); break;
             case 'guest:sit': this.play('shop:sit'); break;
-            case 'guest:leave': if (e.reason !== 'served' && e.reason !== 'closed') this.play('shop:leave'); break;
-            case 'delivered': this.play('shop:coin'); this.toast(`${e.score} 分 · +${e.revenue}${e.tip ? ` 小费 ${e.tip}` : ''}`); break;
+            case 'guest:leave':
+                if (e.reason !== 'served' && e.reason !== 'closed') this.play('shop:leave');
+                this.hud?.onGuestLeave(e.reason);
+                this.store?.onGuestLeave(e.guest, e.reason);
+                break;
+            case 'delivered': {
+                this.play('shop:coin');
+                this.hud?.onDelivered(e);
+                const o = this.flow.shift?.state.orders.find(x => x.id === e.order);
+                const line = DELIVER_LINE[e.result];
+                if (o && line) this.store?.react(o.guestId, e.tip > 0 && e.result === 'perfect' ? '好吃！赏你的' : line[0], line[1]);
+                break;
+            }
             case 'wiped': this.play('shop:wipe'); break;
+            case 'request:served': {
+                // 街坊请托：送到一碗报一声，送齐了说清楚打烊入账（文档 30 §3）
+                const req = this.flow.progress?.state.request;
+                if (!req) break;
+                const name = this.config.recipe.get(req.recipeId)?.name ?? '';
+                if (e.served >= req.count) { this.play('shop:goal'); this.toast(`请托做到了：${name}送齐 ${req.count} 碗，打烊时 +${req.reward}`); }
+                else this.toast(`请托送到 ${e.served}/${req.count} 碗${name}`);
+                break;
+            }
+            case 'skill:up': {
+                // 熟练跨档：一句话说清效果，不讲公式（文档 10 §7）
+                const name = this.config.recipe.get(e.recipe)?.name ?? '';
+                this.play('shop:goal');
+                this.toast(`${name}练到「${SKILL_NAMES[e.tier]}」了：${SKILL_EFFECT[e.tier]}`);
+                break;
+            }
             case 'phase':
                 if (e.phase === 'service') { this.play('shop:open'); this.sound?.setMusic('service'); }
                 if (e.phase === 'closing') { this.play('shop:close'); this.toast('打烊了，把最后几单送完'); }

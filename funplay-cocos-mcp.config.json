@@ -2,7 +2,26 @@
   "host": "127.0.0.1",
   "port": 26735,
   "portMode": "project",
-  "clientConfigEntries": {},
+  "clientConfigEntries": {
+    "codex": {
+      "serverName": "cocos-batian-49ec0d",
+      "url": "http://127.0.0.1:26735/",
+      "configPath": "/Users/liweng/.codex/config.toml",
+      "projectIdentity": "49ec0d8f76110c038e22ffb0"
+    },
+    "cursor": {
+      "serverName": "cocos-batian-49ec0d",
+      "url": "http://127.0.0.1:26735/",
+      "configPath": "/Users/liweng/.cursor/mcp.json",
+      "projectIdentity": "49ec0d8f76110c038e22ffb0"
+    },
+    "claude_code": {
+      "serverName": "cocos-batian-49ec0d",
+      "url": "http://127.0.0.1:26735/",
+      "configPath": "/Users/liweng/.claude.json",
+      "projectIdentity": "49ec0d8f76110c038e22ffb0"
+    }
+  },
   "toolProfile": "custom",
   "enabledTools": [],
   "disabledTools": [],

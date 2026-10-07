@@ -5,26 +5,6 @@
   "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46",
   "files": [],
   "subMetas": {
-    "13010": {
-      "importer": "gltf-embeded-image",
-      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010",
-      "displayName": "",
-      "id": "13010",
-      "name": "Congee_A.image",
-      "userData": {
-        "gltfIndex": 1,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": false,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".jpg",
-        ".json"
-      ],
-      "subMetas": {}
-    },
     "47f85": {
       "importer": "gltf-mesh",
       "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@47f85",
@@ -43,14 +23,54 @@
       ],
       "subMetas": {}
     },
-    "ef752": {
+    "950a5": {
       "importer": "gltf-embeded-image",
-      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@950a5",
       "displayName": "",
-      "id": "ef752",
-      "name": "Congee_A_N.image",
+      "id": "950a5",
+      "name": "BT2_Congee_Normal.image",
       "userData": {
         "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "14bd2": {
+      "importer": "gltf-embeded-image",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@14bd2",
+      "displayName": "",
+      "id": "14bd2",
+      "name": "BT2_Congee_Base.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4f194": {
+      "importer": "gltf-embeded-image",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4f194",
+      "displayName": "",
+      "id": "4f194",
+      "name": "BT2_Congee_RoughMetal.image",
+      "userData": {
+        "gltfIndex": 2,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -77,7 +97,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752"
+        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@950a5"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -100,7 +120,30 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010"
+        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@14bd2"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4f194"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -145,12 +188,16 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "Congee_A_N",
-        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@ef752"
+        "name": "BT2_Congee_Normal",
+        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@950a5"
       },
       {
-        "name": "Congee_A",
-        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@13010"
+        "name": "BT2_Congee_Base",
+        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@14bd2"
+      },
+      {
+        "name": "BT2_Congee_RoughMetal",
+        "uri": "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4f194"
       }
     ],
     "lods": {
@@ -178,7 +225,8 @@
       "skeletons": [],
       "textures": [
         "3e0f0cc1-e93f-427a-863c-2f773da6ee46@3effa",
-        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@221a5"
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@221a5",
+        "3e0f0cc1-e93f-427a-863c-2f773da6ee46@0089c"
       ],
       "materials": [
         "3e0f0cc1-e93f-427a-863c-2f773da6ee46@4091a"
@@ -186,6 +234,12 @@
       "scenes": [
         "3e0f0cc1-e93f-427a-863c-2f773da6ee46@dad3a4"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

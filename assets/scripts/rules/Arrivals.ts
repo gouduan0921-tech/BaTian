@@ -13,9 +13,11 @@ export interface Arrival {
     /** 固定来客，只点这一道（救援街坊） */
     onlyRecipe?: string;
     fixed?: boolean;
+    /** 街坊请托约好的客人（文档 30 §3）：只点约好的粥，耐心更长 */
+    request?: boolean;
 }
 
-export interface FixedGuest { customerId: string; wave: WaveId; first: boolean }
+export interface FixedGuest { customerId: string; wave: WaveId; first: boolean; onlyRecipe?: string; request?: boolean }
 
 export interface ArrivalInput {
     day: number;
@@ -74,13 +76,17 @@ export function planArrivals(config: GameConfig, input: ArrivalInput, rng: Seede
 
     const firstMorning = arrivals.find(a => a.wave === 'morning');
     if (input.rescue && firstMorning) Object.assign(firstMorning, { customerId: NEIGHBOR_ID, onlyRecipe: 'R01', fixed: true });
+    const extraInWave: Record<string, number> = {};
     for (const g of input.guests) {
+        const extra = { ...(g.onlyRecipe ? { onlyRecipe: g.onlyRecipe } : {}), ...(g.request ? { request: true } : {}) };
         if (g.first) {
             const slot = arrivals.find(a => a.wave === g.wave && !a.fixed);
-            if (slot) Object.assign(slot, { customerId: g.customerId, fixed: true });
+            if (slot) Object.assign(slot, { customerId: g.customerId, fixed: true, ...extra });
         } else {
+            // 同一时段的几位约好的客人前后错开 8 秒进门
             const w = bal.demand.waves.find(x => x.id === g.wave)!;
-            arrivals.push({ time: (w.start + w.end) / 2 + 1, customerId: g.customerId, wave: g.wave, fixed: true });
+            const k = extraInWave[g.wave] = (extraInWave[g.wave] ?? -1) + 1;
+            arrivals.push({ time: Math.min(w.end - 0.5, (w.start + w.end) / 2 + 1 + k * 8), customerId: g.customerId, wave: g.wave, fixed: true, ...extra });
         }
     }
     if (input.day === bal.demand.chapterCriticDay && !arrivals.some(a => a.customerId === CRITIC_ID && a.wave === 'lunch')) {

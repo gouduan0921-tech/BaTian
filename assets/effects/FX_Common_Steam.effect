@@ -1,0 +1,51 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: steam-vs:vert
+      frag: steam-fs:frag
+      rasterizerState: { cullMode: none }
+      depthStencilState: { depthTest: true, depthWrite: false }
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendSrcAlpha: one
+          blendDstAlpha: one_minus_src_alpha
+      properties:
+        mainColor: { value: [1, 0.97, 0.91, 0.25], linear: true, editor: { type: color } }
+}%
+CCProgram steam-vs %{
+  precision highp float;
+  #include <legacy/input>
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/local-batch>
+  out vec2 v_uv;
+  vec4 vert () {
+    vec4 p;
+    CCVertInput(p);
+    mat4 world;
+    CCGetWorldMatrix(world);
+    v_uv = a_texCoord;
+    return cc_matProj * cc_matView * world * p;
+  }
+}%
+CCProgram steam-fs %{
+  precision highp float;
+  #include <legacy/output-standard>
+  in vec2 v_uv;
+  uniform SteamTone { vec4 mainColor; };
+  float cloud(vec2 p, vec2 center, vec2 width) {
+    vec2 q = (p - center) / width;
+    return exp(-dot(q, q) * 3.0);
+  }
+  vec4 frag () {
+    // Overlapping wisps have soft edges and no opaque sphere silhouette.
+    float density = cloud(v_uv, vec2(0.42, 0.28), vec2(0.27, 0.37))
+                  + cloud(v_uv, vec2(0.57, 0.56), vec2(0.34, 0.32)) * 0.75
+                  + cloud(v_uv, vec2(0.38, 0.77), vec2(0.32, 0.27)) * 0.45;
+    float edge = smoothstep(0.0, 0.12, v_uv.x) * smoothstep(0.0, 0.12, 1.0 - v_uv.x)
+               * smoothstep(0.0, 0.12, v_uv.y) * smoothstep(0.0, 0.12, 1.0 - v_uv.y);
+    return CCFragOutput(vec4(mainColor.rgb, min(1.0, density) * edge * mainColor.a));
+  }
+}%

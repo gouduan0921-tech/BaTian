@@ -14,8 +14,13 @@ def cls(name):
 def model_id(name):
     meta=json.loads((PROJECT/f'assets/resources/models/real/{name}.glb.meta').read_text())
     found=[v for v in meta['subMetas'].values() if v['importer']=='gltf-scene' and v['userData']['gltfIndex']==0]
+    if len(found)>1:  # 重新导入后编辑器可能留下旧的子资源键，只认已生成到 library 的那个
+        found=[v for v in found if (PROJECT/'library'/v['uuid'][:2]/(v['uuid']+'.json')).exists()] or found[-1:]
     assert len(found)==1,name
     return found[0]['uuid']
+
+SEASON_GARNISH={'I13':'FOOD_Season_Yam','I14':'FOOD_Season_CuredPork','I15':'FOOD_Season_Shepherd','I16':'FOOD_Season_MungBean'}
+SEASON_STAND={'I13':'PROP_Season_Stand_Yam','I14':'PROP_Season_Stand_Pork','I15':'PROP_Season_Stand_Shepherd','I16':'PROP_Season_Stand_MungBean'}
 
 def upgrade(a,kind):
     a=copy.deepcopy(a)
@@ -110,6 +115,11 @@ def upgrade(a,kind):
             rice=node('RiceGrains',i,(0,.304,0)); attach(rice,'FOOD_Common_RiceGrains')
             view=next(a[c['__id__']] for c in a[i]['_components'] if a[c['__id__']]['__type__']==cls('PotView'))
             view['riceGrains']={'__id__':rice}
+            # 时令食材的正式配料（文档 30）：PotView 按下锅的食材点亮对应的一件
+            sg=node('SeasonGarnish',i,(0,.311,0))
+            for ing,key in SEASON_GARNISH.items():
+                c=node(ing,sg); attach(c,key); a[c]['_active']=False
+            view['seasonGarnish']={'__id__':sg}
     decor=json.loads((PROJECT/'assets/resources/data/rules/decor.json').read_text())
     for d in decor:
         if d['kind']=='tableware' or d['id']=='D01': continue
@@ -134,6 +144,12 @@ def upgrade(a,kind):
                 for k,x in enumerate([3.38,5.78],1):
                     t=node('BrassLamp'+str(k),i,(x,.77,3.35)); attach(t,d['mesh'])
             else: attach(i,d['mesh'],(.08,1.2,0),euler=(0,90,0),exclude=('Light',))
+    # 备料台与一号锅之间的时令陈列，StoreView 只亮当季那件
+    stand=node('SeasonStand',1,(-2.6,.87,-1.72),(0,-10,0),(1.2,1.2,1.2))
+    for ing,key in SEASON_STAND.items():
+        c=node(ing,stand); attach(c,key); a[c]['_active']=False
+    store=next(x for x in a if x.get('__type__')==cls('StoreView'))
+    store['seasonStand']={'__id__':stand}
     node('RealPropsInstalled',1)
     return a
 

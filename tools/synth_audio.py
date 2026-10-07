@@ -249,7 +249,111 @@ def build_music():
     write('music_service_loop', render_music(78, True), 0.5)
 
 
+def seamless(x, fade):
+    """把多生成的尾巴叠到开头，做成首尾相接的循环。"""
+    k = int(SR * fade)
+    body = x[:-k].copy()
+    w = np.linspace(0, 1, k)
+    body[:k] = body[:k] * w + x[-k:] * (1 - w)
+    return body
+
+
+def build_ambience():
+    print('环境：')
+    # 街坊的人声嘈嘈：低频带通噪声 + 慢起伏，像隔着门帘听见的说话声
+    sec = 12.0
+    t = t_axis(sec + 1.5)
+    murmur = bandish(rng.standard_normal(len(t)), 180, 900)
+    swell = 0.55 + 0.25 * np.sin(2 * np.pi * 0.11 * t) + 0.2 * np.sin(2 * np.pi * 0.37 * t + 1.3)
+    voices = np.zeros_like(t)
+    for _ in range(18):                                   # 偶尔一句稍近一点的话
+        at = rng.uniform(0, sec)
+        d = rng.uniform(0.35, 0.9)
+        n = int(SR * d)
+        i = int(SR * at)
+        seg = bandish(rng.standard_normal(n), rng.uniform(250, 380), rng.uniform(900, 1500))
+        seg *= np.sin(np.pi * np.arange(n) / n) ** 2 * (1 + 0.6 * np.sin(2 * np.pi * rng.uniform(3, 6) * np.arange(n) / SR))
+        voices[i:i + n] += seg[:len(voices) - i] * rng.uniform(0.3, 0.6)
+    clinks = np.zeros_like(t)
+    for _ in range(9):                                    # 远处碗勺碰一下
+        f = rng.uniform(2200, 3400)
+        tt = t_axis(0.25)
+        c = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(2 * np.pi * f * 1.51 * tt)) * np.exp(-tt * 28)
+        place_loop(clinks, c * rng.uniform(0.08, 0.16), int(rng.uniform(0, len(t) - len(c))))
+    insects = np.sin(2 * np.pi * 4300 * t) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 23 * t))) * (0.4 + 0.6 * (np.sin(2 * np.pi * 0.07 * t) > 0.3))
+    insects = bandish(insects, 3000, 6000) * 0.05      # 夏夜虫鸣，很轻
+    x = murmur * swell * 0.7 + voices * 0.5 + clinks + insects
+    write('amb_street_loop', seamless(x, 1.5), 0.4)
+
+
+def build_stings():
+    print('提示：')
+    # 打烊结账：五声音阶向上一串弹拨，最后一声铃收住
+    seq = [(293.66, 0.0), (369.99, 0.14), (440.0, 0.28), (587.33, 0.42)]
+    x = np.zeros(int(SR * 2.4))
+    for f, at in seq:
+        s = pluck(f, 1.6, 0.45)
+        i = int(SR * at)
+        x[i:i + len(s)] += s[:len(x) - i] * 0.8
+    b = bell(1174.7, 1.8)
+    i = int(SR * 0.58)
+    x[i:i + len(b)] += b[:len(x) - i] * 0.5
+    write('AU17_dayend', x, 0.55)
+    # 小目标做到：两声清亮的拨弦 + 一声铜钱
+    x = np.zeros(int(SR * 0.9))
+    for f, at in ((880.0, 0.0), (1174.7, 0.09)):
+        s = pluck(f, 0.7, 0.7)
+        i = int(SR * at)
+        x[i:i + len(s)] += s[:len(x) - i]
+    tt = t_axis(0.35)
+    coin = np.sin(2 * np.pi * 2637 * tt) * np.exp(-tt * 20) * 0.5
+    i = int(SR * 0.2)
+    x[i:i + len(coin)] += coin[:len(x) - i]
+    write('AU18_goal', x, 0.5)
+
+
+def chirp(f0, f1, dur, vib=0.0):
+    """一声鸟叫：频率滑音 + 少许颤音，快起慢收。"""
+    t = t_axis(dur)
+    f = f0 + (f1 - f0) * (t / dur) ** 0.7
+    if vib:
+        f = f * (1 + vib * np.sin(2 * np.pi * 38 * t))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    shape = np.clip(t / 0.008, 0, 1) * np.exp(-t / (dur * 0.45))
+    return (np.sin(ph) + 0.18 * np.sin(2 * ph)) * shape
+
+
+def build_morning():
+    print('清晨：')
+    sec = 14.0
+    t = t_axis(sec + 1.5)
+    n = len(t)
+    breeze = bandish(rng.standard_normal(n), 120, 1200) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.06 * t + 0.4)) * 0.35
+    street = bandish(rng.standard_normal(n), 90, 380) * 0.25        # 远处的早市，低低的一层
+    birds = np.zeros(n)
+    at = 0.3
+    while at < sec:                                                   # 麻雀：两三声一串，隔一会儿再来
+        base = rng.uniform(3200, 4600)
+        for k in range(rng.integers(2, 5)):
+            c = chirp(base * rng.uniform(0.95, 1.1), base * rng.uniform(1.15, 1.45), rng.uniform(0.05, 0.09))
+            place_loop(birds, c * rng.uniform(0.25, 0.45), int(SR * (at + k * rng.uniform(0.09, 0.14))))
+        at += rng.uniform(0.6, 1.6)
+    for at in (2.2, 8.7):                                             # 远一点的画眉，一句婉转的
+        for k, (a, b) in enumerate(((2100, 2900), (2900, 2400), (2500, 3300), (3300, 2600))):
+            c = chirp(a, b, 0.16, vib=0.02)
+            place_loop(birds, c * 0.22, int(SR * (at + k * 0.17)))
+    bike = np.zeros(n)                                                # 巷口一声自行车铃
+    ring_ = bell(2350.0, 0.6, ((1, 1), (2.32, 0.4), (4.1, 0.15)))
+    for k in range(2):
+        place_loop(bike, ring_ * 0.18, int(SR * (5.4 + k * 0.13)))
+    x = breeze + street + birds + bike
+    write('amb_morning_loop', seamless(x, 1.5), 0.35)
+
+
 if __name__ == '__main__':
     print('输出到', OUT)
     build_sfx()
     build_music()
+    build_ambience()
+    build_morning()
+    build_stings()

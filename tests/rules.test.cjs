@@ -13,7 +13,7 @@ const tscCandidates = [
 const tscJs = tscCandidates.find(c => fs.existsSync(c));
 const out = path.join(root, 'temp/rule-tests');
 const scripts = path.join(root, 'assets/scripts');
-const entry = ['core/Config.ts', 'rules/Shift.ts', 'rules/Progress.ts', 'save/SaveModel.ts', 'gameplay/GameFlow.ts'].map(f => path.join(scripts, f));
+const entry = ['core/Config.ts', 'rules/Shift.ts', 'rules/Progress.ts', 'rules/Goals.ts', 'save/SaveModel.ts', 'gameplay/GameFlow.ts'].map(f => path.join(scripts, f));
 fs.mkdirSync(out, { recursive: true });
 const tsconfig = path.join(out, 'tsconfig.rules.json');
 fs.writeFileSync(tsconfig, JSON.stringify({
@@ -36,6 +36,9 @@ const { emptyPot, startPot, stepPot, stirPot } = req('rules/Pot.js');
 const { readAtmosphere, emptyPlacement } = req('rules/Atmosphere.js');
 const { SaveStore, memoryStore, parseSave, serializeSave, SAVE_FORMAT } = req('save/SaveModel.js');
 const { GameFlow } = req('gameplay/GameFlow.js');
+const { dailyGoals, goalStatus } = req('rules/Goals.js');
+const { skillInfo, skillTierUp } = req('rules/Skill.js');
+const { chapterAt } = req('rules/Chapters.js');
 
 const dataDir = path.join(root, 'assets/resources/data/rules');
 const loadRaw = () => Object.fromEntries(CONFIG_FILES.map(f => [f, JSON.parse(fs.readFileSync(path.join(dataDir, `${f}.json`), 'utf8'))]));
@@ -102,6 +105,43 @@ test('T27 权重或份额和不为 1 时启动失败', () => {
 test('粥谱成本等于食材价之和（04 §7）', () => {
     const want = { R01: 4, R02: 18, R03: 9, R04: 15, R05: 19, R06: 8, R07: 16, R08: 9, R09: 21, R10: 19, R11: 17, R12: 28 };
     for (const [id, c] of Object.entries(want)) assert.equal(R(id).cost, c, id);
+});
+
+test('T01 新档：钱包 200，可做白粥与皮蛋瘦肉粥，只有暖木风格与粗瓷碗', () => {
+    const p = new Progress(config, newProfile(config, 1));
+    assert.equal(p.state.wallet, 200);
+    assert.deepEqual(p.unlockedRecipes().map(r => r.id), ['R01', 'R02']);
+    assert.deepEqual(p.state.styles, ['warm-wood']);
+    assert.equal(p.state.tableware, 'D10');
+    assert.ok(p.state.ownedDecor.every(id => ['D10', 'D01'].includes(id)), p.state.ownedDecor.join());
+});
+test('T36 短篇奖励在打烊结算时就发：跳过 S05 对白，次日仍多一名食评', () => {
+    const p = new Progress(config, newProfile(config, 1));
+    const s05 = config.stories.find(s => s.id === 'S05');
+    p.grant(s05.reward);
+    assert.ok(p.state.nextDay.guests.some(g => g.customerId === 'C07' && g.wave === 'lunch'));
+});
+test('T42 混用三种风格主件：标记「颜色有点杂」，光色 −5', () => {
+    const pl = emptyPlacement();
+    pl.window.main = 'D01'; pl.door.main = 'D17'; pl.hall.main = 'D09';
+    const { staticParts } = req('rules/Atmosphere.js');
+    const mixed = staticParts(config, pl);
+    pl.hall.main = 'D05';
+    const two = staticParts(config, pl);
+    assert.equal(mixed.mixed, true);
+    assert.equal(two.mixed, false);
+    assert.equal(config.atmosphere.mixLightPenalty, 5);
+});
+
+test('发布构建的展开语法：不对 Map / Set / 迭代器用 [...x]（构建用宽松转译，会变成 [x]）', () => {
+    const bad = [];
+    const walk = d => { for (const n of fs.readdirSync(d)) { const p = path.join(d, n);
+        if (fs.statSync(p).isDirectory()) walk(p);
+        else if (n.endsWith('.ts')) fs.readFileSync(p, 'utf8').split('\n').forEach((l, i) => {
+            if (/\[\.\.\.(new (Set|Map)\b|[\w.]+\.(keys|values|entries)\(\))/.test(l) || /\[\.\.\.(removed|out|this\.overlays|this\.guests)\]/.test(l)) bad.push(`${n}:${i + 1}`);
+        }); } };
+    walk(scripts);
+    assert.deepEqual(bad, []);
 });
 
 // ───────────── 锅 ─────────────
@@ -323,6 +363,24 @@ test('T18 第三日钱不够付租金记欠租，次日进货 2 种，再次打�
     assert.equal(p.state.wallet, 100 - 20 - 30);
     assert.equal(p.buyKinds, 4);
 });
+test('房租随铺面变大：每多一口锅、两个座位加租（04 §6）', () => {
+    const p = new Progress(config, newProfile(config, 1));
+    assert.equal(p.rent, bal.session.rent);
+    p.state.upgrades.push('U01', 'U04');
+    assert.equal(p.rent, bal.session.rent + bal.session.rentPerPot + 2 * bal.session.rentPerSeat);
+    p.state.wallet = 500; p.state.completedDays = 3;
+    const rep = closeEmptyDay(p);
+    assert.equal(rep.ledger.rent, p.rent);
+});
+test('米和小米单日可进 20 份，其他食材 8 份', () => {
+    const p = new Progress(config, newProfile(config, 1));
+    p.state.wallet = 999;
+    p.morning();
+    assert.equal(p.buy('I01', 20), null);
+    assert.match(p.buy('I01', 1), /20 份/);
+    assert.equal(p.buy('I03', 8), null);
+    assert.match(p.buy('I03', 1), /8 份/);
+});
 test('T19 打烊后钱包 < 40：次日 +2 份大米，清晨第一位是点白粥的街坊', () => {
     const p = new Progress(config, newProfile(config, 1));
     p.state.wallet = 20;
@@ -495,6 +553,317 @@ test('完整一日流程：清晨 → 预处理 → 营业 → 日结 → 次日
     flow.nextDay();
     assert.equal(flow.mode, 'morning');
     assert.equal(flow.progress.day, 2);
+});
+
+test('每日小目标：第 1 日没有；第 4 日三件，同种子同日相同，类型错开', () => {
+    const recipes = config.recipes.filter(r => r.unlockDay <= 4);
+    assert.equal(dailyGoals(config, 9, 1, recipes, 6, false).length, 0);
+    const a = dailyGoals(config, 9, 4, recipes, 9, true);
+    const b = dailyGoals(config, 9, 4, recipes, 9, true);
+    assert.equal(a.length, bal.goals.count);
+    assert.deepEqual(a, b);
+    assert.ok(a.some(g => g.type === 'serve' || g.type === 'tips'));
+    assert.ok(a.some(g => g.type === 'perfect' || g.type === 'noWalk'));
+    assert.ok(!(a.some(g => g.type === 'serve') && a.some(g => g.type === 'tips')));
+    for (const g of a) if (g.type === 'recipe') assert.ok(recipes.some(r => r.id === g.recipeId));
+    // 不消耗主随机数：生成目标前后，客流随机序列不变
+    const rng = new SeededRng(5);
+    const before = rng.step;
+    dailyGoals(config, 5, 3, recipes, 8, false);
+    assert.equal(rng.step, before);
+});
+
+test('每日小目标：进度、等走即失败、打烊发铜钱与满贯', () => {
+    const { sh, profile } = makeShift();
+    sh.state.setup.goals = [
+        { id: 'serve', type: 'serve', target: 2, reward: 12 },
+        { id: 'recipe-R01', type: 'recipe', target: 1, recipeId: 'R01', reward: 12 },
+        { id: 'noWalk', type: 'noWalk', target: 0, reward: 20 },
+    ];
+    const st = sh.state;
+    st.ledger.served = 2;
+    st.served['C01|R01|perfect|morning'] = 2;
+    let all = st.setup.goals.map(g => goalStatus(g, st, 30, false));
+    assert.deepEqual(all.map(x => x.done), [true, true, false]);
+    all = st.setup.goals.map(g => goalStatus(g, st, 30, true));
+    assert.ok(all.every(x => x.done));
+    const wallet = profile.state.wallet;
+    const rep = profile.closeDay(sh);
+    assert.equal(rep.goalReward, 12 + 12 + 20 + bal.goals.bonusAll);
+    assert.equal(rep.ledger.goalReward, rep.goalReward);
+    assert.equal(profile.state.wallet, wallet + st.ledger.revenue + st.ledger.tips + rep.goalReward + rep.bonus - rep.ledger.rent - rep.ledger.debtPaid);
+    st.ledger.reasons.impatient = 1;
+    const walk = goalStatus(st.setup.goals[2], st, 30, true);
+    assert.ok(walk.failed && !walk.done);
+});
+
+// ───────────── 厨艺熟练（文档 10 §4）─────────────
+test('厨艺：0 入门、8 顺手、20 拿手，档内进度正确', () => {
+    assert.equal(skillInfo(config, 0).name, '入门');
+    assert.equal(skillInfo(config, 4).progress, 0.5);
+    assert.equal(skillInfo(config, 8).name, '顺手');
+    assert.equal(skillInfo(config, 14).progress, 0.5);
+    const top = skillInfo(config, 25);
+    assert.equal(top.name, '拿手'); assert.equal(top.next, null); assert.equal(top.progress, 1);
+    assert.equal(skillTierUp(config, 7, 9), 1);
+    assert.equal(skillTierUp(config, 9, 11), null);
+    assert.equal(skillTierUp(config, 9, 7), null);
+});
+test('厨艺：刚好出餐跨过 8 分发「顺手」事件，打烊报告带熟练变化', () => {
+    const { sh, profile } = makeShift();
+    profile.state.proficiency.R01 = 7;
+    sh.state.setup.proficiency = { R01: 7 };
+    const g = { id: 'GS', customerId: 'C01', wave: 'morning', state: 'seated', seat: 0, doorLeft: 0, orderId: 'OS', dineLeft: 0, served: false, reordered: false };
+    sh.state.guests.GS = g; sh.state.seats[0] = 'GS';
+    sh.state.orders.push({ id: 'OS', guestId: 'GS', recipeId: 'R01', patienceLeft: 999, patienceMax: 999, state: 'waiting', reorder: false });
+    sh.startCooking(0, 'R01', 'mid');
+    cookUntil(sh, 0, p => p.doneness >= 0.8);
+    const bowl = plateAndWait(sh, 0);
+    sh.drainEvents();
+    sh.deliver(bowl.id, 'OS'); run(sh, 1.1);
+    const ev = sh.drainEvents();
+    assert.equal(ev.find(e => e.type === 'delivered').result, 'perfect');
+    const up = ev.find(e => e.type === 'skill:up');
+    assert.ok(up, '应有升档事件');
+    assert.equal(up.recipe, 'R01'); assert.equal(up.tier, 1);
+    assert.equal(sh.warnLine('R01'), 0.38);
+    sh.finish();
+    const rep = profile.closeDay(sh);
+    const c = rep.skill.find(x => x.recipeId === 'R01');
+    assert.deepEqual([c.before, c.after], [7, 9]);
+    assert.equal(profile.state.proficiency.R01, 9);
+});
+test('日结记下最好与最差的一碗', () => {
+    const { sh } = makeShift();
+    serveTo(sh, 'C01', 'R01', { run: s => cookUntil(s, 0, p => p.doneness >= 0.8) });
+    run(sh, 7);
+    serveTo(sh, 'C01', 'R01', { run: s => cookUntil(s, 0, p => p.doneness >= 0.5) });
+    const lg = sh.state.ledger;
+    assert.equal(lg.best.score, 100);
+    assert.equal(lg.worst.score, 65);
+});
+
+// ───────────── 长线（文档 30）─────────────
+const atDay = (day, mutate) => { const p = new Progress(config, newProfile(config, 5)); p.state.completedDays = day - 1; p.state.wallet = 500; mutate?.(p); return p; };
+const ids = rs => rs.map(r => r.id);
+test('L01/L02 时令粥只在本章开放，时令食材只在本季能买', () => {
+    let p = atDay(7);
+    assert.ok(!ids(p.unlockedRecipes()).includes('R13'));
+    assert.ok(p.canBuy('I13'));
+    p = atDay(8);
+    assert.ok(ids(p.unlockedRecipes()).includes('R13'));
+    assert.ok(!ids(p.unlockedRecipes()).some(id => ['R14', 'R15', 'R16'].includes(id)));
+    assert.equal(p.canBuy('I13'), null);
+    assert.equal(p.shiftSetup().season, 'autumn');
+    p = atDay(15);
+    assert.ok(!ids(p.unlockedRecipes()).includes('R13'));
+    assert.ok(ids(p.unlockedRecipes()).includes('R14'));
+    assert.ok(p.canBuy('I13'));
+});
+test('L03 章末两个目标都做到：时令粥收进粥谱，下一章仍可做、食材仍可买', () => {
+    const p = atDay(14);
+    p.state.chapter = { key: 'CH2-0', startDay: 8, served: { R13: 17 }, perfect: 29, requests: 0, fullGoalDays: 0, calmDays: 0 };
+    const sh = p.startShift(new SeededRng(14));
+    sh.state.served['C02|R13|perfect|lunch'] = 1;
+    sh.state.ledger.served = 1;
+    sh.finish();
+    const wallet = p.state.wallet;
+    const rep = p.closeDay(sh);
+    assert.ok(rep.chapter && rep.chapter.season, '应出现章节回顾');
+    assert.deepEqual(rep.chapter.season.goals.map(g => g.done), [true, true]);
+    assert.ok(rep.chapter.season.kept);
+    assert.equal(rep.chapter.season.reward, 120);
+    assert.equal(rep.chapter.season.next.recipeId, 'R14');
+    assert.deepEqual(p.state.keptRecipes, ['R13']);
+    assert.equal(p.stats.chaptersDone, 1);
+    assert.equal(p.day, 15);
+    assert.ok(ids(p.unlockedRecipes()).includes('R13') && ids(p.unlockedRecipes()).includes('R14'));
+    assert.equal(p.canBuy('I13'), null);
+    assert.ok(p.state.wallet >= wallet + 120 + rep.ledger.revenue - rep.ledger.rent - rep.ledger.debtPaid);
+});
+test('L03b 只做到一个目标：按项发钱，不收进粥谱', () => {
+    const p = atDay(14);
+    p.state.chapter = { key: 'CH2-0', startDay: 8, served: { R13: 20 }, perfect: 3, requests: 0, fullGoalDays: 0, calmDays: 0 };
+    const sh = p.startShift(new SeededRng(14)); sh.finish();
+    const rep = p.closeDay(sh);
+    assert.deepEqual(rep.chapter.season.goals.map(g => g.done), [true, false]);
+    assert.equal(rep.chapter.season.reward, 60);
+    assert.ok(!rep.chapter.season.kept);
+    assert.ok(!ids(p.unlockedRecipes()).includes('R13'));
+});
+test('L04 第 36 日回到白露，目标 ×1.25；第 8 日起每 7 日一章', () => {
+    assert.equal(chapterAt(config, 7), null);
+    assert.equal(chapterAt(config, 8).cfg.id, 'CH2');
+    assert.equal(chapterAt(config, 14).endDay, 14);
+    assert.equal(chapterAt(config, 15).cfg.id, 'CH3');
+    assert.equal(chapterAt(config, 35).cfg.id, 'CH5');
+    const y2 = chapterAt(config, 36);
+    assert.equal(y2.cfg.id, 'CH2'); assert.equal(y2.year, 1);
+    assert.equal(y2.goals[0].count, Math.round(18 * 1.25));
+    assert.match(y2.name, /第 2 年/);
+});
+test('L05/L06 请托：打烊生成、次日约好的客人只点这道粥，送到发钱加好感，没送到不扣钱', () => {
+    const q = bal.requests; const chance = q.chance; q.chance = 1;
+    try {
+        const p = atDay(5, p => { p.state.codex.customers.push('C02', 'C06'); p.state.favor.C02 = 8; p.state.favor.C06 = 0; });
+        const rep = closeEmptyDay(p);
+        const r = rep.nextRequest;
+        assert.ok(r, '应生成请托');
+        assert.equal(r.customerId, 'C02');
+        assert.equal(r.day, 6);
+        assert.ok(p.unlockedRecipes().some(x => x.id === r.recipeId));
+        assert.equal(p.state.nextDay.guests.filter(g => g.request && g.onlyRecipe === r.recipeId).length, r.count);
+        const sh = p.startShift(new SeededRng(6));
+        const a = sh.state.arrivals.filter(x => x.request);
+        assert.equal(a.length, r.count);
+        assert.ok(a.every(x => x.onlyRecipe === r.recipeId && x.wave === r.wave && x.customerId === 'C02'));
+        sh.state.requestServed = r.count;
+        sh.finish();
+        const favor = p.state.favor.C02;
+        const rep2 = p.closeDay(sh);
+        assert.ok(rep2.request.done);
+        assert.equal(p.state.favor.C02, Math.min(bal.favor.max, favor + q.favor));
+        assert.equal(p.stats.requestsDone, 1);
+        assert.ok(rep2.bonus >= r.reward);
+        // 没送到：不扣钱
+        const r2 = rep2.nextRequest;
+        if (r2) {
+            const sh2 = p.startShift(new SeededRng(7)); sh2.finish();
+            const rep3 = p.closeDay(sh2);
+            assert.equal(rep3.request.done, false);
+            assert.equal(rep3.request.served, 0);
+        }
+    } finally { q.chance = chance; }
+});
+test('请托：第 4 日打烊前不出现；没见过或好感不够的常客不来托', () => {
+    const q = bal.requests; const chance = q.chance; q.chance = 1;
+    try {
+        let p = atDay(3, p => { p.state.codex.customers.push('C02'); p.state.favor.C02 = 8; });
+        assert.equal(closeEmptyDay(p).nextRequest, null);
+        p = atDay(6, p => { p.state.favor.C02 = 8; });
+        assert.equal(closeEmptyDay(p).nextRequest, null);
+        p = atDay(6, p => { p.state.codex.customers.push('C02'); p.state.favor.C02 = 1; });
+        assert.equal(closeEmptyDay(p).nextRequest, null);
+    } finally { q.chance = chance; }
+});
+test('L07 手账：第一碗刚好那天打烊记「头一碗刚好」，钱包 +10', () => {
+    const p = atDay(2);
+    const sh = p.startShift(new SeededRng(2));
+    sh.state.served['C01|R01|perfect|morning'] = 1; sh.state.ledger.served = 1;
+    sh.finish();
+    const rep = p.closeDay(sh);
+    assert.ok(rep.milestones.some(m => m.id === 'M01'));
+    assert.ok(p.state.milestones.includes('M01'));
+    assert.ok(rep.bonus >= 10);
+    // 不重复记
+    const sh2 = p.startShift(new SeededRng(3)); sh2.finish();
+    assert.ok(!p.closeDay(sh2).milestones.some(m => m.id === 'M01'));
+});
+test('L08 旧存档没有长线字段：读入补默认值，累计从历史还原', () => {
+    const prof = newProfile(config, 9);
+    for (const k of ['chapter', 'request', 'keptRecipes', 'milestones', 'stats']) delete prof[k];
+    prof.history.served = { 'C01|R01|perfect|morning': 3, 'C02|R02|over|lunch': 2 };
+    prof.completedDays = 9;
+    const p = new Progress(config, prof);
+    assert.deepEqual(p.state.keptRecipes, []);
+    assert.equal(p.stats.perfectTotal, 3);
+    assert.equal(p.stats.servedTotal, 5);
+    assert.equal(p.chapterProgress().key, 'CH2-0');
+    const file = { format: SAVE_FORMAT, version: 'x', serial: 1, profile: prof, shift: null, rngStep: 0, settings: {} };
+    assert.ok(parseSave(serializeSave(file), config).ok);
+    prof.keptRecipes = ['R99'];
+    assert.equal(parseSave(serializeSave(file), config).ok, false);
+});
+test('在季时令粥更受欢迎：同口味客人更常点', () => {
+    const count = season => {
+        let n = 0;
+        for (let seed = 1; seed <= 40; seed++) {
+            const { sh } = makeShift({ seed, recipes: ['R01', 'R13'], stock: { I01: 20, I13: 20 }, setup: { season } });
+            sh.state.arrivals = [{ time: 0, customerId: 'C01', wave: 'morning' }];
+            run(sh, 1);
+            const o = sh.state.orders[0];
+            if (o && o.recipeId === 'R13') n++;
+        }
+        return n;
+    };
+    assert.ok(count('autumn') > count(null));
+});
+
+
+// 本轮发布回归：实际发现的存档、结算和重复操作边界。
+test('T28 结构损坏不抛异常，中文按 UTF-8 的 1MB 限制', () => {
+    const file = { format: 1, version: 'x', serial: 0, profile: newProfile(config, 3), shift: null, rngStep: 0, settings: {} };
+    for (const field of ['upgrades', 'pantry', 'favor', 'codex', 'history', 'nextDay']) {
+        const broken = JSON.parse(JSON.stringify(file)); delete broken.profile[field];
+        assert.equal(parseSave(JSON.stringify(broken), config).ok, false, field);
+    }
+    file.note = '粥'.repeat(350000);
+    assert.equal(parseSave(JSON.stringify(file), config).ok, false);
+});
+test('T28 从备份恢复再保存：损坏原文另存，有效备份不被坏档替换', () => {
+    const kv = memoryStore();
+    const file = { format: 1, version: 'x', serial: 0, profile: newProfile(config, 3), shift: null, rngStep: 0, settings: {} };
+    const valid = serializeSave(file), damaged = '{broken';
+    kv.set('batian.save.primary', damaged); kv.set('batian.save.backup', valid);
+    const store = new SaveStore(kv, config), got = store.load();
+    assert.ok(got.file); assert.equal(got.blocked, false);
+    assert.equal(store.write(got.file), null);
+    assert.equal(kv.get('batian.save.primary.damaged'), damaged);
+    assert.equal(kv.get('batian.save.backup'), valid);
+    assert.ok(parseSave(kv.get('batian.save.primary'), config).ok);
+});
+test('日结刷新恢复原账单，连续刷新不重复收入、奖励、租金或天数', () => {
+    const kv = memoryStore(); const flow = new GameFlow(config, new SaveStore(kv, config));
+    flow.newGame(33); flow.progress.state.completedDays = 2; flow.progress.state.wallet = 200;
+    flow.startPrep(); flow.shift.open();
+    flow.shift.state.ledger.revenue = 16; flow.shift.state.ledger.tips = 3;
+    flow.shift.state.served['C01|R01|perfect|morning'] = 1; flow.shift.state.ledger.served = 1;
+    flow.shift.finish(); flow.tick(.05);
+    const wallet = flow.progress.state.wallet, report = flow.dayReport;
+    assert.equal(flow.mode, 'report'); assert.equal(report.ledger.rent, 30);
+    for (let i = 0; i < 3; i++) {
+        const next = new GameFlow(config, new SaveStore(kv, config));
+        assert.ok(next.boot()); next.continueGame(); next.tick(1);
+        assert.equal(next.mode, 'report'); assert.equal(next.progress.state.wallet, wallet);
+        assert.deepEqual(next.dayReport, report); assert.equal(next.progress.state.completedDays, 3);
+        next.save();
+    }
+});
+test('重复开始备料、进入次日和升级购买不会重置锅或重复扣款', () => {
+    const flow = new GameFlow(config, new SaveStore(memoryStore(), config)); flow.newGame(4);
+    flow.progress.state.completedDays = 1; flow.progress.state.wallet = 1000;
+    assert.equal(flow.progress.buyUpgrade('U01'), null);
+    const wallet = flow.progress.state.wallet;
+    assert.ok(flow.progress.buyUpgrade('U01')); assert.equal(flow.progress.state.wallet, wallet);
+    flow.startPrep(); const shift = flow.shift;
+    flow.startPrep(); assert.equal(flow.shift, shift);
+    flow.nextDay(); assert.equal(flow.mode, 'shift'); assert.equal(flow.shift, shift);
+});
+test('装修暂停接待和客人耐心，已下锅仍推进；关闭后恢复接待', () => {
+    const { sh } = makeShift({ pots: 2, arrivals: [{time: 0, customerId: 'C01', wave: 'morning'}] });
+    assert.equal(sh.startCooking(0, 'R01', 'mid'), null); run(sh, .5);
+    const order = sh.waitingOrders[0], beforePatience = order.patienceLeft, beforeCook = sh.state.pots[0].doneness;
+    sh.setReceptionPaused(true); run(sh, 3);
+    assert.equal(order.patienceLeft, beforePatience); assert.ok(sh.state.pots[0].doneness > beforeCook);
+    sh.setReceptionPaused(false); run(sh, 1); assert.ok(order.patienceLeft < beforePatience);
+});
+
+test('装修中保存并刷新：不恢复装修页时接待必须恢复，锅和订单继续原来的进度', () => {
+    const kv = memoryStore(); const first = new GameFlow(config, new SaveStore(kv, config));
+    first.newGame(9); first.progress.pantry.add('I01', 8);
+    first.startPrep(); readyAll(first.shift); first.shift.open();
+    first.shift.state.arrivals = [{ time: 0, customerId: 'C01', wave: 'morning' }]; first.shift.state.nextArrival = 0;
+    first.shift.startCooking(0, 'R01', 'mid'); first.tick(.5);
+    first.shift.setReceptionPaused(true); first.tick(.5); first.save();
+    const before = JSON.parse(JSON.stringify(first.shift.state));
+    const restored = new GameFlow(config, new SaveStore(kv, config));
+    assert.ok(restored.boot()); assert.equal(restored.shift.state.receptionPaused, true);
+    restored.continueGame(); assert.equal(restored.shift.state.receptionPaused, false);
+    assert.equal(restored.shift.state.pots[0].doneness, before.pots[0].doneness);
+    assert.equal(restored.shift.state.orders[0].patienceLeft, before.orders[0].patienceLeft);
+    restored.tick(.2);
+    assert.ok(restored.shift.state.pots[0].doneness > before.pots[0].doneness);
+    assert.ok(restored.shift.state.orders[0].patienceLeft < before.orders[0].patienceLeft);
 });
 
 (async () => {

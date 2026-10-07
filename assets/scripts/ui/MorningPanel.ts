@@ -1,4 +1,6 @@
+import { chapterLine, requestText } from './LongTermText';
 import { _decorator, Component, Label, Node, Prefab } from 'cc';
+import { goalText } from '../rules/Goals';
 import { FRESH_WORDS, shelfClass } from '../rules/Pantry';
 import { GameContext, SEASON_WORD } from '../view/GameContext';
 import { ListRow } from './ListRow';
@@ -14,6 +16,7 @@ const { ccclass, property } = _decorator;
 export class MorningPanel extends Component {
     @property(Label) header: Label | null = null;
     @property(Label) notice: Label | null = null;
+    @property(Label) goals: Label | null = null;
     @property(Node) ingredientList: Node | null = null;
     @property(Node) recipeList: Node | null = null;
     @property(Prefab) rowPrefab: Prefab | null = null;
@@ -38,14 +41,25 @@ export class MorningPanel extends Component {
         if (!p) return;
         const cfg = ctx.config;
         const debt = p.state.debt > 0 ? ` · 欠租 ${p.state.debt}` : '';
-        setText(this.header, `第 ${p.day} 日 · 清晨    铜钱 ${p.state.wallet}${debt}    今天还能进 ${Math.max(0, p.kindsLeft())} 种`);
+        const run = p.chapter();
+        setText(this.header, `第 ${p.day} 日 · 清晨${run ? ` · ${run.name}` : ''}    铜钱 ${p.state.wallet}${debt}    今天还能进 ${Math.max(0, p.kindsLeft())} 种`);
 
         const notes: string[] = [];
         const m = ctx.flow.morningReport;
         if (m?.removed.length) notes.push(`过期扔掉：${m.removed.map(r => `${cfg.ingredient.get(r.id)!.name}×${r.count}`).join('、')}`);
         if (m?.rescueRice) notes.push(`隔壁街坊送来 ${m.rescueRice} 份大米。`);
         if (p.day === 1) notes.push('先买米，点「开始备料」后有 90 秒淘洗切配的时间。');
+        // 四时章节与街坊请托（文档 30）
+        if (run && p.day === run.startDay) notes.push(run.cfg.intro);
+        const req = p.state.request;
+        if (req && req.day === p.day) notes.push(`今天的请托：${requestText(cfg, req)}，做到给 ${req.reward} 铜。记得把食材买齐。`);
+        if (run) notes.push(chapterLine(cfg, p));
         setText(this.notice, notes.join('\n'));
+        const goals = p.todayGoals();
+        const name = (id: string) => cfg.recipe.get(id)?.name ?? id;
+        setText(this.goals, goals.length
+            ? `今日小目标：${goals.map(g => `${goalText(g, name)}（+${g.reward}）`).join('　')}　全做到再 +${cfg.balance.goals.bonusAll}`
+            : '');
 
         const recipes = p.unlockedRecipes().sort((a, b) => (a.id === p.state.pinnedRecipe ? -1 : b.id === p.state.pinnedRecipe ? 1 : 0));
         const needed = new Set<string>();
@@ -57,7 +71,7 @@ export class MorningPanel extends Component {
             const tier = held ? FRESH_WORDS[p.pantry.bestTier(ing.id)] : '';
             const bought = p.state.boughtToday[ing.id] ?? 0;
             rows[idx]
-                .fill(`${ing.name}  ${ing.buyPrice} 铜`, `${shelfClass(ing)} · 今日已进 ${bought}`, held ? `持有 ${held}（${tier}）` : '无')
+                .fill(`${ing.name}  ${ing.buyPrice} 铜`, `${shelfClass(ing)} · 今日已进 ${bought}/${p.dailyCap(ing.id)}`, held ? `持有 ${held}（${tier}）` : '无')
                 .actions(
                     { text: '+1', enabled: !p.canBuy(ing.id, 1), fn: () => { ctx.check(p.buy(ing.id, 1)); ctx.refresh(); } },
                     { text: '+4', enabled: !p.canBuy(ing.id, 4), fn: () => { ctx.check(p.buy(ing.id, 4)); ctx.refresh(); } },
@@ -70,8 +84,9 @@ export class MorningPanel extends Component {
             const adds = r.adds.map(a => cfg.ingredient.get(a.id)!.name);
             const lacksAdd = r.adds.filter(a => p.pantry.total(a.id) < 1).map(a => cfg.ingredient.get(a.id)!.name);
             const status = miss.length ? `缺 ${miss.join('、')}` : lacksAdd.length ? `缺配料 ${lacksAdd.join('、')}` : '可做';
+            const tag = r.season ? (p.kept.includes(r.id) ? '［收进粥谱］' : '［时令］') : '';
             rrows[idx]
-                .fill(`${p.state.pinnedRecipe === r.id ? '★ ' : ''}${r.name}  ${r.price} 铜`, `${SEASON_WORD[r.seasoning]} · 熬 ${r.cookSeconds} 秒${adds.length ? ` · 加 ${adds.join('、')}` : ''}`, status)
+                .fill(`${p.state.pinnedRecipe === r.id ? '★ ' : ''}${tag}${r.name}  ${r.price} 铜`, `${SEASON_WORD[r.seasoning]} · 熬 ${r.cookSeconds} 秒${adds.length ? ` · 加 ${adds.join('、')}` : ''}`, status)
                 .actions(null, (p.state.pinPending || p.state.pinnedRecipe) && p.state.codex.recipes.includes(r.id) && p.state.pinnedRecipe !== r.id
                     ? { text: '钉在顶上', fn: () => { p.state.pinnedRecipe = r.id; p.state.pinPending = false; ctx.refresh(); } }
                     : null);

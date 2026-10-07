@@ -29,7 +29,7 @@ export class SettingsPanel extends Component {
         this.ambienceButton?.bind(() => { s().ambience = cycle(s().ambience); this.changed(); });
         this.textButton?.bind(() => { s().textSize = s().textSize === 'normal' ? 'large' : 'normal'; this.changed(); });
         this.motionButton?.bind(() => { s().reduceMotion = !s().reduceMotion; this.changed(); });
-        this.tutorialButton?.bind(() => { s().tutorialDone = false; this.changed(); ctx.toast('教学提示已重新打开'); });
+        this.tutorialButton?.bind(() => { s().tutorialDone = false; s().potTipDone = false; this.changed(); ctx.toast('教学提示已重新打开'); });
         this.titleButton?.bind(() => { ctx.close('settings'); ctx.flow.toTitle(); });
         this.closeButton?.bind(() => ctx.close('settings'));
     }

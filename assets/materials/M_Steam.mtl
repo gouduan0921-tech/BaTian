@@ -4,56 +4,24 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+    "__uuid__": "65012067-3904-4f56-bd42-d388f663281b"
   },
-  "_techIdx": 1,
+  "_techIdx": 0,
   "_defines": [
-    {},
-    {},
     {}
   ],
   "_states": [
-    {
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
-    },
-    {
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
-    },
-    {
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
-    }
+    {}
   ],
   "_props": [
     {
       "mainColor": {
         "__type__": "cc.Color",
         "r": 255,
-        "g": 255,
-        "b": 255,
-        "a": 140
-      },
-      "roughness": 1.0,
-      "metallic": 0.0
-    },
-    {},
-    {}
+        "g": 250,
+        "b": 240,
+        "a": 75
+      }
+    }
   ]
 }

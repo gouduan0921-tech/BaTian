@@ -66,4 +66,6 @@ export const CUSTOMER_LINE: Record<string, string> = {
 export const INGREDIENT_TINT: Record<string, string> = {
     I03: '#AB795F', I04: '#4A4038', I05: '#E3A04A', I06: '#6F9A52', I07: '#E58A6A', I08: '#F2E7D8',
     I09: '#8A4E3A', I10: '#9A3B34', I11: '#2E2A28', I12: '#E8D2A8',
+    // 时令食材（文档 30）：山药、腊肉、荠菜、绿豆
+    I13: '#EFE6D2', I14: '#A4553E', I15: '#5E8C47', I16: '#8DAE5E',
 };

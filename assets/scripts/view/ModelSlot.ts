@@ -1,6 +1,35 @@
-import { _decorator, CCString, Component, instantiate, Node, Prefab, Vec3 } from 'cc';
+import { _decorator, CCString, Component, instantiate, Material, MeshRenderer, Node, Prefab, Vec3 } from 'cc';
 
 const { ccclass, property } = _decorator;
+
+/**
+ * Blender 导出时的发光强度（KHR_materials_emissive_strength）Cocos 不认，导入后发光只有 1 倍，
+ * 炭火、灯泡、纸灯在暗处显得发闷。这里按材质名补回来；每个共享材质只调一次。
+ */
+const GLOW_BOOST: Record<string, number> = {
+    BT2_CoalEmber: 2.2,
+    BT2_WarmBulb: 4.5,
+    BT2_WarmStrip: 3.2,
+    BT2_RicePaper: 1.35,
+    BT2_WhitePaper: 1.25,
+    BT2_LetterGold: 2.4,
+    BT2_MorningGlass: 1.6,
+};
+const boosted = new WeakSet<Material>();
+
+function boostGlow(root: Node): void {
+    for (const r of root.getComponentsInChildren(MeshRenderer)) {
+        // Imported GLBs default to no casting. All solid props need contact and self shadows.
+        r.shadowCastingMode = 1;
+        r.receiveShadow = 1;
+        for (const m of r.sharedMaterials) {
+            const k = m ? GLOW_BOOST[m.name] : undefined;
+            if (!m || !k || boosted.has(m)) continue;
+            boosted.add(m);
+            m.setProperty('emissiveScale', new Vec3(k, k, k));
+        }
+    }
+}
 
 /**
  * 在此节点下挂一个 Blender 导出的模型（glb 场景预制体）。
@@ -27,6 +56,7 @@ export class ModelSlot extends Component {
         this.instance.setPosition(this.offset);
         this.instance.setScale(this.scale);
         this.instance.parent = this.node;
+        boostGlow(this.instance);
         this.instances.set('__default', this.instance);
         if (this.placeholder) this.placeholder.active = false;
         for (const name of this.hide) {
@@ -48,6 +78,7 @@ export class ModelSlot extends Component {
             next.setPosition(this.offset);
             next.setScale(this.scale);
             next.parent = this.node;
+            boostGlow(next);
             this.instances.set(key, next);
         }
         next.active = true;

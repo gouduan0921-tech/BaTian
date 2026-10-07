@@ -8,7 +8,8 @@
     "prep": "wash",
     "tags": [
       "米"
-    ]
+    ],
+    "dailyCap": 20
   },
   {
     "id": "I02",
@@ -19,7 +20,8 @@
     "prep": "wash",
     "tags": [
       "米"
-    ]
+    ],
+    "dailyCap": 20
   },
   {
     "id": "I03",
@@ -130,5 +132,53 @@
     "tags": [
       "肉"
     ]
+  },
+  {
+    "id": "I13",
+    "name": "山药",
+    "unit": "根",
+    "buyPrice": 5,
+    "freshHours": 48,
+    "prep": "cut",
+    "tags": [
+      "菜"
+    ],
+    "season": "autumn"
+  },
+  {
+    "id": "I14",
+    "name": "腊肉",
+    "unit": "条",
+    "buyPrice": 10,
+    "freshHours": 72,
+    "prep": "cut",
+    "tags": [
+      "肉"
+    ],
+    "season": "winter"
+  },
+  {
+    "id": "I15",
+    "name": "荠菜",
+    "unit": "把",
+    "buyPrice": 3,
+    "freshHours": 24,
+    "prep": "wash",
+    "tags": [
+      "菜"
+    ],
+    "season": "spring"
+  },
+  {
+    "id": "I16",
+    "name": "绿豆",
+    "unit": "份",
+    "buyPrice": 4,
+    "freshHours": 72,
+    "prep": "soak",
+    "tags": [
+      "豆"
+    ],
+    "season": "summer"
   }
 ]

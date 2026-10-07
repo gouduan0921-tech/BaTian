@@ -1,0 +1,42 @@
+{
+  "ver": "1.0.27",
+  "importer": "image",
+  "imported": true,
+  "uuid": "d2452b3a-02c6-5f77-b6f6-34d34b6b47e4",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "ver": "1.0.22",
+      "importer": "texture",
+      "imported": true,
+      "uuid": "d2452b3a-02c6-5f77-b6f6-34d34b6b47e4@6c48a",
+      "displayName": "FOOD_Common_Congee_B",
+      "id": "6c48a",
+      "name": "texture",
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 4,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d2452b3a-02c6-5f77-b6f6-34d34b6b47e4",
+        "visible": false
+      }
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "hasAlpha": false,
+    "redirect": "d2452b3a-02c6-5f77-b6f6-34d34b6b47e4@6c48a",
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

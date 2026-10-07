@@ -5,12 +5,12 @@
   "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3",
   "files": [],
   "subMetas": {
-    "15357": {
+    "53282": {
       "importer": "gltf-material",
-      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@15357",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@53282",
       "displayName": "",
-      "id": "15357",
-      "name": "BT_HoneyOak.005.material",
+      "id": "53282",
+      "name": "BT2_HoneyOak.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -21,30 +21,12 @@
       ],
       "subMetas": {}
     },
-    "2b0cc": {
-      "importer": "gltf-mesh",
-      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@2b0cc",
-      "displayName": "",
-      "id": "2b0cc",
-      "name": "立方体.2335.mesh",
-      "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 376
-      },
-      "ver": "1.1.1",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "9022a": {
+    "56714": {
       "importer": "gltf-embeded-image",
-      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@56714",
       "displayName": "",
-      "id": "9022a",
-      "name": "HoneyOak_B.image",
+      "id": "56714",
+      "name": "fine_grained_wood_nor_gl.image",
       "userData": {
         "gltfIndex": 0,
         "fixAlphaTransparencyArtifacts": true,
@@ -54,17 +36,75 @@
       "ver": "1.0.3",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".jpg",
+        ".json"
       ],
       "subMetas": {}
     },
-    "e39f7": {
-      "importer": "texture",
-      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@e39f7",
+    "90911": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@90911",
       "displayName": "",
-      "id": "e39f7",
-      "name": "UnnamedTexture.texture",
+      "id": "90911",
+      "name": "fine_grained_wood_Diffuse.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b4a0c": {
+      "importer": "gltf-mesh",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@b4a0c",
+      "displayName": "",
+      "id": "b4a0c",
+      "name": "PROP_WarmWood_Table_Square.001.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1620
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78faa": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@78faa",
+      "displayName": "",
+      "id": "78faa",
+      "name": "fine_grained_wood_arm.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
       "userData": {
         "wrapModeS": "repeat",
         "wrapModeT": "repeat",
@@ -73,7 +113,53 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a"
+        "imageUuidOrDatabaseUri": "2b881682-b446-4262-a2ba-f0544cf628d3@56714"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2b881682-b446-4262-a2ba-f0544cf628d3@90911"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "2b881682-b446-4262-a2ba-f0544cf628d3@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2b881682-b446-4262-a2ba-f0544cf628d3@78faa"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -102,8 +188,16 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "HoneyOak_B",
-        "uri": "2b881682-b446-4262-a2ba-f0544cf628d3@9022a"
+        "name": "fine_grained_wood_nor_gl",
+        "uri": "2b881682-b446-4262-a2ba-f0544cf628d3@56714"
+      },
+      {
+        "name": "fine_grained_wood_Diffuse",
+        "uri": "2b881682-b446-4262-a2ba-f0544cf628d3@90911"
+      },
+      {
+        "name": "fine_grained_wood_arm",
+        "uri": "2b881682-b446-4262-a2ba-f0544cf628d3@78faa"
       }
     ],
     "lods": {
@@ -126,18 +220,26 @@
     },
     "assetFinder": {
       "meshes": [
-        "2b881682-b446-4262-a2ba-f0544cf628d3@2b0cc"
+        "2b881682-b446-4262-a2ba-f0544cf628d3@b4a0c"
       ],
       "skeletons": [],
       "textures": [
-        "2b881682-b446-4262-a2ba-f0544cf628d3@e39f7"
+        "2b881682-b446-4262-a2ba-f0544cf628d3@3effa",
+        "2b881682-b446-4262-a2ba-f0544cf628d3@221a5",
+        "2b881682-b446-4262-a2ba-f0544cf628d3@0089c"
       ],
       "materials": [
-        "2b881682-b446-4262-a2ba-f0544cf628d3@15357"
+        "2b881682-b446-4262-a2ba-f0544cf628d3@53282"
       ],
       "scenes": [
         "2b881682-b446-4262-a2ba-f0544cf628d3@de520"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

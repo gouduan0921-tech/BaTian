@@ -1,0 +1,6 @@
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../..'),req=p=>require(path.join(root,'temp/rule-tests',p));
+const {parseConfig,CONFIG_FILES}=req('core/Config.js'),{Progress,newProfile}=req('rules/Progress.js'),{SeededRng}=req('simulation/SeededRng.js');
+const cfg=parseConfig(Object.fromEntries(CONFIG_FILES.map(f=>[f,JSON.parse(fs.readFileSync(path.join(root,'assets/resources/data/rules',f+'.json')))])));
+const rows=[];for(let day=1;day<=7;day++){const p=new Progress(cfg,newProfile(cfg,day));p.state.completedDays=day-1;p.state.wallet=5000;p.morning();const sh=p.startShift(new SeededRng(day));sh.open();const actual=[];for(let t=0;t<550/.05&&sh.phase!=='done';t++){sh.step(.05);for(const e of sh.drainEvents())if(e.type==='guest:arrive')actual.push(sh.state.guests[e.guest]);}const byWave={};for(const g of actual)byWave[g.wave]=(byWave[g.wave]||0)+1;assert.equal(actual.length,sh.state.arrivals.length);for(const w of ['morning','forenoon','lunch','evening'])assert.ok(byWave[w]>0);rows.push({day,planned:sh.state.arrivals.length,actual:actual.length,byWave,result:'通过',kind:'生产规则逐步运行至打烊，不是七日真人记录'});}
+fs.writeFileSync(path.resolve(root,'../../开发记录/发布验收_20261002/七日到客_规则实测.json'),JSON.stringify(rows,null,2));console.log(rows);

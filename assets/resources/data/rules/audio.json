@@ -63,5 +63,15 @@
     "id": "AU16",
     "event": "shop:wipe",
     "file": "AU16_wipe"
+  },
+  {
+    "id": "AU17",
+    "event": "shop:dayend",
+    "file": "AU17_dayend"
+  },
+  {
+    "id": "AU18",
+    "event": "shop:goal",
+    "file": "AU18_goal"
   }
 ]

@@ -5,31 +5,35 @@
   "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a",
   "files": [],
   "subMetas": {
-    "15357": {
-      "importer": "gltf-material",
-      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@15357",
+    "54713": {
+      "importer": "gltf-embeded-image",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@54713",
       "displayName": "",
-      "id": "15357",
-      "name": "BT_HoneyOak.005.material",
+      "id": "54713",
+      "name": "chinese_tea_table_arm_2k.image",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
-      "ver": "1.0.14",
+      "ver": "1.0.3",
       "imported": true,
       "files": [
+        ".jpg",
         ".json"
       ],
       "subMetas": {}
     },
-    "37469": {
+    "340d2": {
       "importer": "gltf-mesh",
-      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@37469",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@340d2",
       "displayName": "",
-      "id": "37469",
-      "name": "立方体.2315.mesh",
+      "id": "340d2",
+      "name": "PROP_WarmWood_Table_A.001_Professional_Professional.mesh",
       "userData": {
         "gltfIndex": 0,
-        "triangleCount": 376
+        "triangleCount": 2508
       },
       "ver": "1.1.1",
       "imported": true,
@@ -39,12 +43,12 @@
       ],
       "subMetas": {}
     },
-    "9022a": {
+    "1d25d": {
       "importer": "gltf-embeded-image",
-      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@9022a",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@1d25d",
       "displayName": "",
-      "id": "9022a",
-      "name": "HoneyOak_B.image",
+      "id": "1d25d",
+      "name": "chinese_tea_table_nor_gl_2k.image",
       "userData": {
         "gltfIndex": 0,
         "fixAlphaTransparencyArtifacts": true,
@@ -54,17 +58,37 @@
       "ver": "1.0.3",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".jpg",
+        ".json"
       ],
       "subMetas": {}
     },
-    "e39f7": {
-      "importer": "texture",
-      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@e39f7",
+    "8efca": {
+      "importer": "gltf-embeded-image",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@8efca",
       "displayName": "",
-      "id": "e39f7",
-      "name": "UnnamedTexture.texture",
+      "id": "8efca",
+      "name": "chinese_tea_table_diff_2k.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
       "userData": {
         "wrapModeS": "repeat",
         "wrapModeT": "repeat",
@@ -73,9 +97,71 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "112d1529-2b32-445d-9fe1-78966c52c28a@9022a"
+        "imageUuidOrDatabaseUri": "112d1529-2b32-445d-9fe1-78966c52c28a@1d25d"
       },
       "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "112d1529-2b32-445d-9fe1-78966c52c28a@8efca"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "112d1529-2b32-445d-9fe1-78966c52c28a@54713"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "88c8d": {
+      "importer": "gltf-material",
+      "uuid": "112d1529-2b32-445d-9fe1-78966c52c28a@88c8d",
+      "displayName": "",
+      "id": "88c8d",
+      "name": "chinese_tea_table.001.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
       "imported": true,
       "files": [
         ".json"
@@ -102,8 +188,16 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "HoneyOak_B",
-        "uri": "112d1529-2b32-445d-9fe1-78966c52c28a@9022a"
+        "name": "chinese_tea_table_nor_gl_2k",
+        "uri": "112d1529-2b32-445d-9fe1-78966c52c28a@1d25d"
+      },
+      {
+        "name": "chinese_tea_table_diff_2k",
+        "uri": "112d1529-2b32-445d-9fe1-78966c52c28a@8efca"
+      },
+      {
+        "name": "chinese_tea_table_arm_2k",
+        "uri": "112d1529-2b32-445d-9fe1-78966c52c28a@54713"
       }
     ],
     "lods": {
@@ -126,18 +220,26 @@
     },
     "assetFinder": {
       "meshes": [
-        "112d1529-2b32-445d-9fe1-78966c52c28a@37469"
+        "112d1529-2b32-445d-9fe1-78966c52c28a@340d2"
       ],
       "skeletons": [],
       "textures": [
-        "112d1529-2b32-445d-9fe1-78966c52c28a@e39f7"
+        "112d1529-2b32-445d-9fe1-78966c52c28a@3effa",
+        "112d1529-2b32-445d-9fe1-78966c52c28a@221a5",
+        "112d1529-2b32-445d-9fe1-78966c52c28a@0089c"
       ],
       "materials": [
-        "112d1529-2b32-445d-9fe1-78966c52c28a@15357"
+        "112d1529-2b32-445d-9fe1-78966c52c28a@88c8d"
       ],
       "scenes": [
         "112d1529-2b32-445d-9fe1-78966c52c28a@57a37"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

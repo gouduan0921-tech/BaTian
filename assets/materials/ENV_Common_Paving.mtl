@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.Material",
+  "_name": "ENV_Common_Paving",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "c8f66d17-351a-48da-a12c-0212d28575c4"
+  },
+  "_techIdx": 0,
+  "_defines": [
+    {
+      "USE_ALBEDO_MAP": true
+    }
+  ],
+  "_states": [
+    {
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      },
+      "depthStencilState": {},
+      "rasterizerState": {}
+    }
+  ],
+  "_props": [
+    {
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+      },
+      "roughness": 0.91,
+      "metallic": 0.0,
+      "mainTexture": {
+        "__uuid__": "b2a403bd-527c-5af2-acf0-353aa3343f17@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      }
+    }
+  ]
+}

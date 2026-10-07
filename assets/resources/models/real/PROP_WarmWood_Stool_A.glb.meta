@@ -5,31 +5,15 @@
   "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8",
   "files": [],
   "subMetas": {
-    "15357": {
-      "importer": "gltf-material",
-      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@15357",
-      "displayName": "",
-      "id": "15357",
-      "name": "BT_HoneyOak.005.material",
-      "userData": {
-        "gltfIndex": 0
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "a7dfd": {
+    "bd53d": {
       "importer": "gltf-mesh",
-      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a7dfd",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@bd53d",
       "displayName": "",
-      "id": "a7dfd",
-      "name": "Oak stool seat.005.mesh",
+      "id": "bd53d",
+      "name": "PROP_WarmWood_Stool_A.001_Professional_Professional.mesh",
       "userData": {
         "gltfIndex": 0,
-        "triangleCount": 660
+        "triangleCount": 1090
       },
       "ver": "1.1.1",
       "imported": true,
@@ -39,12 +23,12 @@
       ],
       "subMetas": {}
     },
-    "9022a": {
+    "f6072": {
       "importer": "gltf-embeded-image",
-      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@f6072",
       "displayName": "",
-      "id": "9022a",
-      "name": "HoneyOak_B.image",
+      "id": "f6072",
+      "name": "chinese_stool_nor_gl_2k.image",
       "userData": {
         "gltfIndex": 0,
         "fixAlphaTransparencyArtifacts": true,
@@ -54,17 +38,17 @@
       "ver": "1.0.3",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".jpg",
+        ".json"
       ],
       "subMetas": {}
     },
-    "9fcef": {
+    "a008d": {
       "importer": "gltf-embeded-image",
-      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a008d",
       "displayName": "",
-      "id": "9fcef",
-      "name": "WornOak_B.image",
+      "id": "a008d",
+      "name": "chinese_stool_diff_2k.image",
       "userData": {
         "gltfIndex": 1,
         "fixAlphaTransparencyArtifacts": true,
@@ -74,8 +58,28 @@
       "ver": "1.0.3",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ba29f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@ba29f",
+      "displayName": "",
+      "id": "ba29f",
+      "name": "chinese_stool_arm_2k.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
       ],
       "subMetas": {}
     },
@@ -93,7 +97,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a"
+        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@f6072"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -116,7 +120,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef"
+        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a008d"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -125,14 +129,37 @@
       ],
       "subMetas": {}
     },
-    "c0c2f": {
-      "importer": "gltf-material",
-      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@c0c2f",
+    "0089c": {
+      "importer": "texture",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@0089c",
       "displayName": "",
-      "id": "c0c2f",
-      "name": "BT_WornOak.005.material",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
       "userData": {
-        "gltfIndex": 1
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@ba29f"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2f89f": {
+      "importer": "gltf-material",
+      "uuid": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@2f89f",
+      "displayName": "",
+      "id": "2f89f",
+      "name": "chinese_stool.001.material",
+      "userData": {
+        "gltfIndex": 0
       },
       "ver": "1.0.14",
       "imported": true,
@@ -161,12 +188,16 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "HoneyOak_B",
-        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9022a"
+        "name": "chinese_stool_nor_gl_2k",
+        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@f6072"
       },
       {
-        "name": "WornOak_B",
-        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@9fcef"
+        "name": "chinese_stool_diff_2k",
+        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a008d"
+      },
+      {
+        "name": "chinese_stool_arm_2k",
+        "uri": "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@ba29f"
       }
     ],
     "lods": {
@@ -189,20 +220,26 @@
     },
     "assetFinder": {
       "meshes": [
-        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@a7dfd"
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@bd53d"
       ],
       "skeletons": [],
       "textures": [
         "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@3effa",
-        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@221a5"
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@221a5",
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@0089c"
       ],
       "materials": [
-        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@15357",
-        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@c0c2f"
+        "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@2f89f"
       ],
       "scenes": [
         "7f63c397-c1d7-4bc5-8410-35b3d18cdac8@db517"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

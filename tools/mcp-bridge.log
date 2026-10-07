@@ -180,3 +180,112 @@
 [cocos-bridge 2026-10-01T11:10:23.554Z] -> tools/list 1
 [cocos-bridge 2026-10-01T11:10:23.567Z] -> prompts/list 2
 [cocos-bridge 2026-10-01T11:10:23.575Z] -> resources/list 3
+[cocos-bridge 2026-10-02T03:47:55.745Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T03:47:55.852Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T03:47:56.058Z] -> initialize 0
+[cocos-bridge 2026-10-02T03:47:56.148Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T03:47:56.153Z] -> tools/list 1
+[cocos-bridge 2026-10-02T03:47:56.170Z] -> prompts/list 2
+[cocos-bridge 2026-10-02T03:47:56.175Z] -> resources/list 3
+[cocos-bridge 2026-10-02T03:47:56.216Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T03:47:56.234Z] -> initialize 0
+[cocos-bridge 2026-10-02T03:47:56.362Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T03:47:56.373Z] -> tools/list 1
+[cocos-bridge 2026-10-02T03:50:14.415Z] -> tools/call 2
+[cocos-bridge 2026-10-02T03:50:17.483Z] -> tools/call 3
+[cocos-bridge 2026-10-02T03:51:28.790Z] -> tools/call 4
+[cocos-bridge 2026-10-02T03:51:46.714Z] -> tools/call 5
+[cocos-bridge 2026-10-02T04:00:24.545Z] -> tools/call 6
+[cocos-bridge 2026-10-02T04:00:32.287Z] -> tools/call 7
+[cocos-bridge 2026-10-02T04:00:48.044Z] -> tools/call 8
+[cocos-bridge 2026-10-02T04:00:49.231Z] -> tools/call 9
+[cocos-bridge 2026-10-02T04:05:16.450Z] -> tools/call 10
+[cocos-bridge 2026-10-02T04:20:01.329Z] -> tools/call 11
+[cocos-bridge 2026-10-02T04:20:11.698Z] -> tools/call 12
+[cocos-bridge 2026-10-02T04:22:28.373Z] -> tools/call 13
+[cocos-bridge 2026-10-02T04:24:52.029Z] -> tools/call 14
+[cocos-bridge 2026-10-02T04:25:04.328Z] -> tools/call 15
+[cocos-bridge 2026-10-02T04:25:05.606Z] -> tools/call 16
+[cocos-bridge 2026-10-02T04:33:40.493Z] -> tools/call 17
+[cocos-bridge 2026-10-02T04:35:27.752Z] -> tools/call 18
+[cocos-bridge 2026-10-02T04:37:46.289Z] -> tools/call 19
+[cocos-bridge 2026-10-02T04:39:14.154Z] -> tools/call 20
+[cocos-bridge 2026-10-02T04:39:43.081Z] -> tools/call 21
+[cocos-bridge 2026-10-02T04:50:16.074Z] -> tools/call 22
+[cocos-bridge 2026-10-02T04:50:19.687Z] -> tools/call 23
+[cocos-bridge 2026-10-02T04:50:30.851Z] -> tools/call 24
+[cocos-bridge 2026-10-02T05:14:18.667Z] -> tools/call 25
+[cocos-bridge 2026-10-02T05:14:25.291Z] -> tools/call 26
+[cocos-bridge 2026-10-02T05:14:37.123Z] -> tools/call 27
+[cocos-bridge 2026-10-02T05:16:41.252Z] -> tools/call 28
+[cocos-bridge 2026-10-02T05:48:27.799Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T05:48:28.413Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T05:48:28.448Z] -> initialize 0
+[cocos-bridge 2026-10-02T05:48:28.996Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T05:48:28.998Z] -> initialize 0
+[cocos-bridge 2026-10-02T05:48:29.011Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T05:48:29.018Z] -> tools/list 1
+[cocos-bridge 2026-10-02T05:48:29.025Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T05:48:29.030Z] -> prompts/list 2
+[cocos-bridge 2026-10-02T05:48:29.031Z] -> tools/list 1
+[cocos-bridge 2026-10-02T05:48:29.039Z] -> resources/list 3
+[cocos-bridge 2026-10-02T07:24:53.125Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T07:24:53.257Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T07:24:53.262Z] -> initialize 0
+[cocos-bridge 2026-10-02T07:24:53.292Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T07:24:53.298Z] -> initialize 0
+[cocos-bridge 2026-10-02T07:24:53.345Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T07:24:53.350Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T07:24:53.351Z] -> tools/list 1
+[cocos-bridge 2026-10-02T07:24:53.358Z] -> tools/list 1
+[cocos-bridge 2026-10-02T07:24:53.412Z] -> prompts/list 2
+[cocos-bridge 2026-10-02T07:24:53.422Z] -> resources/list 3
+[cocos-bridge 2026-10-02T10:03:29.504Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T10:03:29.777Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T10:03:29.794Z] -> initialize 0
+[cocos-bridge 2026-10-02T10:03:29.818Z] bridging stdio -> http://127.0.0.1:26735/
+[cocos-bridge 2026-10-02T10:03:29.836Z] -> initialize 0
+[cocos-bridge 2026-10-02T10:03:30.104Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T10:03:30.109Z] -> tools/list 1
+[cocos-bridge 2026-10-02T10:03:30.131Z] -> notifications/initialized 
+[cocos-bridge 2026-10-02T10:03:30.145Z] -> tools/list 1
+[cocos-bridge 2026-10-02T10:03:30.173Z] -> prompts/list 2
+[cocos-bridge 2026-10-02T10:03:30.283Z] -> resources/list 3
+[cocos-bridge 2026-10-02T10:15:49.026Z] -> tools/call 2
+[cocos-bridge 2026-10-02T10:15:51.770Z] -> tools/call 3
+[cocos-bridge 2026-10-02T10:22:07.104Z] -> tools/call 4
+[cocos-bridge 2026-10-02T10:23:12.750Z] -> tools/call 5
+[cocos-bridge 2026-10-02T10:23:26.167Z] -> tools/call 6
+[cocos-bridge 2026-10-02T10:23:29.889Z] -> tools/call 7
+[cocos-bridge 2026-10-02T10:24:54.988Z] -> tools/call 8
+[cocos-bridge 2026-10-02T10:44:30.619Z] -> tools/call 9
+[cocos-bridge 2026-10-02T10:44:39.808Z] -> tools/call 10
+[cocos-bridge 2026-10-02T10:45:12.656Z] -> tools/call 11
+[cocos-bridge 2026-10-02T10:45:49.938Z] -> tools/call 12
+[cocos-bridge 2026-10-02T10:45:56.299Z] -> tools/call 13
+[cocos-bridge 2026-10-02T10:46:01.335Z] -> tools/call 14
+[cocos-bridge 2026-10-02T10:46:10.765Z] -> tools/call 15
+[cocos-bridge 2026-10-02T10:46:17.372Z] -> tools/call 16
+[cocos-bridge 2026-10-02T10:46:24.766Z] -> tools/call 17
+[cocos-bridge 2026-10-02T10:47:23.666Z] -> tools/call 18
+[cocos-bridge 2026-10-02T10:47:52.095Z] -> tools/call 19
+[cocos-bridge 2026-10-02T10:48:09.513Z] -> tools/call 20
+[cocos-bridge 2026-10-02T10:48:19.953Z] -> tools/call 21
+[cocos-bridge 2026-10-02T10:48:39.718Z] -> tools/call 22
+[cocos-bridge 2026-10-02T10:48:51.868Z] -> tools/call 23
+[cocos-bridge 2026-10-02T10:48:56.655Z] -> tools/call 24
+[cocos-bridge 2026-10-02T10:49:04.657Z] -> tools/call 25
+[cocos-bridge 2026-10-02T10:49:09.670Z] -> tools/call 26
+[cocos-bridge 2026-10-02T10:49:17.787Z] -> tools/call 27
+[cocos-bridge 2026-10-02T10:49:43.111Z] -> tools/call 28
+[cocos-bridge 2026-10-02T10:51:08.156Z] -> tools/call 29
+[cocos-bridge 2026-10-02T10:52:11.982Z] -> tools/call 30
+[cocos-bridge 2026-10-02T10:52:25.469Z] -> tools/call 31
+[cocos-bridge 2026-10-02T10:52:33.523Z] -> tools/call 32
+[cocos-bridge 2026-10-02T10:52:37.641Z] -> tools/call 33
+[cocos-bridge 2026-10-02T10:54:37.062Z] -> tools/call 34
+[cocos-bridge 2026-10-02T10:58:36.777Z] -> tools/call 35
+[cocos-bridge 2026-10-02T11:00:31.086Z] -> tools/call 36
+[cocos-bridge 2026-10-02T11:00:37.751Z] -> tools/call 37
+[cocos-bridge 2026-10-02T11:14:03.113Z] -> tools/call 38
+[cocos-bridge 2026-10-02T11:14:38.491Z] -> tools/call 39

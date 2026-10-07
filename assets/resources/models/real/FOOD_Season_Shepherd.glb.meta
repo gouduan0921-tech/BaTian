@@ -1,0 +1,406 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d",
+  "files": [],
+  "subMetas": {
+    "50743": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@50743",
+      "displayName": "",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@d6cf8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "74436": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@74436",
+      "displayName": "",
+      "id": "74436",
+      "name": "BT2_ShepherdPurse_Normal.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7e2a8": {
+      "importer": "gltf-mesh",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@7e2a8",
+      "displayName": "",
+      "id": "7e2a8",
+      "name": "FOOD_Season_Shepherd.001.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 3072
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "61dde": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@61dde",
+      "displayName": "",
+      "id": "61dde",
+      "name": "BT2_ShepherdPurse_Base.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "eda86": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@eda86",
+      "displayName": "",
+      "id": "eda86",
+      "name": "BT2_ShepherdPurse_RoughMetal.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "85b9b": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@85b9b",
+      "displayName": "",
+      "id": "85b9b",
+      "name": "BT2_ShepherdPurseYoung_Normal.image",
+      "userData": {
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "15df9": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@15df9",
+      "displayName": "",
+      "id": "15df9",
+      "name": "BT2_ShepherdPurseYoung_Base.image",
+      "userData": {
+        "gltfIndex": 4,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d6cf8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@d6cf8",
+      "displayName": "",
+      "id": "d6cf8",
+      "name": "BT2_ShepherdPurseYoung_RoughMetal.image",
+      "userData": {
+        "gltfIndex": 5,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@74436"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@61dde"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@eda86"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@85b9b"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@15df9"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ebe34": {
+      "importer": "gltf-material",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@ebe34",
+      "displayName": "",
+      "id": "ebe34",
+      "name": "BT2_ShepherdPurse.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d0ad5": {
+      "importer": "gltf-material",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@d0ad5",
+      "displayName": "",
+      "id": "d0ad5",
+      "name": "BT2_ShepherdPurseYoung.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "42ac1": {
+      "importer": "gltf-scene",
+      "uuid": "b48fe52b-1069-416e-b68b-dd8a65bf128d@42ac1",
+      "displayName": "",
+      "id": "42ac1",
+      "name": "FOOD_Season_Shepherd.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "BT2_ShepherdPurse_Normal",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@74436"
+      },
+      {
+        "name": "BT2_ShepherdPurse_Base",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@61dde"
+      },
+      {
+        "name": "BT2_ShepherdPurse_RoughMetal",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@eda86"
+      },
+      {
+        "name": "BT2_ShepherdPurseYoung_Normal",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@85b9b"
+      },
+      {
+        "name": "BT2_ShepherdPurseYoung_Base",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@15df9"
+      },
+      {
+        "name": "BT2_ShepherdPurseYoung_RoughMetal",
+        "uri": "b48fe52b-1069-416e-b68b-dd8a65bf128d@d6cf8"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@7e2a8"
+      ],
+      "skeletons": [],
+      "textures": [
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@3effa",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@221a5",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@0089c",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@9b633",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@9b782",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@50743"
+      ],
+      "materials": [
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@ebe34",
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@d0ad5"
+      ],
+      "scenes": [
+        "b48fe52b-1069-416e-b68b-dd8a65bf128d@42ac1"
+      ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
+    }
+  }
+}

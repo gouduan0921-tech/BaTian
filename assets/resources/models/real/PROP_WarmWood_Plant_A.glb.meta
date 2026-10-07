@@ -5,15 +5,54 @@
   "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c",
   "files": [],
   "subMetas": {
-    "ec237": {
-      "importer": "gltf-mesh",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@ec237",
+    "50743": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@50743",
       "displayName": "",
-      "id": "ec237",
-      "name": "Hollow flowerpot.015.mesh",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@8e3e2"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "86940": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@86940",
+      "displayName": "",
+      "id": "86940",
+      "name": "potted_plant_01_leaves.001.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9adc7": {
+      "importer": "gltf-mesh",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9adc7",
+      "displayName": "",
+      "id": "9adc7",
+      "name": "PROP_WarmWood_Plant_A.001_Professional_Professional.mesh",
       "userData": {
         "gltfIndex": 0,
-        "triangleCount": 552
+        "triangleCount": 18000
       },
       "ver": "1.1.1",
       "imported": true,
@@ -23,14 +62,94 @@
       ],
       "subMetas": {}
     },
-    "213b8": {
+    "663d9": {
       "importer": "gltf-embeded-image",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@663d9",
       "displayName": "",
-      "id": "213b8",
-      "name": "Terracotta_B.image",
+      "id": "663d9",
+      "name": "potted_plant_01_pot_nor_gl_2k.image",
       "userData": {
         "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9715e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9715e",
+      "displayName": "",
+      "id": "9715e",
+      "name": "potted_plant_01_pot_diff_2k.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d5a6d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@d5a6d",
+      "displayName": "",
+      "id": "d5a6d",
+      "name": "potted_plant_01_pot_rough_2k.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6665d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@6665d",
+      "displayName": "",
+      "id": "6665d",
+      "name": "potted_plant_01_leaves_nor_gl_2k.image",
+      "userData": {
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3550d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@3550d",
+      "displayName": "",
+      "id": "3550d",
+      "name": "potted_plant_01_leaves_diff_2k.image",
+      "userData": {
+        "gltfIndex": 4,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -43,12 +162,32 @@
       ],
       "subMetas": {}
     },
-    "e39f7": {
-      "importer": "texture",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@e39f7",
+    "8e3e2": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@8e3e2",
       "displayName": "",
-      "id": "e39f7",
-      "name": "UnnamedTexture.texture",
+      "id": "8e3e2",
+      "name": "potted_plant_01_leaves_rough_2k.image",
+      "userData": {
+        "gltfIndex": 5,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
       "userData": {
         "wrapModeS": "repeat",
         "wrapModeT": "repeat",
@@ -57,7 +196,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8"
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@663d9"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -66,62 +205,106 @@
       ],
       "subMetas": {}
     },
-    "14cad": {
-      "importer": "gltf-material",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@14cad",
+    "221a5": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@221a5",
       "displayName": "",
-      "id": "14cad",
-      "name": "BT_Terracotta.005.material",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9715e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@d5a6d"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@6665d"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@3550d"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9ed0d": {
+      "importer": "gltf-material",
+      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9ed0d",
+      "displayName": "",
+      "id": "9ed0d",
+      "name": "potted_plant_01_pot.001.material",
       "userData": {
         "gltfIndex": 0
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "8bb30": {
-      "importer": "gltf-material",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@8bb30",
-      "displayName": "",
-      "id": "8bb30",
-      "name": "BT_Soil.005.material",
-      "userData": {
-        "gltfIndex": 1
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "1ad6f": {
-      "importer": "gltf-material",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@1ad6f",
-      "displayName": "",
-      "id": "1ad6f",
-      "name": "BT_Leaf.005.material",
-      "userData": {
-        "gltfIndex": 2
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "ae26c": {
-      "importer": "gltf-material",
-      "uuid": "d1f938e0-6145-4325-8462-8dfe0a1b321c@ae26c",
-      "displayName": "",
-      "id": "ae26c",
-      "name": "BT_YoungLeaf.005.material",
-      "userData": {
-        "gltfIndex": 3
       },
       "ver": "1.0.14",
       "imported": true,
@@ -150,8 +333,28 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "Terracotta_B",
-        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@213b8"
+        "name": "potted_plant_01_pot_nor_gl_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@663d9"
+      },
+      {
+        "name": "potted_plant_01_pot_diff_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@9715e"
+      },
+      {
+        "name": "potted_plant_01_pot_rough_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@d5a6d"
+      },
+      {
+        "name": "potted_plant_01_leaves_nor_gl_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@6665d"
+      },
+      {
+        "name": "potted_plant_01_leaves_diff_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@3550d"
+      },
+      {
+        "name": "potted_plant_01_leaves_rough_2k",
+        "uri": "d1f938e0-6145-4325-8462-8dfe0a1b321c@8e3e2"
       }
     ],
     "lods": {
@@ -174,21 +377,30 @@
     },
     "assetFinder": {
       "meshes": [
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@ec237"
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@9adc7"
       ],
       "skeletons": [],
       "textures": [
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@e39f7"
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@3effa",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@221a5",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@0089c",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@9b633",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@9b782",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@50743"
       ],
       "materials": [
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@14cad",
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@8bb30",
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@1ad6f",
-        "d1f938e0-6145-4325-8462-8dfe0a1b321c@ae26c"
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@9ed0d",
+        "d1f938e0-6145-4325-8462-8dfe0a1b321c@86940"
       ],
       "scenes": [
         "d1f938e0-6145-4325-8462-8dfe0a1b321c@106f6"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

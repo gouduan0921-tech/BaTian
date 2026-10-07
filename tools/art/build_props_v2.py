@@ -425,7 +425,7 @@ def rod(a, b, r, mat, seg=10):
 
 def text_mesh(body, pos, size, mat, extrude=.012, rot=(math.pi / 2, 0, 0), bevel=.002):
     c = bpy.data.curves.new('Lettering', 'FONT'); c.body = body; c.size = size; c.align_x = 'CENTER'; c.align_y = 'CENTER'
-    c.extrude = extrude; c.bevel_depth = bevel; c.bevel_resolution = 1; c.resolution_u = 6
+    c.extrude = extrude; c.bevel_depth = bevel; c.bevel_resolution = 1 if size > .3 else 0; c.resolution_u = 3 if size > .3 else 2
     for path in ['/System/Library/Fonts/Supplemental/Songti.ttc', '/System/Library/Fonts/STHeiti Medium.ttc', '/System/Library/Fonts/Supplemental/Arial Unicode.ttf']:
         try:
             c.font = bpy.data.fonts.load(path, check_existing=True); break
@@ -625,6 +625,12 @@ ASSETS = {
     'PROP_NightBlue_Bowl_Deep': lambda: bowl('PROP_NightBlue_Bowl_Deep', M['glaze_indigo'], inner=M['porcelain'], deep=True),
     'PROP_WarmWood_Tray_A': tray,
 }
+
+# 店铺环境与 25 件装修在同目录的 build_props_v2_env.py 里，共用这里的材质和几何工具
+_env = ROOT / '游戏工程/BaTian/tools/art/build_props_v2_env.py'
+if _env.exists() and (ONLY is None or any(k not in ASSETS for k in ONLY)):
+    exec(compile(_env.read_text(), str(_env), 'exec'), globals())
+    ASSETS.update(ENV_ASSETS)
 
 extra = globals().get('EXTRA_ASSETS')
 if extra:

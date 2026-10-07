@@ -441,5 +441,154 @@
     "color": "#D9B25A",
     "heatHint": "mid",
     "freshPenalty": 2
+  },
+  {
+    "id": "R13",
+    "name": "桂花山药粥",
+    "unlockDay": 8,
+    "season": "autumn",
+    "cost": 9,
+    "price": 30,
+    "cookSeconds": 60,
+    "scorchMul": 0.9,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I13",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I13",
+        "atDoneness": 0.4
+      }
+    ],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜",
+      "时令"
+    ],
+    "color": "#EEDFB8",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R14",
+    "name": "腊味粥",
+    "unlockDay": 8,
+    "season": "winter",
+    "cost": 17,
+    "price": 40,
+    "cookSeconds": 66,
+    "scorchMul": 1.1,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I14",
+        "count": 1
+      },
+      {
+        "id": "I06",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I14",
+        "atDoneness": 0.3
+      },
+      {
+        "id": "I06",
+        "atDoneness": 0.75
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "咸香",
+      "浓",
+      "时令"
+    ],
+    "color": "#E2C49A",
+    "heatHint": "mid",
+    "freshPenalty": 1
+  },
+  {
+    "id": "R15",
+    "name": "荠菜肉末粥",
+    "unlockDay": 8,
+    "season": "spring",
+    "cost": 15,
+    "price": 34,
+    "cookSeconds": 58,
+    "scorchMul": 1.0,
+    "ingredients": [
+      {
+        "id": "I01",
+        "count": 1
+      },
+      {
+        "id": "I03",
+        "count": 1
+      },
+      {
+        "id": "I15",
+        "count": 1
+      }
+    ],
+    "adds": [
+      {
+        "id": "I03",
+        "atDoneness": 0.45
+      },
+      {
+        "id": "I15",
+        "atDoneness": 0.75
+      }
+    ],
+    "seasoning": "savory",
+    "tags": [
+      "鲜",
+      "咸香",
+      "时令"
+    ],
+    "color": "#DCE0BE",
+    "heatHint": "mid",
+    "freshPenalty": 2
+  },
+  {
+    "id": "R16",
+    "name": "绿豆粥",
+    "unlockDay": 8,
+    "season": "summer",
+    "cost": 8,
+    "price": 26,
+    "cookSeconds": 64,
+    "scorchMul": 0.9,
+    "ingredients": [
+      {
+        "id": "I16",
+        "count": 1
+      },
+      {
+        "id": "I01",
+        "count": 1
+      }
+    ],
+    "adds": [],
+    "seasoning": "sweet",
+    "tags": [
+      "清甜",
+      "时令"
+    ],
+    "color": "#CFDDB0",
+    "heatHint": "mid",
+    "freshPenalty": 1
   }
 ]

@@ -5,15 +5,98 @@
   "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96",
   "files": [],
   "subMetas": {
-    "8ff0e": {
-      "importer": "gltf-mesh",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@8ff0e",
+    "37261": {
+      "importer": "gltf-embeded-image",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@37261",
       "displayName": "",
-      "id": "8ff0e",
-      "name": "Copper shade.010.mesh",
+      "id": "37261",
+      "name": "industrial_wall_lamp_arm_1k.image",
+      "userData": {
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "45479": {
+      "importer": "gltf-embeded-image",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@45479",
+      "displayName": "",
+      "id": "45479",
+      "name": "industrial_wall_lamp_emissive_1k.image",
       "userData": {
         "gltfIndex": 0,
-        "triangleCount": 588
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50743": {
+      "importer": "texture",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@50743",
+      "displayName": "",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@2e5b1"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "64411": {
+      "importer": "gltf-embeded-image",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@64411",
+      "displayName": "",
+      "id": "64411",
+      "name": "industrial_wall_lamp_glass_nor_gl_1k.image",
+      "userData": {
+        "gltfIndex": 4,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ed341": {
+      "importer": "gltf-mesh",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@ed341",
+      "displayName": "",
+      "id": "ed341",
+      "name": "Sphere.001.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 4446
       },
       "ver": "1.1.1",
       "imported": true,
@@ -23,14 +106,54 @@
       ],
       "subMetas": {}
     },
-    "28ade": {
+    "cd220": {
       "importer": "gltf-embeded-image",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@28ade",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@cd220",
       "displayName": "",
-      "id": "28ade",
-      "name": "SmokedOak_B.image",
+      "id": "cd220",
+      "name": "industrial_wall_lamp_nor_gl_1k.image",
       "userData": {
-        "gltfIndex": 0,
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0c195": {
+      "importer": "gltf-embeded-image",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@0c195",
+      "displayName": "",
+      "id": "0c195",
+      "name": "industrial_wall_lamp_diff_1k.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2e5b1": {
+      "importer": "gltf-embeded-image",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@2e5b1",
+      "displayName": "",
+      "id": "2e5b1",
+      "name": "industrial_wall_lamp_glass_diff_1k.image",
+      "userData": {
+        "gltfIndex": 5,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -43,14 +166,14 @@
       ],
       "subMetas": {}
     },
-    "4d235": {
+    "2345e": {
       "importer": "gltf-embeded-image",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@4d235",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@2345e",
       "displayName": "",
-      "id": "4d235",
-      "name": "RicePaper_B.image",
+      "id": "2345e",
+      "name": "industrial_wall_lamp_glass_arm_1k.image",
       "userData": {
-        "gltfIndex": 1,
+        "gltfIndex": 6,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -58,8 +181,8 @@
       "ver": "1.0.3",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".jpg",
+        ".json"
       ],
       "subMetas": {}
     },
@@ -77,7 +200,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@28ade"
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@45479"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -100,7 +223,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@4d235"
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@cd220"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -109,12 +232,104 @@
       ],
       "subMetas": {}
     },
-    "e9894": {
-      "importer": "gltf-material",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@e9894",
+    "0089c": {
+      "importer": "texture",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@0089c",
       "displayName": "",
-      "id": "e9894",
-      "name": "BT_AgedBrass.005.material",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@0c195"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@37261"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@64411"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "99ea5": {
+      "importer": "texture",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@99ea5",
+      "displayName": "",
+      "id": "99ea5",
+      "name": "UnnamedTexture-6.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8c03e51d-08a3-4583-9090-e6d41c439b96@2345e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1a3d1": {
+      "importer": "gltf-material",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@1a3d1",
+      "displayName": "",
+      "id": "1a3d1",
+      "name": "industrial_wall_lamp.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -125,30 +340,14 @@
       ],
       "subMetas": {}
     },
-    "061e8": {
+    "a82fa": {
       "importer": "gltf-material",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@061e8",
+      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@a82fa",
       "displayName": "",
-      "id": "061e8",
-      "name": "BT_SmokedOak.005.material",
+      "id": "a82fa",
+      "name": "BT5_FrostedLamp.material",
       "userData": {
         "gltfIndex": 1
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "f91b8": {
-      "importer": "gltf-material",
-      "uuid": "8c03e51d-08a3-4583-9090-e6d41c439b96@f91b8",
-      "displayName": "",
-      "id": "f91b8",
-      "name": "BT_RicePaper.005.material",
-      "userData": {
-        "gltfIndex": 2
       },
       "ver": "1.0.14",
       "imported": true,
@@ -177,12 +376,32 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "SmokedOak_B",
-        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@28ade"
+        "name": "industrial_wall_lamp_emissive_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@45479"
       },
       {
-        "name": "RicePaper_B",
-        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@4d235"
+        "name": "industrial_wall_lamp_nor_gl_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@cd220"
+      },
+      {
+        "name": "industrial_wall_lamp_diff_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@0c195"
+      },
+      {
+        "name": "industrial_wall_lamp_arm_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@37261"
+      },
+      {
+        "name": "industrial_wall_lamp_glass_nor_gl_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@64411"
+      },
+      {
+        "name": "industrial_wall_lamp_glass_diff_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@2e5b1"
+      },
+      {
+        "name": "industrial_wall_lamp_glass_arm_1k",
+        "uri": "8c03e51d-08a3-4583-9090-e6d41c439b96@2345e"
       }
     ],
     "lods": {
@@ -205,21 +424,31 @@
     },
     "assetFinder": {
       "meshes": [
-        "8c03e51d-08a3-4583-9090-e6d41c439b96@8ff0e"
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@ed341"
       ],
       "skeletons": [],
       "textures": [
         "8c03e51d-08a3-4583-9090-e6d41c439b96@3effa",
-        "8c03e51d-08a3-4583-9090-e6d41c439b96@221a5"
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@221a5",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@0089c",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@9b633",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@9b782",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@50743",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@99ea5"
       ],
       "materials": [
-        "8c03e51d-08a3-4583-9090-e6d41c439b96@e9894",
-        "8c03e51d-08a3-4583-9090-e6d41c439b96@061e8",
-        "8c03e51d-08a3-4583-9090-e6d41c439b96@f91b8"
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@1a3d1",
+        "8c03e51d-08a3-4583-9090-e6d41c439b96@a82fa"
       ],
       "scenes": [
         "8c03e51d-08a3-4583-9090-e6d41c439b96@f26e1"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

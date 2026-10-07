@@ -5,6 +5,29 @@
   "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881",
   "files": [],
   "subMetas": {
+    "50743": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@50743",
+      "displayName": "",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@f2841"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
     "53282": {
       "importer": "gltf-material",
       "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@53282",
@@ -17,6 +40,46 @@
       "ver": "1.0.14",
       "imported": true,
       "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "56714": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@56714",
+      "displayName": "",
+      "id": "56714",
+      "name": "fine_grained_wood_nor_gl.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "90911": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@90911",
+      "displayName": "",
+      "id": "90911",
+      "name": "fine_grained_wood_Diffuse.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
         ".json"
       ],
       "subMetas": {}
@@ -39,52 +102,12 @@
       ],
       "subMetas": {}
     },
-    "2b694": {
+    "78faa": {
       "importer": "gltf-embeded-image",
-      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@78faa",
       "displayName": "",
-      "id": "2b694",
-      "name": "Honey_A_N.image",
-      "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": false,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".jpg",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "1edfd": {
-      "importer": "gltf-embeded-image",
-      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd",
-      "displayName": "",
-      "id": "1edfd",
-      "name": "Honey_A.image",
-      "userData": {
-        "gltfIndex": 1,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": false,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".jpg",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "186d3": {
-      "importer": "gltf-embeded-image",
-      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3",
-      "displayName": "",
-      "id": "186d3",
-      "name": "Oak_A_N.image",
+      "id": "78faa",
+      "name": "fine_grained_wood_arm.image",
       "userData": {
         "gltfIndex": 2,
         "fixAlphaTransparencyArtifacts": true,
@@ -99,14 +122,54 @@
       ],
       "subMetas": {}
     },
-    "04c28": {
+    "d48dc": {
       "importer": "gltf-embeded-image",
-      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@d48dc",
       "displayName": "",
-      "id": "04c28",
-      "name": "Oak_A.image",
+      "id": "d48dc",
+      "name": "wood_cabinet_worn_long_nor_gl.image",
       "userData": {
         "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b3065": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@b3065",
+      "displayName": "",
+      "id": "b3065",
+      "name": "wood_cabinet_worn_long_Diffuse.image",
+      "userData": {
+        "gltfIndex": 4,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f2841": {
+      "importer": "gltf-embeded-image",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@f2841",
+      "displayName": "",
+      "id": "f2841",
+      "name": "wood_cabinet_worn_long_arm.image",
+      "userData": {
+        "gltfIndex": 5,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -133,7 +196,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694"
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@56714"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -156,7 +219,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd"
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@90911"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -179,7 +242,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3"
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@78faa"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -202,7 +265,30 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28"
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@d48dc"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "41f9cb5f-ede7-41a5-8294-50590304c881@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "41f9cb5f-ede7-41a5-8294-50590304c881@b3065"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -247,20 +333,28 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "Honey_A_N",
-        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@2b694"
+        "name": "fine_grained_wood_nor_gl",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@56714"
       },
       {
-        "name": "Honey_A",
-        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@1edfd"
+        "name": "fine_grained_wood_Diffuse",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@90911"
       },
       {
-        "name": "Oak_A_N",
-        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@186d3"
+        "name": "fine_grained_wood_arm",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@78faa"
       },
       {
-        "name": "Oak_A",
-        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@04c28"
+        "name": "wood_cabinet_worn_long_nor_gl",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@d48dc"
+      },
+      {
+        "name": "wood_cabinet_worn_long_Diffuse",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@b3065"
+      },
+      {
+        "name": "wood_cabinet_worn_long_arm",
+        "uri": "41f9cb5f-ede7-41a5-8294-50590304c881@f2841"
       }
     ],
     "lods": {
@@ -290,7 +384,9 @@
         "41f9cb5f-ede7-41a5-8294-50590304c881@3effa",
         "41f9cb5f-ede7-41a5-8294-50590304c881@221a5",
         "41f9cb5f-ede7-41a5-8294-50590304c881@0089c",
-        "41f9cb5f-ede7-41a5-8294-50590304c881@9b633"
+        "41f9cb5f-ede7-41a5-8294-50590304c881@9b633",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@9b782",
+        "41f9cb5f-ede7-41a5-8294-50590304c881@50743"
       ],
       "materials": [
         "41f9cb5f-ede7-41a5-8294-50590304c881@53282",
@@ -299,6 +395,12 @@
       "scenes": [
         "41f9cb5f-ede7-41a5-8294-50590304c881@9de16"
       ]
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": false,
+      "compress": false,
+      "quantize": true
     }
   }
 }

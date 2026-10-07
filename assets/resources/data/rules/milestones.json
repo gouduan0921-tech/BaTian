@@ -1,0 +1,299 @@
+[
+  {
+    "id": "M01",
+    "group": "熬粥",
+    "name": "头一碗刚好",
+    "condition": {
+      "type": "perfectTotal",
+      "min": 1
+    },
+    "reward": 10,
+    "desc": "熬出第一碗「刚好」"
+  },
+  {
+    "id": "M02",
+    "group": "熬粥",
+    "name": "五十碗刚好",
+    "condition": {
+      "type": "perfectTotal",
+      "min": 50
+    },
+    "reward": 40,
+    "desc": "累计熬出 50 碗「刚好」"
+  },
+  {
+    "id": "M03",
+    "group": "熬粥",
+    "name": "两百碗刚好",
+    "condition": {
+      "type": "perfectTotal",
+      "min": 200
+    },
+    "reward": 100,
+    "desc": "累计熬出 200 碗「刚好」"
+  },
+  {
+    "id": "M04",
+    "group": "熬粥",
+    "name": "粥谱半本",
+    "condition": {
+      "type": "recipesLit",
+      "min": 8
+    },
+    "reward": 30,
+    "desc": "粥谱点亮 8 道"
+  },
+  {
+    "id": "M05",
+    "group": "熬粥",
+    "name": "粥谱全本",
+    "condition": {
+      "type": "recipesLit",
+      "min": 16
+    },
+    "reward": 150,
+    "desc": "粥谱 16 道全部点亮"
+  },
+  {
+    "id": "M06",
+    "group": "熬粥",
+    "name": "第一道拿手",
+    "condition": {
+      "type": "masterCount",
+      "min": 1
+    },
+    "reward": 30,
+    "desc": "有一道粥练到「拿手」"
+  },
+  {
+    "id": "M07",
+    "group": "熬粥",
+    "name": "五道拿手",
+    "condition": {
+      "type": "masterCount",
+      "min": 5
+    },
+    "reward": 80,
+    "desc": "5 道粥练到「拿手」"
+  },
+  {
+    "id": "M08",
+    "group": "熬粥",
+    "name": "十道拿手",
+    "condition": {
+      "type": "masterCount",
+      "min": 10
+    },
+    "reward": 150,
+    "desc": "10 道粥练到「拿手」"
+  },
+  {
+    "id": "M09",
+    "group": "经营",
+    "name": "一百碗",
+    "condition": {
+      "type": "servedTotal",
+      "min": 100
+    },
+    "reward": 20,
+    "desc": "累计卖出 100 碗"
+  },
+  {
+    "id": "M10",
+    "group": "经营",
+    "name": "五百碗",
+    "condition": {
+      "type": "servedTotal",
+      "min": 500
+    },
+    "reward": 60,
+    "desc": "累计卖出 500 碗"
+  },
+  {
+    "id": "M11",
+    "group": "经营",
+    "name": "一千五百碗",
+    "condition": {
+      "type": "servedTotal",
+      "min": 1500
+    },
+    "reward": 150,
+    "desc": "累计卖出 1500 碗"
+  },
+  {
+    "id": "M12",
+    "group": "经营",
+    "name": "日进三百",
+    "condition": {
+      "type": "bestDayIncome",
+      "min": 300
+    },
+    "reward": 30,
+    "desc": "一天的营收加小费到 300"
+  },
+  {
+    "id": "M13",
+    "group": "经营",
+    "name": "日进六百",
+    "condition": {
+      "type": "bestDayIncome",
+      "min": 600
+    },
+    "reward": 80,
+    "desc": "一天的营收加小费到 600"
+  },
+  {
+    "id": "M14",
+    "group": "经营",
+    "name": "开张满月",
+    "condition": {
+      "type": "daysCompleted",
+      "min": 30
+    },
+    "reward": 60,
+    "desc": "小铺开满 30 天"
+  },
+  {
+    "id": "M15",
+    "group": "经营",
+    "name": "开张百日",
+    "condition": {
+      "type": "daysCompleted",
+      "min": 100
+    },
+    "reward": 200,
+    "desc": "小铺开满 100 天"
+  },
+  {
+    "id": "M16",
+    "group": "街坊",
+    "name": "听了三个故事",
+    "condition": {
+      "type": "storiesHeard",
+      "min": 3
+    },
+    "reward": 30,
+    "desc": "听过 3 则常客的故事"
+  },
+  {
+    "id": "M17",
+    "group": "街坊",
+    "name": "故事都听过",
+    "condition": {
+      "type": "storiesHeard",
+      "min": 6
+    },
+    "reward": 80,
+    "desc": "6 则故事全部听过"
+  },
+  {
+    "id": "M18",
+    "group": "街坊",
+    "name": "头一件请托",
+    "condition": {
+      "type": "requestsDone",
+      "min": 1
+    },
+    "reward": 20,
+    "desc": "完成第一件街坊请托"
+  },
+  {
+    "id": "M19",
+    "group": "街坊",
+    "name": "十件请托",
+    "condition": {
+      "type": "requestsDone",
+      "min": 10
+    },
+    "reward": 80,
+    "desc": "累计完成 10 件请托"
+  },
+  {
+    "id": "M20",
+    "group": "街坊",
+    "name": "老朋友",
+    "condition": {
+      "type": "favorMax",
+      "min": 20
+    },
+    "reward": 50,
+    "desc": "有一位常客的好感到 20"
+  },
+  {
+    "id": "M21",
+    "group": "四时",
+    "name": "过了一个节气",
+    "condition": {
+      "type": "chaptersDone",
+      "min": 1
+    },
+    "reward": 40,
+    "desc": "一章的两个目标都做到"
+  },
+  {
+    "id": "M22",
+    "group": "四时",
+    "name": "四时都过",
+    "condition": {
+      "type": "chaptersDone",
+      "min": 4
+    },
+    "reward": 120,
+    "desc": "四章都做到"
+  },
+  {
+    "id": "M23",
+    "group": "四时",
+    "name": "一道时令留下",
+    "condition": {
+      "type": "keptRecipes",
+      "min": 1
+    },
+    "reward": 40,
+    "desc": "一道时令粥收进粥谱"
+  },
+  {
+    "id": "M24",
+    "group": "四时",
+    "name": "四季都留下",
+    "condition": {
+      "type": "keptRecipes",
+      "min": 4
+    },
+    "reward": 150,
+    "desc": "四道时令粥都收进粥谱"
+  },
+  {
+    "id": "M25",
+    "group": "铺子",
+    "name": "三种风格",
+    "condition": {
+      "type": "stylesUnlocked",
+      "min": 3
+    },
+    "reward": 30,
+    "desc": "暖木、晨白、夜蓝都能用"
+  },
+  {
+    "id": "M26",
+    "group": "铺子",
+    "name": "十件陈设",
+    "condition": {
+      "type": "decorOwned",
+      "min": 10
+    },
+    "reward": 40,
+    "desc": "拥有 10 件装修"
+  },
+  {
+    "id": "M27",
+    "group": "铺子",
+    "name": "五天全做到",
+    "condition": {
+      "type": "fullGoalDays",
+      "min": 5
+    },
+    "reward": 50,
+    "desc": "有 5 天小目标三件全做到"
+  }
+]

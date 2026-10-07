@@ -21,7 +21,9 @@
     "debtBuyKinds": 2,
     "unitCap": 8,
     "passCapacity": 3,
-    "autosaveSeconds": 30
+    "autosaveSeconds": 30,
+    "rentPerPot": 20,
+    "rentPerSeat": 10
   },
   "actions": {
     "wash": 4,
@@ -144,7 +146,8 @@
     "budgetPerCompletedDay": 4,
     "budgetStep": 10,
     "pricePenalty": 2,
-    "chapterCriticDay": 7
+    "chapterCriticDay": 7,
+    "seasonalBonus": 3
   },
   "favor": {
     "match": 2,
@@ -171,5 +174,35 @@
         "addWindow": 0.1
       }
     ]
+  },
+  "goals": {
+    "startDay": 2,
+    "count": 3,
+    "serveShare": 0.6,
+    "perfectBase": 1,
+    "perfectPerDay": 0.34,
+    "perfectCap": 5,
+    "tipsBase": 4,
+    "tipsPerDay": 2,
+    "atmosphereMin": 35,
+    "reward": 12,
+    "rewardHard": 20,
+    "bonusAll": 15
+  },
+  "requests": {
+    "startDay": 4,
+    "chance": 0.6,
+    "minFavor": 2,
+    "countEarly": 1,
+    "countLate": 2,
+    "lateFromDay": 10,
+    "rewardRate": 0.6,
+    "patienceMul": 1.5,
+    "favor": 1
+  },
+  "chapters": {
+    "startDay": 8,
+    "length": 7,
+    "yearScale": 0.25
   }
 }

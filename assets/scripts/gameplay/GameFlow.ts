@@ -53,6 +53,7 @@ export class GameFlow {
         this.progress = new Progress(this.config, f.profile);
         this.rng = new SeededRng(f.profile.rng.seed, f.rngStep);
         this.serial = f.serial;
+        this.dayReport = f.report ?? null;
         if (f.shift) {
             this.shift = new Shift(this.config, f.shift, this.progress.pantry, this.rng);
         }
@@ -72,7 +73,14 @@ export class GameFlow {
 
     continueGame(): void {
         if (!this.progress) return;
-        if (this.shift && this.shift.phase !== 'done') { this.paused = false; this.setMode('shift'); return; }
+        if (this.shift && this.shift.phase !== 'done') {
+            // 装修页是临时界面，刷新后不会重新打开；不能留下接待暂停。
+            this.shift.setReceptionPaused(false);
+            this.paused = false;
+            this.setMode('shift');
+            return;
+        }
+        if (this.dayReport) { this.setMode('report'); return; }
         this.beginMorning();
     }
 
@@ -86,7 +94,7 @@ export class GameFlow {
 
     /** 点「开始备料」：生成当日客流，进入 90 秒预处理。 */
     startPrep(): void {
-        if (!this.progress || !this.rng) return;
+        if (!this.progress || !this.rng || this.mode !== 'morning') return;
         this.shift = this.progress.startShift(this.rng);
         this.clock.reset();
         this.saveTimer = 0;
@@ -141,7 +149,7 @@ export class GameFlow {
     }
 
     /** 日结看完：进入次日清晨。 */
-    nextDay(): void { this.beginMorning(); }
+    nextDay(): void { if (this.mode === 'report') this.beginMorning(); }
 
     toTitle(): void {
         this.save();
@@ -155,6 +163,7 @@ export class GameFlow {
             format: SAVE_FORMAT, version: this.config.balance.version, serial: this.serial,
             profile: this.progress.state, shift: this.shift && this.shift.phase !== 'done' ? this.shift.state : null,
             rngStep: this.rng.step, settings: this.settings,
+            report: this.dayReport,
         };
         const msg = this.store.write(file);
         if (!msg) this.serial = file.serial;

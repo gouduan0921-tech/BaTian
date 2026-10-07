@@ -5,7 +5,7 @@
     "kind": "main",
     "slot": "window",
     "style": "warm-wood",
-    "price": 80,
+    "price": 160,
     "atmosphere": {
       "warmth": 10,
       "clean": 0,
@@ -20,7 +20,7 @@
     "kind": "main",
     "slot": "door",
     "style": "warm-wood",
-    "price": 60,
+    "price": 120,
     "atmosphere": {
       "warmth": 8,
       "clean": 6,
@@ -35,7 +35,7 @@
     "kind": "main",
     "slot": "hall",
     "style": "warm-wood",
-    "price": 120,
+    "price": 240,
     "atmosphere": {
       "warmth": 16,
       "clean": 4,
@@ -50,7 +50,7 @@
     "kind": "main",
     "slot": "counter",
     "style": "warm-wood",
-    "price": 100,
+    "price": 200,
     "atmosphere": {
       "warmth": 4,
       "clean": 12,
@@ -65,7 +65,7 @@
     "kind": "main",
     "slot": "kitchen",
     "style": "warm-wood",
-    "price": 140,
+    "price": 280,
     "atmosphere": {
       "warmth": 0,
       "clean": 8,
@@ -80,7 +80,7 @@
     "kind": "main",
     "slot": "window",
     "style": "morning-white",
-    "price": 150,
+    "price": 300,
     "atmosphere": {
       "warmth": 6,
       "clean": 0,
@@ -95,7 +95,7 @@
     "kind": "main",
     "slot": "door",
     "style": "morning-white",
-    "price": 90,
+    "price": 180,
     "atmosphere": {
       "warmth": 0,
       "clean": 10,
@@ -110,7 +110,7 @@
     "kind": "main",
     "slot": "hall",
     "style": "morning-white",
-    "price": 160,
+    "price": 320,
     "atmosphere": {
       "warmth": 12,
       "clean": 10,
@@ -125,7 +125,7 @@
     "kind": "main",
     "slot": "counter",
     "style": "morning-white",
-    "price": 150,
+    "price": 300,
     "atmosphere": {
       "warmth": 0,
       "clean": 18,
@@ -140,7 +140,7 @@
     "kind": "main",
     "slot": "kitchen",
     "style": "morning-white",
-    "price": 180,
+    "price": 360,
     "atmosphere": {
       "warmth": 0,
       "clean": 14,
@@ -155,7 +155,7 @@
     "kind": "main",
     "slot": "window",
     "style": "night-blue",
-    "price": 120,
+    "price": 240,
     "atmosphere": {
       "warmth": 12,
       "clean": 0,
@@ -170,7 +170,7 @@
     "kind": "main",
     "slot": "door",
     "style": "night-blue",
-    "price": 90,
+    "price": 180,
     "atmosphere": {
       "warmth": 10,
       "clean": 6,
@@ -185,7 +185,7 @@
     "kind": "main",
     "slot": "hall",
     "style": "night-blue",
-    "price": 180,
+    "price": 360,
     "atmosphere": {
       "warmth": 18,
       "clean": 6,
@@ -200,7 +200,7 @@
     "kind": "main",
     "slot": "counter",
     "style": "night-blue",
-    "price": 150,
+    "price": 300,
     "atmosphere": {
       "warmth": 0,
       "clean": 14,
@@ -215,7 +215,7 @@
     "kind": "main",
     "slot": "kitchen",
     "style": "night-blue",
-    "price": 200,
+    "price": 400,
     "atmosphere": {
       "warmth": 0,
       "clean": 10,
@@ -230,7 +230,7 @@
     "kind": "small",
     "slot": "window",
     "style": "warm-wood",
-    "price": 30,
+    "price": 60,
     "atmosphere": {
       "warmth": 0,
       "clean": 2,
@@ -260,7 +260,7 @@
     "kind": "small",
     "slot": "door",
     "style": "night-blue",
-    "price": 40,
+    "price": 80,
     "atmosphere": {
       "warmth": 4,
       "clean": 0,
@@ -275,7 +275,7 @@
     "kind": "small",
     "slot": "counter",
     "style": "night-blue",
-    "price": 40,
+    "price": 80,
     "atmosphere": {
       "warmth": 0,
       "clean": 2,
@@ -290,7 +290,7 @@
     "kind": "small",
     "slot": "window",
     "style": "morning-white",
-    "price": 40,
+    "price": 80,
     "atmosphere": {
       "warmth": 0,
       "clean": 3,
@@ -305,7 +305,7 @@
     "kind": "small",
     "slot": "hall",
     "style": "morning-white",
-    "price": 50,
+    "price": 100,
     "atmosphere": {
       "warmth": 0,
       "clean": 2,
@@ -341,7 +341,7 @@
     "kind": "tableware",
     "slot": null,
     "style": "warm-wood",
-    "price": 100,
+    "price": 200,
     "atmosphere": {
       "warmth": 0,
       "clean": 0,
@@ -365,7 +365,7 @@
     "kind": "tableware",
     "slot": null,
     "style": "morning-white",
-    "price": 100,
+    "price": 200,
     "atmosphere": {
       "warmth": 0,
       "clean": 0,
@@ -390,7 +390,7 @@
     "kind": "tableware",
     "slot": null,
     "style": "night-blue",
-    "price": 120,
+    "price": 240,
     "atmosphere": {
       "warmth": 0,
       "clean": 0,
